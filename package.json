@@ -1,0 +1,18 @@
+{
+  "name": "kemek-enterprise",
+  "version": "1.0.0",
+  "description": "Kemek Enterprise — premium website for a UK family property business.",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -c tailwind.config.js -i src/tailwind.input.css -o css/tailwind.css --minify",
+    "watch:css": "tailwindcss -c tailwind.config.js -i src/tailwind.input.css -o css/tailwind.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elkelvinwilliams/kemek-enterprise.git"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}

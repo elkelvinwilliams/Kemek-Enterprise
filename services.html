@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kemek Enterprise services — buy & sell, rent-to-rent & lettings, property sourcing, done-for-you investing, contractor accommodation, and upcoming social housing across the UK.">
+  <title>Services | Kemek Enterprise</title>
+  <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans bg-cream text-ink">
+
+  <!-- ═══ NAVIGATION ════════════════════════════════════════════════════════ -->
+  <nav id="site-nav" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="nav-mark" aria-label="Kemek Enterprise home">
+          <span class="monogram" aria-hidden="true">K</span>
+          <span class="wordmark">KEMEK<span class="wordmark-sub">Enterprise</span></span>
+        </a>
+        <div class="hidden md:flex items-center gap-8" role="list">
+          <a href="index.html"   data-nav-link class="text-white/65 hover:text-white text-sm tracking-wide transition-colors py-2" role="listitem">Home</a>
+          <a href="services.html" data-nav-link class="text-white/65 hover:text-white text-sm tracking-wide transition-colors py-2" role="listitem">Services</a>
+          <a href="about.html"    data-nav-link class="text-white/65 hover:text-white text-sm tracking-wide transition-colors py-2" role="listitem">About</a>
+          <a href="contact.html"  data-nav-link class="text-white/65 hover:text-white text-sm tracking-wide transition-colors py-2" role="listitem">Contact</a>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="contact.html#book" class="btn-primary !hidden sm:!inline-flex text-sm px-5 py-2.5">Book a Call</a>
+          <button id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"
+                  class="md:hidden text-white p-2 -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center">
+            <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"/></svg>
+            <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" class="hidden" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" role="navigation" aria-label="Mobile menu">
+        <div class="pb-6 pt-2 flex flex-col gap-1 border-t border-white/10">
+          <a href="index.html"   data-nav-link class="text-white/65 hover:text-white text-sm tracking-wide py-3 px-1 transition-colors">Home</a>
+          <a href="services.html" data-nav-link class="text-white/65 hover:text-white text-sm tracking-wide py-3 px-1 transition-colors">Services</a>
+          <a href="about.html"    data-nav-link class="text-white/65 hover:text-white text-sm tracking-wide py-3 px-1 transition-colors">About</a>
+          <a href="contact.html"  data-nav-link class="text-white/65 hover:text-white text-sm tracking-wide py-3 px-1 transition-colors">Contact</a>
+          <a href="contact.html#book" class="btn-primary text-center mt-3">Book a Discovery Call</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ═══ PAGE HERO ═══════════════════════════════════════════════════════ -->
+    <header class="page-hero page-hero-bg px-6">
+      <div class="absolute inset-0 opacity-[0.04]" style="background-image: repeating-linear-gradient(0deg,rgba(255,255,255,1) 0,rgba(255,255,255,1) 1px,transparent 1px,transparent 80px), repeating-linear-gradient(90deg,rgba(255,255,255,1) 0,rgba(255,255,255,1) 1px,transparent 1px,transparent 80px);" aria-hidden="true"></div>
+      <div class="relative z-10 pt-16">
+        <span class="section-label fade-up fade-up-1" style="color:var(--gold)">What We Do</span>
+        <h1 class="font-serif text-white text-4xl sm:text-5xl lg:text-6xl font-semibold fade-up fade-up-2">Our Services</h1>
+        <p class="text-white/55 mt-4 max-w-xl mx-auto fade-up fade-up-3">Six ways we help you buy, sell, rent, invest and live well — at whatever level of involvement suits you.</p>
+      </div>
+    </header>
+
+    <!-- ═══ QUICK INDEX ═════════════════════════════════════════════════════ -->
+    <section class="py-14 px-6 lg:px-12 border-b" style="border-color:var(--border)">
+      <div class="max-w-7xl mx-auto flex flex-wrap justify-center gap-3">
+        <a href="#buy-sell" class="filter-btn">Buy &amp; Sell</a>
+        <a href="#lettings" class="filter-btn">Rent-to-Rent</a>
+        <a href="#sourcing" class="filter-btn">Sourcing</a>
+        <a href="#done-for-you" class="filter-btn">Done-For-You</a>
+        <a href="#contractor" class="filter-btn">Contractor Stays</a>
+        <a href="#social" class="filter-btn">Social Housing</a>
+        <a href="#interiors" class="filter-btn">EA Interiors</a>
+      </div>
+    </section>
+
+    <!-- ═══ SERVICE 1: BUY & SELL ═══════════════════════════════════════════ -->
+    <section id="buy-sell" class="py-24 px-6 lg:px-12 scroll-mt-24" aria-label="Buy and Sell">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div class="reveal">
+          <div class="ph-prop-1 ph-sheen aspect-[4/3] w-full"></div>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <span class="section-label">01 — Acquisition &amp; Sales</span>
+          <span class="accent-line"></span>
+          <h2 class="font-serif text-3xl sm:text-4xl text-ink">Buy &amp; Sell</h2>
+          <p class="mt-5 leading-relaxed" style="color:var(--muted)">We acquire and sell residential property across the UK. Whether you're buying your next home, picking up an investment, or releasing equity quickly, we negotiate hard and keep the process moving — fairly, transparently and on your timeline.</p>
+          <ul class="mt-6 space-y-3">
+            <li class="service-row"><span>Residential purchases &amp; chain-free buying</span><span class="price-tag">Buyers</span></li>
+            <li class="service-row"><span>Fast, fair sales &amp; equity release</span><span class="price-tag">Sellers</span></li>
+            <li class="service-row"><span>Below-market &amp; off-market acquisitions</span><span class="price-tag">Investors</span></li>
+          </ul>
+          <a href="contact.html#book" class="btn-ink mt-8">Enquire About Buying or Selling</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SERVICE 2: LETTINGS ═════════════════════════════════════════════ -->
+    <section id="lettings" class="py-24 px-6 lg:px-12 scroll-mt-24" style="background:var(--stone)" aria-label="Rent to Rent and Lettings">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div class="reveal reveal-delay-1 order-2 lg:order-1">
+          <span class="section-label">02 — Lettings &amp; Management</span>
+          <span class="accent-line"></span>
+          <h2 class="font-serif text-3xl sm:text-4xl text-ink">Rent-to-Rent &amp; Lettings</h2>
+          <p class="mt-5 leading-relaxed" style="color:var(--muted)">We rent properties, add value and let them well. Landlords get guaranteed peace of mind and a hands-off income; tenants get a home that's properly maintained and professionally run. We handle compliance, maintenance and the day-to-day.</p>
+          <ul class="mt-6 space-y-3">
+            <li class="service-row"><span>Guaranteed rent for landlords</span><span class="price-tag">Landlords</span></li>
+            <li class="service-row"><span>Full lettings &amp; tenancy management</span><span class="price-tag">Hands-off</span></li>
+            <li class="service-row"><span>Well-maintained, compliant homes</span><span class="price-tag">Tenants</span></li>
+          </ul>
+          <a href="contact.html#book" class="btn-ink mt-8">Talk to Us About Lettings</a>
+        </div>
+        <div class="reveal order-1 lg:order-2">
+          <div class="ph-prop-2 ph-sheen aspect-[4/3] w-full"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SERVICE 3: SOURCING ═════════════════════════════════════════════ -->
+    <section id="sourcing" class="py-24 px-6 lg:px-12 scroll-mt-24" aria-label="Property Sourcing">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div class="reveal">
+          <div class="ph-prop-3 ph-sheen aspect-[4/3] w-full"></div>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <span class="section-label">03 — Deal Sourcing</span>
+          <span class="accent-line"></span>
+          <h2 class="font-serif text-3xl sm:text-4xl text-ink">Property Sourcing</h2>
+          <p class="mt-5 leading-relaxed" style="color:var(--muted)">We find the deals other people don't see. Using our network and local knowledge, we source off-market and below-value opportunities for clients to buy — fully researched, with the numbers stacked up, so you only ever look at deals worth your time.</p>
+          <ul class="mt-6 space-y-3">
+            <li class="service-row"><span>Off-market &amp; below-value deals</span><span class="price-tag">Sourced</span></li>
+            <li class="service-row"><span>Due diligence &amp; deal analysis</span><span class="price-tag">Researched</span></li>
+            <li class="service-row"><span>Matched to your strategy &amp; budget</span><span class="price-tag">Tailored</span></li>
+          </ul>
+          <a href="contact.html#book" class="btn-ink mt-8">Get Deals Sourced for You</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SERVICE 4: DONE FOR YOU ═════════════════════════════════════════ -->
+    <section id="done-for-you" class="py-24 px-6 lg:px-12 scroll-mt-24" style="background:var(--navy)" aria-label="Done For You Investing">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div class="reveal reveal-delay-1 order-2 lg:order-1">
+          <span class="section-label" style="color:var(--gold)">04 — Fully Managed</span>
+          <span class="accent-line" style="background:var(--gold)"></span>
+          <h2 class="font-serif text-3xl sm:text-4xl text-white">Done-For-You Investing</h2>
+          <p class="mt-5 leading-relaxed text-white/60">Too busy to get into property? We do it all for you. From finding and investing to selling or filling the home with tenants, our team runs the entire process end-to-end. You stay informed; we do the work. It's the simplest way to build a property portfolio around a busy life.</p>
+          <ul class="mt-6 space-y-1">
+            <li class="flex items-center gap-3 py-2 text-white/80 text-sm"><span style="color:var(--gold)">✦</span> We find &amp; analyse the opportunity</li>
+            <li class="flex items-center gap-3 py-2 text-white/80 text-sm"><span style="color:var(--gold)">✦</span> We invest &amp; manage the purchase</li>
+            <li class="flex items-center gap-3 py-2 text-white/80 text-sm"><span style="color:var(--gold)">✦</span> We sell for profit, or fill with tenants</li>
+            <li class="flex items-center gap-3 py-2 text-white/80 text-sm"><span style="color:var(--gold)">✦</span> You receive returns — completely hands-off</li>
+          </ul>
+          <a href="contact.html#book" class="btn-primary mt-8">Start Hands-Off Investing</a>
+        </div>
+        <div class="reveal order-1 lg:order-2">
+          <div class="ph-prop-4 ph-sheen aspect-[4/3] w-full"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SERVICE 5: CONTRACTOR ═══════════════════════════════════════════ -->
+    <section id="contractor" class="py-24 px-6 lg:px-12 scroll-mt-24" aria-label="Contractor Accommodation">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div class="reveal">
+          <div class="ph-prop-5 ph-sheen aspect-[4/3] w-full"></div>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <span class="section-label">05 — Professional Stays</span>
+          <span class="accent-line"></span>
+          <h2 class="font-serif text-3xl sm:text-4xl text-ink">Contractor Accommodation</h2>
+          <p class="mt-5 leading-relaxed" style="color:var(--muted)">A special portfolio for professionals who need quality accommodation near where they work — doctors, footballers, and contracted staff on local placements. Comfortable, well-located homes, ready to move into, with flexible terms that fit the way contractors actually live.</p>
+          <ul class="mt-6 space-y-3">
+            <li class="service-row"><span>Medical &amp; locum professionals</span><span class="price-tag">Doctors</span></li>
+            <li class="service-row"><span>Sports &amp; performance staff</span><span class="price-tag">Footballers</span></li>
+            <li class="service-row"><span>Contracted &amp; relocating teams</span><span class="price-tag">Staff</span></li>
+          </ul>
+          <a href="contact.html#book" class="btn-ink mt-8">Arrange Accommodation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SERVICE 6: SOCIAL HOUSING ═══════════════════════════════════════ -->
+    <section id="social" class="py-24 px-6 lg:px-12 scroll-mt-24" style="background:var(--stone)" aria-label="Social Housing">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div class="reveal reveal-delay-1 order-2 lg:order-1">
+          <span class="inline-block text-[0.6rem] tracking-widest uppercase font-semibold px-2.5 py-1 mb-3" style="background:var(--gold); color:var(--deep)">Coming Soon</span>
+          <h2 class="font-serif text-3xl sm:text-4xl text-ink">Social Housing</h2>
+          <p class="mt-5 leading-relaxed" style="color:var(--muted)">Soon, Kemek Enterprise will move into social housing — providing dignified, well-kept homes for elderly people and less fortunate members of society. It's the heart of who we are as a family business: property isn't only an investment, it's a place for people to belong.</p>
+          <p class="mt-4 leading-relaxed" style="color:var(--muted)">If you're a local authority, partner or supporter who shares this mission, we'd love to talk early.</p>
+          <a href="contact.html#book" class="btn-outline-dark mt-8">Register Your Interest</a>
+        </div>
+        <div class="reveal order-1 lg:order-2">
+          <div class="ph-prop-6 ph-sheen aspect-[4/3] w-full"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ EA INTERIORS ════════════════════════════════════════════════════ -->
+    <section id="interiors" class="py-24 px-6 lg:px-12 scroll-mt-24" style="background:var(--navy)" aria-label="EA Interiors">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div class="reveal">
+          <div class="ph-interior-1 ph-sheen aspect-[4/3] w-full"></div>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <span class="section-label" style="color:var(--gold)">In-House · Design &amp; Build</span>
+          <span class="accent-line" style="background:var(--gold)"></span>
+          <h2 class="font-serif text-3xl sm:text-4xl text-white">EA Interiors</h2>
+          <p class="font-serif italic text-lg mt-2" style="color:var(--gold)">Emmanuella Akua Interiors</p>
+          <p class="mt-5 leading-relaxed text-white/60">Our in-house property development and interior design studio, led by <strong class="text-white font-semibold">Emmanuella Akua</strong> — our principal developer and interior designer. EA Interiors takes a property from purchase to polished finish: structural refurbishment, full interior design, and the styling that makes a house feel like home and helps it hold its value.</p>
+          <ul class="mt-6 space-y-1">
+            <li class="flex items-center gap-3 py-2 text-white/80 text-sm"><span style="color:var(--gold)">✦</span> Property development &amp; refurbishment</li>
+            <li class="flex items-center gap-3 py-2 text-white/80 text-sm"><span style="color:var(--gold)">✦</span> Bespoke interior design</li>
+            <li class="flex items-center gap-3 py-2 text-white/80 text-sm"><span style="color:var(--gold)">✦</span> Project management end-to-end</li>
+            <li class="flex items-center gap-3 py-2 text-white/80 text-sm"><span style="color:var(--gold)">✦</span> Styling &amp; staging for sale or let</li>
+          </ul>
+          <a href="contact.html#book" class="btn-primary mt-8">Work With EA Interiors</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ENGAGEMENT NOTE ═════════════════════════════════════════════════ -->
+    <section class="py-20 px-6 text-center" aria-label="How to start">
+      <div class="max-w-2xl mx-auto reveal">
+        <span class="section-label">Not Sure Which You Need?</span>
+        <h2 class="font-serif text-3xl sm:text-4xl text-ink">Start with a conversation</h2>
+        <p class="mt-5" style="color:var(--muted)">Every situation is different. Book a free discovery call and we'll point you to the right service — with no obligation and no jargon.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <a href="contact.html#book" class="btn-primary">Book a Discovery Call</a>
+          <a href="https://wa.me/442000000000" class="btn-outline-dark">Message on WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══ FOOTER ════════════════════════════════════════════════════════════ -->
+  <footer class="pt-20 pb-10 px-6 lg:px-12">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 pb-14 border-b border-white/10">
+        <div class="lg:col-span-1">
+          <a href="index.html" class="nav-mark mb-5" aria-label="Kemek Enterprise home">
+            <span class="monogram" aria-hidden="true">K</span>
+            <span class="wordmark">KEMEK<span class="wordmark-sub">Enterprise</span></span>
+          </a>
+          <p class="text-sm text-white/45 leading-relaxed">A UK family property company — buying, selling, sourcing and managing property, and building homes people are proud of.</p>
+        </div>
+        <div>
+          <h3 class="text-white text-sm font-semibold tracking-wider uppercase mb-4">Explore</h3>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="index.html" class="text-white/50">Home</a></li>
+            <li><a href="services.html" class="text-white/50">Services</a></li>
+            <li><a href="about.html" class="text-white/50">About</a></li>
+            <li><a href="contact.html" class="text-white/50">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-white text-sm font-semibold tracking-wider uppercase mb-4">Services</h3>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="services.html#buy-sell" class="text-white/50">Buy &amp; Sell</a></li>
+            <li><a href="services.html#lettings" class="text-white/50">Rent-to-Rent</a></li>
+            <li><a href="services.html#sourcing" class="text-white/50">Property Sourcing</a></li>
+            <li><a href="services.html#contractor" class="text-white/50">Contractor Stays</a></li>
+            <li><a href="services.html#interiors" class="text-white/50">EA Interiors</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-white text-sm font-semibold tracking-wider uppercase mb-4">Get in Touch</h3>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="tel:+442000000000" class="text-white/50">+44 (0)20 0000 0000</a></li>
+            <li><a href="mailto:hello@kemekenterprise.co.uk" class="text-white/50">hello@kemekenterprise.co.uk</a></li>
+            <li><a href="https://wa.me/442000000000" class="text-white/50">WhatsApp Us</a></li>
+            <li class="text-white/40">United Kingdom</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 text-xs text-white/35">
+        <p>© 2026 Kemek Enterprise. All rights reserved. A family business.</p>
+        <p>Backed by <span style="color:var(--gold)">Ten Talents Bank</span> &amp; partners.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ QUICK-CONTACT WIDGET ══════════════════════════════════════════════ -->
+  <div id="chat-widget" aria-label="Quick contact">
+    <div id="chat-menu">
+      <a class="chat-opt" href="https://wa.me/442000000000" aria-label="Message us on WhatsApp">
+        <span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.2 13.9c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1-1.4-1-2.6s.6-1.8.9-2.1c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.2.1.4.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.1.1.6-.1 1.2Z"/></svg></span>
+        WhatsApp
+      </a>
+      <a class="chat-opt" href="tel:+442000000000" aria-label="Call us">
+        <span class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.5 5.5c0 8.3 6.7 15 15 15 .9 0 1.8-.7 1.9-1.6l.3-2.2c.1-.7-.3-1.4-1-1.6l-3-1c-.6-.2-1.3 0-1.6.5l-.8 1.1A11.5 11.5 0 0 1 7.8 9l1.1-.8c.5-.4.7-1 .5-1.7l-1-3c-.2-.7-.9-1.1-1.6-1l-2.2.3c-.9.1-1.6 1-1.6 1.9Z"/></svg></span>
+        Call Us
+      </a>
+      <a class="chat-opt" href="contact.html#book" aria-label="Book a discovery call">
+        <span class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 3v3M17 3v3M4 8h16M5 6h14a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Z"/></svg></span>
+        Book a Call
+      </a>
+    </div>
+    <button id="chat-toggle" aria-label="Open quick contact" aria-expanded="false">
+      <svg class="chat-icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.4 8.4 0 0 1-12 7.6L3 21l1.9-5.5A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+      <svg class="chat-icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
