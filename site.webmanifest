@@ -1,0 +1,17 @@
+{
+  "name": "Kemek Enterprise",
+  "short_name": "Kemek",
+  "description": "A UK family property company — buying, selling, sourcing and managing property.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A1A30",
+  "theme_color": "#0A1A30",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

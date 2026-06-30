@@ -145,25 +145,67 @@ if (chatWidget) {
   document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); });
 }
 
-/* ─── Contact form (demo) ───────────────────────────────────────────────── */
+/* ─── Contact form ──────────────────────────────────────────────────────────
+   Submits to the form's `action` (set up for Formspree). If the endpoint is
+   still the placeholder, or the network request fails, it falls back to opening
+   the visitor's email client so an enquiry is never silently lost.            */
 const form = document.getElementById('contact-form');
 if (form) {
-  form.addEventListener('submit', e => {
+  const status   = document.getElementById('form-status');
+  const setStatus = (msg, color) => { if (status) { status.textContent = msg; status.style.color = color || ''; } };
+
+  const flashBtn = (btn, label, ok) => {
+    btn.textContent = label;
+    btn.style.background  = ok ? '#2E7D52' : '';
+    btn.style.borderColor = ok ? '#2E7D52' : '';
+    btn.style.color       = ok ? '#fff' : '';
+  };
+
+  const mailtoFallback = () => {
+    const to   = form.dataset.fallbackEmail || 'hello@kemekenterprise.co.uk';
+    const data = new FormData(form);
+    const body = [...data.entries()].map(([k, v]) => `${k}: ${v}`).join('\n');
+    const subject = `Website enquiry — ${data.get('interest') || 'General'}`;
+    window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+
+  form.addEventListener('submit', async e => {
     e.preventDefault();
-    const btn = form.querySelector('[type="submit"]');
+    if (!form.reportValidity()) return;
+
+    const btn  = form.querySelector('[type="submit"]');
     const orig = btn.textContent;
-    btn.textContent = 'Enquiry Sent ✓';
-    btn.style.background = '#2E7D52';
-    btn.style.borderColor = '#2E7D52';
-    btn.style.color = '#fff';
+    const action = form.getAttribute('action') || '';
+    const configured = action && !action.includes('YOUR_FORM_ID');
+
     btn.disabled = true;
-    setTimeout(() => {
-      btn.textContent = orig;
-      btn.style.background = '';
-      btn.style.borderColor = '';
-      btn.style.color = '';
-      btn.disabled = false;
+    btn.textContent = 'Sending…';
+
+    // No live endpoint yet — hand off to the visitor's email app.
+    if (!configured) {
+      flashBtn(btn, 'Opening email…', true);
+      setStatus('Opening your email app so you can send the enquiry…');
+      mailtoFallback();
+      setTimeout(() => { flashBtn(btn, orig, false); btn.disabled = false; }, 3000);
+      return;
+    }
+
+    try {
+      const res = await fetch(action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      });
+      if (!res.ok) throw new Error('Request failed');
+      flashBtn(btn, 'Enquiry Sent ✓', true);
+      setStatus('Thank you — we’ll be in touch within one working day.', '#2E7D52');
       form.reset();
-    }, 3500);
+      setTimeout(() => { flashBtn(btn, orig, false); btn.disabled = false; }, 3500);
+    } catch (err) {
+      setStatus('Couldn’t send automatically — opening your email app instead…', '#b4541f');
+      mailtoFallback();
+      flashBtn(btn, orig, false);
+      btn.disabled = false;
+    }
   });
 }

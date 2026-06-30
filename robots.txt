@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://elkelvinwilliams.github.io/kemek-enterprise/sitemap.xml
