@@ -37,7 +37,7 @@
           <div><dt>Base uplift</dt><dd class="${b.gross_uplift < 0 ? 'neg' : ''}">${gbpK(b.gross_uplift)}<small>${pct(b.gross_uplift_pct)} of price</small></dd></div>
           <div><dt>Confidence</dt><dd><span class="conf ${confClass(d.confidence)}">${esc(d.confidence)}</span></dd></div>
         </dl>
-        <p class="deal-card__note">${cash ? 'Commercial — valued on rent ÷ yield, not GDV.' : 'Analytical range — not a valuation.'} Checked ${fmtDate(d.date_checked)}.</p>
+        <p class="deal-card__note">${d.auction_date ? `<b style="color:var(--ink);font-style:normal">Auction ${fmtDate(d.auction_date)}</b> · ` : ''}${cash ? 'Commercial — valued on rent ÷ yield, not GDV.' : 'Analytical range — not a valuation.'} Checked ${fmtDate(d.date_checked)}.</p>
         <div class="deal-card__actions">
           <a class="btn-ink" href="deal.html?id=${encodeURIComponent(d.id)}">View deal</a>
           <button class="btn-outline-dark" data-calc="${esc(d.id)}">Run the numbers</button>
@@ -117,6 +117,7 @@
     items.push(`<div class="ev-row"><dt>Date checked</dt><dd>${fmtDate(d.date_checked)} (research cut-off ${fmtDate(D.research_date)})</dd></div>`);
     items.push(`<div class="ev-row"><dt>Confidence</dt><dd><span class="conf ${confClass(d.confidence)}">${esc(d.confidence)}</span></dd></div>`);
     items.push(`<div class="ev-row"><dt>Value basis</dt><dd>${esc(d.value_kind)}</dd></div>`);
+    if (d.auction_date) items.push(`<div class="ev-row"><dt>Auction</dt><dd>${fmtDate(d.auction_date)}${has(d, 'auctioneer') ? ' — ' + esc(d.auctioneer) : ''}</dd></div>`);
     if (has(d, 'source')) items.push(`<div class="ev-row"><dt>Primary source</dt><dd><a href="${esc(d.source)}" target="_blank" rel="noopener">${esc(d.source_name || 'Listing')}</a></dd></div>`);
     if (has(d, 'research')) items.push(`<div class="ev-row"><dt>Research basis</dt><dd>${esc(d.research)}</dd></div>`);
     if (has(d, 'correction')) items.push(`<div class="ev-row"><dt>Correction</dt><dd>${esc(d.correction)}${has(d, 'original_claim') ? ` <small>(retired figure: ${esc(d.original_claim)})</small>` : ''}</dd></div>`);
@@ -163,7 +164,7 @@
       id: (a, b) => a.id.localeCompare(b.id),
     };
     const visible = () => D.deals.filter(d =>
-      (state.nation === 'all' || d.nation === state.nation) &&
+      (state.nation === 'all' || d.nation === state.nation || d.region === state.nation) &&
       (state.category === 'all' || d.category === state.category) &&
       (state.confidence === 'all' || d.confidence === state.confidence) &&
       (state.band === 'all' || bandOf(d) === state.band) &&
@@ -199,6 +200,7 @@
       ['net', 'Net after known costs', d => `<span class="${base(d).net_profit < 0 ? 'neg' : ''}">${gbpK(base(d).net_profit)}</span><br><small>${base(d).tbd.length} TBD</small>`, d => base(d).net_profit],
       ['confidence', 'Confidence', d => `<span class="conf ${confClass(d.confidence)}">${esc(d.confidence)}</span>`, d => d.confidence],
       ['stage', 'Stage', d => `<span class="deal-badge ${stageClass(d.stage)}">${esc(d.stage)}</span>`, d => d.stage],
+      ['auction', 'Auction', d => d.auction_date ? fmtDate(d.auction_date) : '—', d => d.auction_date || 'z'],
     ];
     const renderTable = (list) => {
       if (!tbl) return;
@@ -257,7 +259,7 @@
         <div><span>Guide</span><b>${esc(d.guide_label || range(d.guide[0], d.guide[1]))}</b></div>
         <div><span>${commercial ? 'Income value (rent ÷ yield)' : 'Indicative end value'}</span><b>${range(d.value[0], d.value[2])}</b><small>base ${gbpK(d.value[1])} · not a valuation</small></div>
         <div><span>Base gross uplift</span><b class="${b.gross_uplift < 0 ? 'neg' : ''}">${gbpK(b.gross_uplift)}</b><small>${pct(b.gross_uplift_pct)} of purchase price</small></div>
-        <div><span>Confidence</span><b><span class="conf ${confClass(d.confidence)}">${esc(d.confidence)}</span></b><small>checked ${fmtDate(d.date_checked)}</small></div>
+        <div><span>Confidence</span><b><span class="conf ${confClass(d.confidence)}">${esc(d.confidence)}</span></b><small>checked ${fmtDate(d.date_checked)}${d.auction_date ? ' · auction ' + fmtDate(d.auction_date) : ''}</small></div>
       </div>
       <p class="deal-basis"><b>Value basis:</b> ${esc(d.value_kind)}. ${commercial ? 'This is a commercial investment — its value is modelled from current rent, ERV, yield and occupancy, and is never described as GDV.' : 'The range is an analytical estimate built from local evidence; it is not a formal valuation.'} ${/development upside separate/i.test(d.value_kind) ? 'Any planning or development upside is kept separate and is not included in any case.' : ''}</p>
       <div class="deal-actions"><button class="btn-outline-dark" data-evidence="${esc(d.id)}">Evidence &amp; sources</button><a class="btn-primary" href="contact.html#book">Register interest</a><a class="deal-link" href="pipeline.html">← All opportunities</a></div>

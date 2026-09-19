@@ -91,20 +91,21 @@
   'use strict';
   const E = window.KemekPipeline;
   const LS = 'kemek_pipeline_full_v1';
-  const PRIVATE = ['address', 'source', 'source_name', 'research', 'correction', 'original_claim', 'comps', 'flags', 'size_sqft', 'income_pcm', 'commercial'];
+  const PRIVATE = ['address', 'auctioneer', 'source', 'source_name', 'research', 'correction', 'original_claim', 'comps', 'flags', 'size_sqft', 'income_pcm', 'commercial'];
   const FIELDS = [
     ['id', 'Deal ID'], ['headline', 'Headline (public name — no address)'], ['stage', 'Stage', 'select'], ['area', 'Area'], ['outcode', 'Postcode district'], ['nation', 'Nation', 'select', ['England', 'Wales', 'Scotland', 'Northern Ireland']],
     ['category', 'Category', 'select', ['Residential', 'Listed', 'Rural', 'Commercial', 'Land', 'Mixed']], ['type', 'Type'], ['config', 'Configuration'],
     ['guide_low', 'Guide low £', 'number'], ['guide_high', 'Guide high £', 'number'], ['guide_label', 'Guide (as stated)'],
     ['value_low', 'End value LOW £', 'number'], ['value_base', 'End value BASE £', 'number'], ['value_high', 'End value HIGH £', 'number'], ['value_label', 'End value (as stated)'],
     ['value_kind', 'Value basis', 'select', ['GDV', 'Income value (rent ÷ yield) — NOT GDV', 'Residential value (development upside separate)']],
-    ['tax', 'Tax table', 'select', ['SDLT_RES_HIGHER', 'SDLT_NONRES', 'LTT_RES_HIGHER', 'LBTT_RES_ADS']], ['confidence', 'Confidence', 'select', ['High', 'Medium', 'Low–Medium', 'Low']], ['date_checked', 'Date checked', 'date'],
+    ['tax', 'Tax table', 'select', ['SDLT_RES_HIGHER', 'SDLT_NONRES', 'LTT_RES_HIGHER', 'LBTT_RES_ADS']], ['confidence', 'Confidence', 'select', ['High', 'Medium', 'Low–Medium', 'Low']], ['date_checked', 'Date checked', 'date'], ['auction_date', 'Auction date', 'date'],
+    ['auctioneer', 'Auctioneer', 'text', null, true],
     ['address', 'Full address', 'text', null, true], ['source_name', 'Source name', 'text', null, true], ['source', 'Source URL', 'text', null, true],
     ['size_sqft', 'Size sq ft', 'number', null, true], ['income_pcm', 'Income £ pcm', 'number', null, true], ['original_claim', 'Original claim (retired)', 'text', null, true],
     ['research', 'Research basis', 'textarea', null, true, 'full'], ['correction', 'Correction / important note', 'textarea', null, true, 'full'],
     ['flags_text', 'Watch-points (one per line)', 'textarea', null, true, 'full'], ['comps_text', 'Comparable evidence — one per line: label | £ | date | note', 'textarea', null, true, 'full'],
   ];
-  const PUBLISHABLE = ['address', 'source', 'source_name', 'research', 'correction', 'original_claim', 'comps', 'flags', 'size_sqft', 'income_pcm'];
+  const PUBLISHABLE = ['address', 'auctioneer', 'source', 'source_name', 'research', 'correction', 'original_claim', 'comps', 'flags', 'size_sqft', 'income_pcm'];
   let data = null, cur = null;
   const $ = s => document.querySelector(s);
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -213,7 +214,7 @@
   $('#btn-new').addEventListener('click', () => {
     if (!data) return;
     const n = data.deals.length + 1; const id = 'KEM-' + String(n).padStart(3, '0');
-    data.deals.push({ id, headline: 'New opportunity', area: '', outcode: '', region: 'England', nation: 'England', type: '', category: 'Residential', config: '', guide: [0, 0], guide_label: '', value: [0, 0, 0], value_label: '', value_kind: 'GDV', tax: 'SDLT_RES_HIGHER', confidence: 'Medium', date_checked: new Date().toISOString().slice(0, 10), stage: 'Screening', published: false, public_fields: ['headline', 'area', 'outcode', 'region', 'nation', 'type', 'category', 'config', 'guide', 'guide_label', 'value', 'value_label', 'value_kind', 'confidence', 'date_checked', 'stage', 'tax'], address: '', source: '', source_name: '', research: '', correction: '', original_claim: '', comps: [], flags: [], overrides: {}, research_date: data.research_date });
+    data.deals.push({ id, headline: 'New opportunity', area: '', outcode: '', region: 'England', nation: 'England', type: '', category: 'Residential', config: '', guide: [0, 0], guide_label: '', value: [0, 0, 0], value_label: '', value_kind: 'GDV', tax: 'SDLT_RES_HIGHER', confidence: 'Medium', date_checked: new Date().toISOString().slice(0, 10), stage: 'Screening', published: false, public_fields: ['headline', 'area', 'outcode', 'region', 'nation', 'type', 'category', 'config', 'guide', 'guide_label', 'value', 'value_label', 'value_kind', 'confidence', 'date_checked', 'stage', 'tax', 'auction_date'], address: '', auction_date: '', auctioneer: '', source: '', source_name: '', research: '', correction: '', original_claim: '', comps: [], flags: [], overrides: {}, research_date: data.research_date });
     renderList(); select(id);
   });
 
