@@ -2,3 +2,5 @@ node_modules/
 .DS_Store
 *.log
 .cache/
+data/pipeline.private.js
+data/pipeline.private.json

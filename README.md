@@ -18,6 +18,16 @@ investing · contractor accommodation · social housing (coming soon).
 | `services.html` | The six service lines in detail |
 | `about.html` | Family story, mission, values, team, investors |
 | `contact.html` | Enquiry form, book-a-call, phone/WhatsApp/email, hours, socials |
+| `pipeline.html` | Deal Pipeline — cards, filters, comparison table, Conservative / Base / Upside calculator, evidence drawer |
+| `deal.html?id=KEM-001` | Property detail page for one pipeline record |
+| `admin/pipeline-admin.html` | Private admin/edit screen (not linked, `noindex`, blocked in `robots.txt`) |
+
+## Deal Pipeline — how the data works
+- `data/pipeline.public.js` — the **only** dataset the website carries. It holds just the fields the admin has published (headline, area, guide, indicative range, confidence, date checked, stage). Committed.
+- `data/pipeline.private.js` / `.json` — the full master (addresses, sources, evidence, corrections, costs). **Git-ignored — never commit.** Load it into the admin screen (drag-and-drop) to edit.
+- Admin workflow: edit → *Save to this browser* → *Export PUBLIC* → replace `data/pipeline.public.js` → commit. The export refuses to run if any private field is present without its "publish" box ticked.
+- **GO** in the admin promotes a record to the deal room; that is the explicit instruction to build the full deal pack from the Kemek templates.
+- `js/pipeline-engine.js` is the calculation engine (mirrors the master spreadsheet exactly). Indicative end values are analytical ranges — never valuations; TBD costs count as £0 and are flagged.
 
 ## Develop
 ```bash
