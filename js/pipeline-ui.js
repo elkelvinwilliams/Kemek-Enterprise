@@ -213,6 +213,29 @@
     render();
   }
 
+  /* ─── Services page: live strip under Property Sourcing ───────────────── */
+  const strip = document.getElementById('sourcing-pipeline');
+  if (strip) {
+    const top = [...D.deals].sort((a, b) => base(b).gross_uplift_pct - base(a).gross_uplift_pct).slice(0, 3);
+    strip.innerHTML = top.map((d, i) => {
+      const b = base(d);
+      return `<a class="mini-deal reveal" href="deal.html?id=${encodeURIComponent(d.id)}" style="transition-delay:${i * 0.08}s">
+        <span class="mini-deal__id">${esc(d.id)} · ${esc(d.nation)}</span>
+        <b class="font-serif">${esc(d.headline)}</b>
+        <span class="mini-deal__meta">${esc(d.type)}${d.config ? ' · ' + esc(d.config) : ''}</span>
+        <dl><div><dt>Guide</dt><dd>${esc(d.guide_label || range(d.guide[0], d.guide[1]))}</dd></div>
+            <div><dt>Indicative value</dt><dd>${range(d.value[0], d.value[2])}</dd></div>
+            <div><dt>Base uplift</dt><dd class="${b.gross_uplift < 0 ? 'neg' : ''}">${gbpK(b.gross_uplift)} <small>(${pct(b.gross_uplift_pct)})</small></dd></div></dl>
+        <span class="mini-deal__foot"><span class="conf ${confClass(d.confidence)}">${esc(d.confidence)}</span> <small>not a valuation · checked ${fmtDate(d.date_checked)}</small></span>
+      </a>`;
+    }).join('');
+    const count = document.getElementById('sourcing-pipeline-count'); if (count) count.textContent = D.deals.length;
+    strip.querySelectorAll('.reveal').forEach(el => {
+      const io = new IntersectionObserver(en => en.forEach(x => { if (x.isIntersecting) { x.target.classList.add('visible'); io.unobserve(x.target); } }), { threshold: 0.1 });
+      io.observe(el);
+    });
+  }
+
   /* ─── Detail page ─────────────────────────────────────────────────────── */
   const detail = document.getElementById('deal-detail');
   if (detail) {

@@ -165,6 +165,19 @@
           </div>
         </div>
       </div>
+
+      <!-- Live Deal Pipeline strip — reads data/pipeline.public.js (published fields only) -->
+      <div class="max-w-7xl mx-auto sourcing-strip reveal" id="deal-pipeline">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+          <div>
+            <span class="section-label">Deal Pipeline · Live</span>
+            <h3 class="font-serif text-2xl sm:text-3xl text-ink">Strongest base-case uplift right now</h3>
+            <p class="mt-2 text-sm max-w-2xl" style="color:var(--muted)">Three of the <span id="sourcing-pipeline-count">13</span> opportunities we're screening, ranked by gross uplift at the guide mid-point. Indicative ranges, not valuations — every figure is dated and confidence-graded, and costs without a quote are marked TBD.</p>
+          </div>
+          <a href="pipeline.html" class="deal-link whitespace-nowrap">All opportunities, filters &amp; calculator →</a>
+        </div>
+        <div id="sourcing-pipeline" class="mini-grid"></div>
+      </div>
     </section>
 
     <!-- ═══ SERVICE 4: DONE FOR YOU ═════════════════════════════════════════ -->
@@ -333,6 +346,9 @@
     </button>
   </div>
 
+  <script src="data/pipeline.public.js"></script>
+  <script src="js/pipeline-engine.js"></script>
   <script src="js/main.js" defer></script>
+  <script src="js/pipeline-ui.js" defer></script>
 </body>
 </html>
