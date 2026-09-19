@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kemek Enterprise — opportunity detail with corrected, evidenced figures and a live Conservative / Base / Upside calculator.">
+  <title>Deal Detail | Kemek Enterprise</title>
+  <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#0A1A30">
+  <meta name="robots" content="noindex, follow">
+</head>
+<body class="font-sans bg-cream text-ink">
+
+  <nav id="site-nav" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="nav-mark" aria-label="Kemek Enterprise home">
+          <span class="monogram" aria-hidden="true">K</span>
+          <span class="wordmark">KEMEK<span class="wordmark-sub">Enterprise</span></span>
+        </a>
+        <div class="hidden md:flex items-center gap-8" role="list">
+          <a href="index.html"    data-nav-link class="text-white/65 hover:text-white text-sm tracking-wide transition-colors py-2" role="listitem">Home</a>
+          <a href="services.html" data-nav-link class="text-white/65 hover:text-white text-sm tracking-wide transition-colors py-2" role="listitem">Services</a>
+          <a href="pipeline.html" data-nav-link class="text-white/65 hover:text-white text-sm tracking-wide transition-colors py-2" role="listitem" style="color:#F8F6F1">Deal Pipeline</a>
+          <a href="about.html"    data-nav-link class="text-white/65 hover:text-white text-sm tracking-wide transition-colors py-2" role="listitem">About</a>
+          <a href="contact.html"  data-nav-link class="text-white/65 hover:text-white text-sm tracking-wide transition-colors py-2" role="listitem">Contact</a>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="contact.html#book" class="btn-primary !hidden sm:!inline-flex text-sm px-5 py-2.5">Book a Call</a>
+          <button id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"
+                  class="md:hidden text-white p-2 -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center">
+            <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"/></svg>
+            <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" class="hidden" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" role="navigation" aria-label="Mobile menu">
+        <div class="pb-6 pt-2 flex flex-col gap-1 border-t border-white/10">
+          <a href="index.html"    data-nav-link class="text-white/65 hover:text-white text-sm tracking-wide py-3 px-1 transition-colors">Home</a>
+          <a href="services.html" data-nav-link class="text-white/65 hover:text-white text-sm tracking-wide py-3 px-1 transition-colors">Services</a>
+          <a href="pipeline.html" data-nav-link class="text-white/65 hover:text-white text-sm tracking-wide py-3 px-1 transition-colors">Deal Pipeline</a>
+          <a href="about.html"    data-nav-link class="text-white/65 hover:text-white text-sm tracking-wide py-3 px-1 transition-colors">About</a>
+          <a href="contact.html"  data-nav-link class="text-white/65 hover:text-white text-sm tracking-wide py-3 px-1 transition-colors">Contact</a>
+          <a href="contact.html#book" class="btn-primary text-center mt-3">Book a Discovery Call</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <header class="page-hero page-hero-bg px-6">
+      <div class="absolute inset-0 opacity-[0.04]" style="background-image: repeating-linear-gradient(0deg,rgba(255,255,255,1) 0,rgba(255,255,255,1) 1px,transparent 1px,transparent 80px), repeating-linear-gradient(90deg,rgba(255,255,255,1) 0,rgba(255,255,255,1) 1px,transparent 1px,transparent 80px);" aria-hidden="true"></div>
+      <div id="deal-hero" class="relative z-10 pt-16"></div>
+    </header>
+
+    <section class="py-16 px-6 lg:px-12">
+      <div id="deal-detail" class="max-w-6xl mx-auto"></div>
+    </section>
+
+    <section class="py-14 px-6 lg:px-12" style="background:var(--stone)">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-sm" style="color:var(--muted)">
+        <div><b class="text-ink">Not a valuation.</b> Indicative end values are analytical ranges built from local evidence at the date checked. A formal RICS valuation is obtained before any bid.</div>
+        <div><b class="text-ink">Nothing invented.</b> Refurbishment, legal, survey and buyer fees are TBD until quoted — they count as £0 in the calculator and are flagged.</div>
+        <div><b class="text-ink">Tax is modelled for a company buyer.</b> SDLT / LTT / LBTT bands are as understood at the research date and must be verified by the solicitor.</div>
+      </div>
+    </section>
+  </main>
+
+  <div id="pl-overlay" class="pl-overlay" aria-hidden="true"></div>
+  <aside id="pl-drawer" class="pl-drawer" role="dialog" aria-modal="true" aria-labelledby="pl-drawer-title">
+    <div class="pl-panel__head"><div><h3 id="pl-drawer-title" class="font-serif text-2xl text-ink" data-title></h3><p class="text-sm" style="color:var(--muted)" data-sub></p></div><button class="pl-close" data-close aria-label="Close">✕</button></div>
+    <div class="pl-panel__body" data-body></div>
+  </aside>
+
+  <footer class="pt-16 pb-10 px-6 lg:px-12">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/35">
+      <p>© 2026 Kemek Enterprise. All rights reserved. A family business.</p>
+      <p><a href="pipeline.html" class="text-white/50">← Back to the Deal Pipeline</a></p>
+    </div>
+  </footer>
+
+  <script src="data/pipeline.public.js"></script>
+  <script src="js/pipeline-engine.js"></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/pipeline-ui.js" defer></script>
+</body>
+</html>

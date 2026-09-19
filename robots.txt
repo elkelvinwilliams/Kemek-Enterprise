@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
 
-Sitemap: https://elkelvinwilliams.github.io/kemek-enterprise/sitemap.xml
+Sitemap: https://elkelvinwilliams.github.io/Kemek-Enterprise/sitemap.xml

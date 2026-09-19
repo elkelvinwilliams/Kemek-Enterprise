@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Pipeline Admin | Kemek Enterprise</title>
+  <link rel="stylesheet" href="../css/tailwind.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <style>
+    body { background: var(--cream); }
+    .adm { display: grid; grid-template-columns: 300px 1fr; min-height: 100vh; }
+    @media (max-width: 900px) { .adm { grid-template-columns: 1fr; } .adm-side { position: static !important; max-height: none !important; } }
+    .adm-side { background: var(--ink); color: rgba(255,255,255,0.8); padding: 1.4rem 1.2rem; position: sticky; top: 0; max-height: 100vh; overflow-y: auto; }
+    .adm-main { padding: 1.6rem 2rem 4rem; }
+    .adm-list button { display: block; width: 100%; text-align: left; background: none; border: none; color: rgba(255,255,255,0.75); padding: 0.55rem 0.6rem; cursor: pointer; font-family: 'Jost', sans-serif; font-size: 0.8rem; border-left: 2px solid transparent; }
+    .adm-list button:hover { color: #fff; background: rgba(255,255,255,0.05); }
+    .adm-list button.active { color: #fff; border-left-color: var(--gold); background: rgba(200,162,75,0.12); }
+    .adm-list small { display: block; color: rgba(255,255,255,0.45); font-size: 0.68rem; }
+    .adm-tool { display: block; width: 100%; text-align: left; margin-top: 0.5rem; padding: 0.6rem 0.8rem; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; border: 1.5px solid rgba(255,255,255,0.25); background: transparent; color: #fff; cursor: pointer; font-family: 'Jost', sans-serif; }
+    .adm-tool:hover { border-color: var(--gold); }
+    .adm-tool.gold { background: var(--gold); color: var(--deep); border-color: var(--gold); font-weight: 600; }
+    .adm-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem 1.2rem; }
+    @media (min-width: 1100px) { .adm-grid { grid-template-columns: repeat(3, 1fr); } }
+    .adm-grid .full { grid-column: 1 / -1; }
+    .adm-field label { display: block; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.25rem; }
+    .adm-field input, .adm-field select, .adm-field textarea { width: 100%; padding: 0.55rem 0.7rem; border: 1.5px solid var(--border); background: #fff; font-family: 'Jost', sans-serif; font-size: 0.84rem; }
+    .adm-field textarea { min-height: 72px; }
+    .adm-field input:focus, .adm-field textarea:focus, .adm-field select:focus { outline: none; border-color: var(--gold); }
+    .adm-field.private label::after { content: ' · PRIVATE'; color: #8E2E22; }
+    .adm-pub { display: flex; align-items: center; gap: 0.5rem; font-size: 0.72rem; color: var(--muted); margin-top: 0.3rem; }
+    .adm-card { background: #fff; border: 1px solid var(--border); padding: 1.4rem 1.6rem; margin-bottom: 1.4rem; }
+    .adm-card h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.5rem; color: var(--ink); margin-bottom: 0.9rem; }
+    .adm-status { position: fixed; bottom: 18px; right: 18px; background: var(--ink); color: #fff; padding: 0.7rem 1.1rem; font-size: 0.78rem; opacity: 0; transition: opacity 0.3s ease; z-index: 100; }
+    .adm-status.show { opacity: 1; }
+    .adm-bar { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; margin-bottom: 1.2rem; }
+    .adm-bar .btn-ink, .adm-bar .btn-primary, .adm-bar .btn-outline-dark { padding: 0.6rem 1.1rem; font-size: 0.68rem; cursor: pointer; }
+    .go-check { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.4rem 1.2rem; font-size: 0.82rem; }
+    .go-check label { display: flex; gap: 0.5rem; align-items: center; }
+    .adm-empty { max-width: 760px; margin: 4rem auto; text-align: center; }
+    .drop { border: 2px dashed var(--border); padding: 2.5rem; margin-top: 1.5rem; background: #fff; }
+    .drop.over { border-color: var(--gold); background: #FFFBEA; }
+    .assump-table { width: 100%; font-size: 0.8rem; border-collapse: collapse; }
+    .assump-table td, .assump-table th { padding: 0.45rem 0.5rem; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+    .assump-table input { width: 110px; padding: 0.35rem 0.5rem; border: 1.5px solid var(--border); font-family: 'Jost', sans-serif; font-size: 0.8rem; text-align: right; background: #FFFBEA; }
+    .assump-table input.tbd { background: #FFF1F0; border-color: #F0B9B3; }
+    .assump-table .st { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; padding: 2px 7px; }
+    .st-ASSUMED { background: #FBF1D6; color: #7A5C15; } .st-TBD { background: #FADBD8; color: #8E2E22; } .st-KNOWN { background: #DDF0E3; color: #1F6A3F; }
+    @media print { .adm-side, .adm-bar, .adm-status, .no-print { display: none !important; } .adm { display: block; } .adm-main { padding: 0; } }
+  </style>
+</head>
+<body class="font-sans text-ink">
+<div class="adm">
+  <aside class="adm-side">
+    <a href="../index.html" class="nav-mark mb-4" aria-label="Kemek Enterprise home"><span class="monogram" aria-hidden="true">K</span><span class="wordmark">KEMEK<span class="wordmark-sub">Enterprise</span></span></a>
+    <p class="text-xs" style="color:rgba(255,255,255,0.5);margin:0.6rem 0 1rem">Pipeline admin · private · nothing here is on the server</p>
+    <div class="adm-list" id="adm-list"></div>
+    <div style="margin-top:1.2rem;border-top:1px solid rgba(255,255,255,0.12);padding-top:1rem">
+      <button class="adm-tool" id="btn-assumptions">Global assumptions</button>
+      <button class="adm-tool" id="btn-new">+ Add opportunity</button>
+      <button class="adm-tool" id="btn-save">Save to this browser</button>
+      <button class="adm-tool gold" id="btn-export-public">Export PUBLIC → pipeline.public.js</button>
+      <button class="adm-tool" id="btn-export-full">Export FULL dataset (.json)</button>
+      <label class="adm-tool" style="cursor:pointer">Import full dataset<input type="file" id="file-import" accept=".json" hidden></label>
+      <button class="adm-tool" id="btn-clear" style="border-color:rgba(255,255,255,0.12);color:rgba(255,255,255,0.5)">Forget local copy</button>
+    </div>
+    <p class="text-xs" style="color:rgba(255,255,255,0.4);margin-top:1rem;line-height:1.5">Workflow: edit → Save → Export PUBLIC → commit <code>data/pipeline.public.js</code> to the repo. The FULL export is the private master — keep it off the website.</p>
+  </aside>
+
+  <main class="adm-main">
+    <div id="adm-empty" class="adm-empty">
+      <span class="section-label">Deal Pipeline · Admin</span>
+      <h1 class="font-serif text-4xl text-ink">Load the private dataset</h1>
+      <p class="mt-4" style="color:var(--muted)">The public website only ever carries fields you have published. The full dataset (addresses, sources, evidence, corrections, costs) lives in <b>pipeline.private.json</b> — import it here, or on this machine it loads automatically from <code>data/pipeline.private.js</code> if present (that file is git-ignored).</p>
+      <div class="drop" id="drop">Drop <b>pipeline.private.json</b> here, or <label class="deal-link" style="cursor:pointer">choose a file<input type="file" id="file-import-2" accept=".json" hidden></label></div>
+      <p class="mt-6 text-sm" style="color:var(--muted)">Or <button class="deal-link" id="btn-start-public">start from the public dataset</button> (no private fields — you can add them).</p>
+    </div>
+    <div id="adm-editor" hidden></div>
+    <div id="adm-global" hidden></div>
+  </main>
+</div>
+<div class="adm-status" id="adm-status"></div>
+
+<script src="../data/pipeline.public.js"></script>
+<script src="../data/pipeline.private.js" onerror="void 0"></script>
+<script src="../js/pipeline-engine.js"></script>
+<script>
+(() => {
+  'use strict';
+  const E = window.KemekPipeline;
+  const LS = 'kemek_pipeline_full_v1';
+  const PRIVATE = ['address', 'source', 'source_name', 'research', 'correction', 'original_claim', 'comps', 'flags', 'size_sqft', 'income_pcm', 'commercial'];
+  const FIELDS = [
+    ['id', 'Deal ID'], ['headline', 'Headline (public name — no address)'], ['stage', 'Stage', 'select'], ['area', 'Area'], ['outcode', 'Postcode district'], ['nation', 'Nation', 'select', ['England', 'Wales', 'Scotland', 'Northern Ireland']],
+    ['category', 'Category', 'select', ['Residential', 'Listed', 'Rural', 'Commercial', 'Land', 'Mixed']], ['type', 'Type'], ['config', 'Configuration'],
+    ['guide_low', 'Guide low £', 'number'], ['guide_high', 'Guide high £', 'number'], ['guide_label', 'Guide (as stated)'],
+    ['value_low', 'End value LOW £', 'number'], ['value_base', 'End value BASE £', 'number'], ['value_high', 'End value HIGH £', 'number'], ['value_label', 'End value (as stated)'],
+    ['value_kind', 'Value basis', 'select', ['GDV', 'Income value (rent ÷ yield) — NOT GDV', 'Residential value (development upside separate)']],
+    ['tax', 'Tax table', 'select', ['SDLT_RES_HIGHER', 'SDLT_NONRES', 'LTT_RES_HIGHER', 'LBTT_RES_ADS']], ['confidence', 'Confidence', 'select', ['High', 'Medium', 'Low–Medium', 'Low']], ['date_checked', 'Date checked', 'date'],
+    ['address', 'Full address', 'text', null, true], ['source_name', 'Source name', 'text', null, true], ['source', 'Source URL', 'text', null, true],
+    ['size_sqft', 'Size sq ft', 'number', null, true], ['income_pcm', 'Income £ pcm', 'number', null, true], ['original_claim', 'Original claim (retired)', 'text', null, true],
+    ['research', 'Research basis', 'textarea', null, true, 'full'], ['correction', 'Correction / important note', 'textarea', null, true, 'full'],
+    ['flags_text', 'Watch-points (one per line)', 'textarea', null, true, 'full'], ['comps_text', 'Comparable evidence — one per line: label | £ | date | note', 'textarea', null, true, 'full'],
+  ];
+  const PUBLISHABLE = ['address', 'source', 'source_name', 'research', 'correction', 'original_claim', 'comps', 'flags', 'size_sqft', 'income_pcm'];
+  let data = null, cur = null;
+  const $ = s => document.querySelector(s);
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const toast = m => { const el = $('#adm-status'); el.textContent = m; el.classList.add('show'); clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove('show'), 2600); };
+  const gbp = E.gbp, pct = E.pct;
+
+  /* ─── Loading ─────────────────────────────────────────────────────────── */
+  const boot = () => {
+    try { const s = localStorage.getItem(LS); if (s) { data = JSON.parse(s); toast('Loaded your saved copy from this browser'); return start(); } } catch (e) {}
+    if (window.KEMEK_PIPELINE_PRIVATE) { data = JSON.parse(JSON.stringify(window.KEMEK_PIPELINE_PRIVATE)); toast('Loaded data/pipeline.private.js'); return start(); }
+  };
+  const importFile = f => { const r = new FileReader(); r.onload = () => { try { data = JSON.parse(r.result); if (!data.deals) throw 0; start(); toast(`Imported ${data.deals.length} records`); } catch (e) { toast('That file is not a pipeline dataset'); } }; r.readAsText(f); };
+  ['#file-import', '#file-import-2'].forEach(s => $(s).addEventListener('change', e => e.target.files[0] && importFile(e.target.files[0])));
+  const drop = $('#drop');
+  drop.addEventListener('dragover', e => { e.preventDefault(); drop.classList.add('over'); });
+  drop.addEventListener('dragleave', () => drop.classList.remove('over'));
+  drop.addEventListener('drop', e => { e.preventDefault(); drop.classList.remove('over'); e.dataTransfer.files[0] && importFile(e.dataTransfer.files[0]); });
+  $('#btn-start-public').addEventListener('click', () => { data = JSON.parse(JSON.stringify(window.KEMEK_PIPELINE)); data.deals.forEach(d => { d.comps = d.comps || []; d.flags = d.flags || []; d.overrides = d.overrides || {}; }); start(); });
+
+  const start = () => { $('#adm-empty').hidden = true; data.deals.forEach(d => { d.public_fields = d.public_fields || []; d.overrides = d.overrides || {}; d.comps = d.comps || []; d.flags = d.flags || []; }); renderList(); select(data.deals[0]?.id); };
+
+  /* ─── Sidebar list ────────────────────────────────────────────────────── */
+  const renderList = () => {
+    $('#adm-list').innerHTML = data.deals.map(d => `<button data-id="${esc(d.id)}" class="${cur && cur.id === d.id ? 'active' : ''}">${esc(d.id)} — ${esc(d.headline)}<small>${esc(d.stage)}${d.published ? '' : ' · unpublished'}</small></button>`).join('');
+    $('#adm-list').querySelectorAll('button').forEach(b => b.addEventListener('click', () => select(b.dataset.id)));
+  };
+
+  /* ─── Editor ──────────────────────────────────────────────────────────── */
+  const select = id => {
+    cur = data.deals.find(d => d.id === id); if (!cur) return;
+    $('#adm-global').hidden = true; $('#adm-editor').hidden = false; renderList(); renderEditor();
+  };
+  const val = (d, k) => ({ guide_low: d.guide?.[0], guide_high: d.guide?.[1], value_low: d.value?.[0], value_base: d.value?.[1], value_high: d.value?.[2], flags_text: (d.flags || []).join('\n'), comps_text: (d.comps || []).map(c => `${c.label} | ${c.price} | ${c.date} | ${c.note}`).join('\n') }[k] ?? d[k] ?? '');
+  const renderEditor = () => {
+    const d = cur;
+    const s = E.runDeal(data, d);
+    $('#adm-editor').innerHTML = `
+      <div class="adm-bar no-print">
+        <span class="section-label" style="margin:0">${esc(d.id)}</span>
+        <label class="adm-pub" style="margin:0 0.6rem"><input type="checkbox" id="f-published" ${d.published ? 'checked' : ''}> Listed on the public site</label>
+        <button class="btn-primary" id="btn-go" ${/GO/.test(d.stage) ? 'disabled' : ''}>${/GO/.test(d.stage) ? '✓ In deal room' : 'GO → promote to deal room'}</button>
+        <button class="btn-outline-dark" id="btn-brief">Print deal-room brief</button>
+        <button class="btn-outline-dark" id="btn-delete" style="margin-left:auto;border-color:#B4541F;color:#B4541F">Remove record</button>
+      </div>
+      ${/GO/.test(d.stage) ? `<div class="adm-card" style="border-left:4px solid #2E7D52"><h2>Deal room — ${esc(d.headline)}</h2>
+        <p class="text-sm" style="color:var(--muted)">GO given ${esc(d.go_date || '')}${d.go_by ? ' by ' + esc(d.go_by) : ''}. This is the explicit GO — the full deal pack (appraisal, GDV evidence report, refurb schedule, legal-pack review, finance DIP) is produced from the Kemek templates now.</p>
+        <div class="go-check mt-3">${['Legal pack reviewed by Setfords', 'Survey booked', 'Refurb schedule costed', 'Finance DIP in hand', 'Comparables verified by valuer', 'Bid limit set & signed off', 'Deposit route confirmed', 'Exit strategy agreed'].map((t, i) => `<label><input type="checkbox" data-check="${i}" ${(d.checklist || [])[i] ? 'checked' : ''}> ${t}</label>`).join('')}</div></div>` : ''}
+      <div class="adm-card"><h2>Record</h2><div class="adm-grid">
+        ${FIELDS.map(([k, label, type, opts, priv, span]) => {
+          const v = val(d, k);
+          const pubKey = k === 'flags_text' ? 'flags' : k === 'comps_text' ? 'comps' : k;
+          const pub = PUBLISHABLE.includes(pubKey) ? `<label class="adm-pub"><input type="checkbox" data-pub="${pubKey}" ${(d.public_fields || []).includes(pubKey) ? 'checked' : ''}> publish this field</label>` : '';
+          let input;
+          if (type === 'select') input = `<select data-f="${k}">${(opts || data.stages || []).map(o => `<option ${o === v ? 'selected' : ''}>${esc(o)}</option>`).join('')}</select>`;
+          else if (type === 'textarea') input = `<textarea data-f="${k}">${esc(v)}</textarea>`;
+          else input = `<input data-f="${k}" type="${type || 'text'}" value="${esc(v)}" ${type === 'number' ? 'step="any"' : ''}>`;
+          return `<div class="adm-field ${priv ? 'private' : ''} ${span || ''}"><label>${esc(label)}</label>${input}${pub}</div>`;
+        }).join('')}
+      </div></div>
+      <div class="adm-card"><h2>Per-deal assumption overrides <small style="font-family:Jost;font-size:0.7rem;color:var(--muted)">blank = use global</small></h2>
+        <table class="assump-table"><tr><th>Assumption</th><th>Global</th><th>Override</th><th>Note</th></tr>
+        ${data.assumptions.map(a => `<tr><td>${esc(a.label)} <em style="color:var(--muted)">${esc(a.unit)}</em></td><td>${a.value === null ? '<span class="st st-TBD">TBD</span>' : esc(a.value)}</td><td><input data-ov="${a.key}" type="number" step="any" value="${d.overrides?.[a.key] ?? ''}"></td><td style="color:var(--muted)">${esc(a.note)}</td></tr>`).join('')}
+        </table>${d.overrides?._note ? `<p class="text-xs mt-2" style="color:var(--muted)">${esc(d.overrides._note)}</p>` : ''}</div>
+      <div class="adm-card"><h2>Conservative · Base · Upside</h2>
+        <div class="calc-tbd" ${s.Base.tbd.length ? '' : 'hidden'}><b>${s.Base.tbd.length} cost items TBD</b> — ${s.Base.tbd.join(', ')} — counted as £0.</div>
+        <table class="calc-table"><thead><tr><th></th>${E.CASES.map(c => `<th>${c}</th>`).join('')}</tr></thead><tbody>
+        ${[['acquisition', 'Acquisition'], ['auction_fee', 'Auction / buyer fee'], ['tax', 'Transaction tax'], ['legal', 'Legal'], ['survey', 'Survey'], ['refurb', 'Refurb'], ['professional', 'Professional / planning'], ['contingency', 'Contingency'], ['loan', 'Bridging loan'], ['interest', 'Interest'], ['arrangement', 'Arrangement fee'], ['finance', 'Finance total'], ['total_cost', 'TOTAL PROJECT COST', 1], ['equity', 'Required equity'], ['end_value', 'End value', 1], ['gross_uplift', 'Gross value uplift'], ['gross_uplift_pct', 'Uplift %', 0, 1], ['gross_profit', 'Gross project profit'], ['exit_costs', 'Exit costs'], ['net_profit', 'NET PROFIT', 1], ['roi', 'ROI (on equity)', 0, 1], ['roc', 'Return on cost', 0, 1], ['margin', 'Gross margin', 0, 1]]
+          .map(([k, l, strong, isPct]) => `<tr class="${strong ? 'strong' : ''}"><th>${l}</th>${E.CASES.map(c => `<td class="num ${s[c][k] < 0 ? 'neg' : ''}">${isPct ? pct(s[c][k], 1) : gbp(s[c][k])}</td>`).join('')}</tr>`).join('')}
+        </tbody></table></div>`;
+    // wire
+    $('#adm-editor').querySelectorAll('[data-f]').forEach(el => el.addEventListener('input', () => { apply(el.dataset.f, el.value); }));
+    $('#adm-editor').querySelectorAll('[data-pub]').forEach(el => el.addEventListener('change', () => { const set = new Set(d.public_fields); el.checked ? set.add(el.dataset.pub) : set.delete(el.dataset.pub); d.public_fields = [...set]; }));
+    $('#adm-editor').querySelectorAll('[data-ov]').forEach(el => el.addEventListener('change', () => { if (el.value === '') delete d.overrides[el.dataset.ov]; else d.overrides[el.dataset.ov] = Number(el.value); renderEditor(); }));
+    $('#adm-editor').querySelectorAll('[data-check]').forEach(el => el.addEventListener('change', () => { d.checklist = d.checklist || []; d.checklist[+el.dataset.check] = el.checked; }));
+    $('#f-published').addEventListener('change', e => { d.published = e.target.checked; renderList(); });
+    $('#btn-go').addEventListener('click', () => {
+      if (!confirm(`GO on ${d.id} — ${d.headline}?\n\nThis promotes the record to the deal room and is the explicit instruction to build the full deal pack.`)) return;
+      d.stage = 'GO — Deal Room'; d.go_date = new Date().toISOString().slice(0, 10); d.go_by = prompt('GO given by', 'El Kelvin Williams') || ''; renderList(); renderEditor(); toast('Promoted to deal room');
+    });
+    $('#btn-brief').addEventListener('click', () => window.print());
+    $('#btn-delete').addEventListener('click', () => { if (confirm('Remove this record from the dataset?')) { data.deals = data.deals.filter(x => x !== d); cur = null; renderList(); select(data.deals[0]?.id); } });
+  };
+  const apply = (k, v) => {
+    const d = cur; const num = x => x === '' ? null : Number(x);
+    if (k === 'guide_low') d.guide[0] = num(v); else if (k === 'guide_high') d.guide[1] = num(v);
+    else if (k === 'value_low') d.value[0] = num(v); else if (k === 'value_base') d.value[1] = num(v); else if (k === 'value_high') d.value[2] = num(v);
+    else if (k === 'flags_text') d.flags = v.split('\n').map(x => x.trim()).filter(Boolean);
+    else if (k === 'comps_text') d.comps = v.split('\n').filter(x => x.trim()).map(l => { const [label, price, date, note] = l.split('|').map(x => (x || '').trim()); return { label, price: Number(String(price).replace(/[£,]/g, '')) || 0, date, note }; });
+    else if (['size_sqft', 'income_pcm'].includes(k)) d[k] = num(v);
+    else d[k] = v;
+    if (['id', 'headline', 'stage'].includes(k)) renderList();
+    if (['guide_low', 'guide_high', 'value_low', 'value_base', 'value_high', 'tax'].includes(k)) { const t = document.activeElement; const sel = t && t.selectionStart; renderEditor(); const again = $('#adm-editor').querySelector(`[data-f="${k}"]`); if (again) { again.focus(); try { again.setSelectionRange(sel, sel); } catch (e) {} } }
+  };
+
+  /* ─── Global assumptions ──────────────────────────────────────────────── */
+  $('#btn-assumptions').addEventListener('click', () => {
+    if (!data) return; cur = null; renderList(); $('#adm-editor').hidden = true; const g = $('#adm-global'); g.hidden = false;
+    g.innerHTML = `<div class="adm-card"><h2>Global modelling assumptions</h2><p class="text-sm mb-3" style="color:var(--muted)">These feed every case unless a deal overrides them. TBD = no evidence, counted as £0 and flagged. Edit the number, or clear it to make it TBD again.</p>
+      <table class="assump-table"><tr><th>Assumption</th><th>Value</th><th>Unit</th><th>Status</th><th>Note / source</th></tr>
+      ${data.assumptions.map((a, i) => `<tr><td><b>${esc(a.label)}</b><br><small style="color:var(--muted)">${esc(a.key)}</small></td><td><input data-g="${i}" type="number" step="any" value="${a.value ?? ''}" class="${a.value === null ? 'tbd' : ''}"></td><td>${esc(a.unit)}</td><td><span class="st st-${a.status}">${a.status}</span></td><td style="color:var(--muted)">${esc(a.note)}</td></tr>`).join('')}</table></div>
+      <div class="adm-card"><h2>Tax tables</h2><p class="text-sm" style="color:var(--muted)">Edit bands in the master spreadsheet (TAX_RATES) and re-import, or adjust the FULL export by hand. Rates: ${Object.values(data.tax_tables).map(t => esc(t.label)).join(' · ')}.</p></div>`;
+    g.querySelectorAll('[data-g]').forEach(el => el.addEventListener('change', () => { const a = data.assumptions[+el.dataset.g]; a.value = el.value === '' ? null : Number(el.value); a.status = a.value === null ? 'TBD' : (a.status === 'TBD' ? 'ASSUMED' : a.status); el.classList.toggle('tbd', a.value === null); }));
+  });
+
+  /* ─── New record ──────────────────────────────────────────────────────── */
+  $('#btn-new').addEventListener('click', () => {
+    if (!data) return;
+    const n = data.deals.length + 1; const id = 'KEM-' + String(n).padStart(3, '0');
+    data.deals.push({ id, headline: 'New opportunity', area: '', outcode: '', region: 'England', nation: 'England', type: '', category: 'Residential', config: '', guide: [0, 0], guide_label: '', value: [0, 0, 0], value_label: '', value_kind: 'GDV', tax: 'SDLT_RES_HIGHER', confidence: 'Medium', date_checked: new Date().toISOString().slice(0, 10), stage: 'Screening', published: false, public_fields: ['headline', 'area', 'outcode', 'region', 'nation', 'type', 'category', 'config', 'guide', 'guide_label', 'value', 'value_label', 'value_kind', 'confidence', 'date_checked', 'stage', 'tax'], address: '', source: '', source_name: '', research: '', correction: '', original_claim: '', comps: [], flags: [], overrides: {}, research_date: data.research_date });
+    renderList(); select(id);
+  });
+
+  /* ─── Save / export / import ──────────────────────────────────────────── */
+  const download = (name, text) => { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([text], { type: 'text/plain' })); a.download = name; a.click(); };
+  $('#btn-save').addEventListener('click', () => { if (!data) return; localStorage.setItem(LS, JSON.stringify(data)); toast('Saved in this browser (not on the server)'); });
+  $('#btn-clear').addEventListener('click', () => { localStorage.removeItem(LS); toast('Local copy forgotten'); });
+  $('#btn-export-full').addEventListener('click', () => { if (!data) return; download('pipeline.private.json', JSON.stringify(data, null, 1)); });
+  $('#btn-export-public').addEventListener('click', () => {
+    if (!data) return;
+    const pub = { research_date: data.research_date, generated: new Date().toISOString().slice(0, 10), stages: data.stages, assumptions: data.assumptions, tax_tables: data.tax_tables, private_fields: data.private_fields, disclaimer: data.disclaimer,
+      deals: data.deals.filter(d => d.published).map(d => { const keep = new Set([...(d.public_fields || []), 'id', 'published', 'research_date', 'public_fields']); const o = {}; Object.keys(d).forEach(k => { if (keep.has(k) && !['scenarios', 'costs', 'overrides', 'checklist', 'go_by'].includes(k)) o[k] = d[k]; }); if (d.overrides && Object.keys(d.overrides).some(k => k[0] !== '_')) { o.overrides = {}; Object.entries(d.overrides).forEach(([k, v]) => { if (k[0] !== '_') o.overrides[k] = v; }); } return o; }) };
+    const leaked = pub.deals.filter(d => PRIVATE.some(k => d[k] !== undefined && !(d.public_fields || []).includes(k)));
+    if (leaked.length) { toast('Export blocked — a private field is not marked public'); return; }
+    download('pipeline.public.js', '/* KEMEK Deal Pipeline — PUBLIC dataset. Exported from the admin screen ' + pub.generated + '. Commit to data/pipeline.public.js */\nwindow.KEMEK_PIPELINE = ' + JSON.stringify(pub, null, 1) + ';\n');
+    toast(`Public export: ${pub.deals.length} listed records, private fields stripped`);
+  });
+  window.addEventListener('beforeunload', e => { if (data) { e.preventDefault(); e.returnValue = ''; } });
+  boot();
+})();
+</script>
+</body>
+</html>
