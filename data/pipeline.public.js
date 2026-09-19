@@ -233,6 +233,7 @@ window.KEMEK_PIPELINE = {
  },
  "private_fields": [
   "address",
+  "auctioneer",
   "source",
   "research",
   "correction",
@@ -291,7 +292,8 @@ window.KEMEK_PIPELINE = {
     "confidence",
     "date_checked",
     "stage",
-    "tax"
+    "tax",
+    "auction_date"
    ],
    "research_date": "2026-09-19"
   },
@@ -339,7 +341,8 @@ window.KEMEK_PIPELINE = {
     "confidence",
     "date_checked",
     "stage",
-    "tax"
+    "tax",
+    "auction_date"
    ],
    "research_date": "2026-09-19"
   },
@@ -387,7 +390,8 @@ window.KEMEK_PIPELINE = {
     "confidence",
     "date_checked",
     "stage",
-    "tax"
+    "tax",
+    "auction_date"
    ],
    "research_date": "2026-09-19"
   },
@@ -435,7 +439,8 @@ window.KEMEK_PIPELINE = {
     "confidence",
     "date_checked",
     "stage",
-    "tax"
+    "tax",
+    "auction_date"
    ],
    "research_date": "2026-09-19"
   },
@@ -483,7 +488,8 @@ window.KEMEK_PIPELINE = {
     "confidence",
     "date_checked",
     "stage",
-    "tax"
+    "tax",
+    "auction_date"
    ],
    "research_date": "2026-09-19"
   },
@@ -531,7 +537,8 @@ window.KEMEK_PIPELINE = {
     "confidence",
     "date_checked",
     "stage",
-    "tax"
+    "tax",
+    "auction_date"
    ],
    "research_date": "2026-09-19"
   },
@@ -579,7 +586,8 @@ window.KEMEK_PIPELINE = {
     "confidence",
     "date_checked",
     "stage",
-    "tax"
+    "tax",
+    "auction_date"
    ],
    "research_date": "2026-09-19"
   },
@@ -627,7 +635,8 @@ window.KEMEK_PIPELINE = {
     "confidence",
     "date_checked",
     "stage",
-    "tax"
+    "tax",
+    "auction_date"
    ],
    "research_date": "2026-09-19"
   },
@@ -675,7 +684,8 @@ window.KEMEK_PIPELINE = {
     "confidence",
     "date_checked",
     "stage",
-    "tax"
+    "tax",
+    "auction_date"
    ],
    "research_date": "2026-09-19"
   },
@@ -723,7 +733,8 @@ window.KEMEK_PIPELINE = {
     "confidence",
     "date_checked",
     "stage",
-    "tax"
+    "tax",
+    "auction_date"
    ],
    "research_date": "2026-09-19"
   },
@@ -771,7 +782,8 @@ window.KEMEK_PIPELINE = {
     "confidence",
     "date_checked",
     "stage",
-    "tax"
+    "tax",
+    "auction_date"
    ],
    "research_date": "2026-09-19"
   },
@@ -819,7 +831,8 @@ window.KEMEK_PIPELINE = {
     "confidence",
     "date_checked",
     "stage",
-    "tax"
+    "tax",
+    "auction_date"
    ],
    "research_date": "2026-09-19"
   },
@@ -867,7 +880,208 @@ window.KEMEK_PIPELINE = {
     "confidence",
     "date_checked",
     "stage",
-    "tax"
+    "tax",
+    "auction_date"
+   ],
+   "research_date": "2026-09-19"
+  },
+  {
+   "id": "KEM-014",
+   "headline": "Victorian semi, South Norwood",
+   "area": "South Norwood, Croydon, London",
+   "outcode": "SE25",
+   "region": "London",
+   "nation": "England",
+   "type": "Semi-detached house",
+   "category": "Residential",
+   "config": "3 bed",
+   "guide": [
+    300000,
+    300000
+   ],
+   "guide_label": "£300k+ current guide",
+   "value": [
+    425000,
+    475000,
+    525000
+   ],
+   "value_label": "£425k–£525k",
+   "value_kind": "GDV",
+   "tax": "SDLT_RES_HIGHER",
+   "confidence": "Medium",
+   "auction_date": "2026-10-07",
+   "date_checked": "2026-09-19",
+   "stage": "Screening",
+   "published": true,
+   "public_fields": [
+    "headline",
+    "area",
+    "outcode",
+    "region",
+    "nation",
+    "type",
+    "category",
+    "config",
+    "guide",
+    "guide_label",
+    "value",
+    "value_label",
+    "value_kind",
+    "confidence",
+    "date_checked",
+    "stage",
+    "tax",
+    "auction_date"
+   ],
+   "research_date": "2026-09-19"
+  },
+  {
+   "id": "KEM-015",
+   "headline": "Detached 1930s house, Ealing / Acton",
+   "area": "Ealing / Acton, London",
+   "outcode": "W5",
+   "region": "London",
+   "nation": "England",
+   "type": "Detached house",
+   "category": "Residential",
+   "config": "4 bed",
+   "guide": [
+    1200000,
+    1200000
+   ],
+   "guide_label": "£1.2m guide",
+   "value": [
+    1400000,
+    1550000,
+    1750000
+   ],
+   "value_label": "£1.4m–£1.75m",
+   "value_kind": "GDV",
+   "tax": "SDLT_RES_HIGHER",
+   "confidence": "Low–Medium",
+   "auction_date": "2026-10-07",
+   "date_checked": "2026-09-19",
+   "stage": "Screening",
+   "published": true,
+   "public_fields": [
+    "headline",
+    "area",
+    "outcode",
+    "region",
+    "nation",
+    "type",
+    "category",
+    "config",
+    "guide",
+    "guide_label",
+    "value",
+    "value_label",
+    "value_kind",
+    "confidence",
+    "date_checked",
+    "stage",
+    "tax",
+    "auction_date"
+   ],
+   "research_date": "2026-09-19"
+  },
+  {
+   "id": "KEM-016",
+   "headline": "Victorian terrace, Manor Park",
+   "area": "Manor Park, Newham, London",
+   "outcode": "E12",
+   "region": "London",
+   "nation": "England",
+   "type": "Mid-terrace house",
+   "category": "Residential",
+   "config": "4 bed",
+   "guide": [
+    625000,
+    625000
+   ],
+   "guide_label": "£625k+ current guide",
+   "value": [
+    520000,
+    550000,
+    580000
+   ],
+   "value_label": "£520k–£580k",
+   "value_kind": "GDV",
+   "tax": "SDLT_RES_HIGHER",
+   "confidence": "Low–Medium",
+   "auction_date": "2026-10-07",
+   "date_checked": "2026-09-19",
+   "stage": "Screening",
+   "published": true,
+   "public_fields": [
+    "headline",
+    "area",
+    "outcode",
+    "region",
+    "nation",
+    "type",
+    "category",
+    "config",
+    "guide",
+    "guide_label",
+    "value",
+    "value_label",
+    "value_kind",
+    "confidence",
+    "date_checked",
+    "stage",
+    "tax",
+    "auction_date"
+   ],
+   "research_date": "2026-09-19"
+  },
+  {
+   "id": "KEM-017",
+   "headline": "Semi-detached house, Isle of Dogs",
+   "area": "Isle of Dogs, Tower Hamlets, London",
+   "outcode": "E14",
+   "region": "London",
+   "nation": "England",
+   "type": "Semi-detached house",
+   "category": "Residential",
+   "config": "3 bed",
+   "guide": [
+    700000,
+    700000
+   ],
+   "guide_label": "£700k guide",
+   "value": [
+    775000,
+    825000,
+    875000
+   ],
+   "value_label": "£775k–£875k",
+   "value_kind": "GDV",
+   "tax": "SDLT_RES_HIGHER",
+   "confidence": "Medium",
+   "auction_date": "2026-10-07",
+   "date_checked": "2026-09-19",
+   "stage": "Screening",
+   "published": true,
+   "public_fields": [
+    "headline",
+    "area",
+    "outcode",
+    "region",
+    "nation",
+    "type",
+    "category",
+    "config",
+    "guide",
+    "guide_label",
+    "value",
+    "value_label",
+    "value_kind",
+    "confidence",
+    "date_checked",
+    "stage",
+    "tax",
+    "auction_date"
    ],
    "research_date": "2026-09-19"
   }
