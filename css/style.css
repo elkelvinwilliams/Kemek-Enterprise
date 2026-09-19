@@ -939,3 +939,18 @@ footer a:hover { color: var(--gold); }
 .ev-gate a { color: var(--gold); text-decoration: none; }
 .page-hero .deal-badge.stage-screen { background: rgba(255,255,255,0.12); color: var(--cream); border-color: rgba(255,255,255,0.25); }
 .page-hero .deal-badge.stage-short { background: rgba(200,162,75,0.25); color: var(--gold-soft); }
+
+/* Services page — live pipeline strip under Property Sourcing */
+.sourcing-strip { margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid var(--border); }
+.mini-grid { display: grid; gap: 1rem; margin-top: 1.5rem; }
+@media (min-width: 768px) { .mini-grid { grid-template-columns: repeat(3, 1fr); } }
+.mini-deal { display: flex; flex-direction: column; gap: 0.35rem; background: #fff; border: 1px solid var(--border); border-top: 3px solid var(--gold); padding: 1.3rem 1.4rem 1.2rem; text-decoration: none; color: var(--text); transition: transform 0.45s cubic-bezier(0.16,1,0.3,1), box-shadow 0.45s ease; }
+.mini-deal:hover { transform: translateY(-4px); box-shadow: 0 22px 44px -28px rgba(6,17,34,0.4); }
+.mini-deal__id { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+.mini-deal b { font-size: 1.35rem; font-weight: 600; color: var(--ink); line-height: 1.15; }
+.mini-deal__meta { font-size: 0.76rem; color: var(--muted); }
+.mini-deal dl { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin-top: 0.8rem; padding-top: 0.8rem; border-top: 1px solid var(--border); }
+.mini-deal dt { font-size: 0.56rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--label); }
+.mini-deal dd { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.1rem; font-weight: 600; color: var(--ink); line-height: 1.1; margin-top: 0.1rem; }
+.mini-deal dd small { font-family: 'Jost', sans-serif; font-size: 0.66rem; font-weight: 400; color: var(--muted); }
+.mini-deal__foot { display: flex; align-items: center; gap: 0.6rem; margin-top: 0.8rem; font-size: 0.68rem; color: var(--muted); flex-wrap: wrap; }
