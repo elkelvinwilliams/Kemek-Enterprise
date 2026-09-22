@@ -21,6 +21,7 @@
   const card = (d, i) => {
     const b = base(d);
     const cash = d.value_kind && /income/i.test(d.value_kind);
+    const na = !d.value[1];
     return `
     <article class="deal-card reveal" data-id="${esc(d.id)}" style="transition-delay:${(i % 3) * 0.08}s">
       <div class="deal-card__media ph-prop-${(i % 6) + 1} ph-sheen">
@@ -32,12 +33,12 @@
         <h3 class="font-serif text-2xl text-ink leading-tight">${esc(d.headline)}</h3>
         <p class="deal-card__area">${esc(d.area)}${d.outcode ? ' · ' + esc(d.outcode) : ''} — ${esc(d.type)}${d.config ? ' · ' + esc(d.config) : ''}</p>
         <dl class="deal-kv">
-          <div><dt>Guide</dt><dd>${esc(d.guide_label || range(d.guide[0], d.guide[1]))}</dd></div>
-          <div><dt>${cash ? 'Income value' : 'Indicative end value'}</dt><dd>${range(d.value[0], d.value[2])}<small>base ${gbpK(d.value[1])}</small></dd></div>
-          <div><dt>Base uplift</dt><dd class="${b.gross_uplift < 0 ? 'neg' : ''}">${gbpK(b.gross_uplift)}<small>${pct(b.gross_uplift_pct)} of price</small></dd></div>
+          <div><dt>Guide</dt><dd>${d.guide[1] ? esc(d.guide_label || range(d.guide[0], d.guide[1])) : '<span class="na">' + esc(d.guide_label || 'Not published') + '</span>'}</dd></div>
+          <div><dt>${cash ? 'Income value' : 'Indicative end value'}</dt><dd>${na ? '<span class="na">Not assessed</span>' : range(d.value[0], d.value[2]) + `<small>base ${gbpK(d.value[1])}</small>`}</dd></div>
+          <div><dt>Base uplift</dt><dd class="${!na && b.gross_uplift < 0 ? 'neg' : ''}">${na ? '<span class="na">—</span>' : gbpK(b.gross_uplift) + `<small>${pct(b.gross_uplift_pct)} of price</small>`}</dd></div>
           <div><dt>Confidence</dt><dd><span class="conf ${confClass(d.confidence)}">${esc(d.confidence)}</span></dd></div>
         </dl>
-        <p class="deal-card__note">${d.auction_date ? `<b style="color:var(--ink);font-style:normal">Auction ${fmtDate(d.auction_date)}</b> · ` : ''}${cash ? 'Commercial — valued on rent ÷ yield, not GDV.' : 'Analytical range — not a valuation.'} Checked ${fmtDate(d.date_checked)}.</p>
+        <p class="deal-card__note">${d.auction_date ? `<b style="color:var(--ink);font-style:normal">Auction ${fmtDate(d.auction_date)}</b> · ` : ''}${na ? '<b style="color:#8E2E22;font-style:normal">End value not yet assessed</b> — screening lead only.' : (cash ? 'Commercial — valued on rent ÷ yield, not GDV.' : 'Analytical range — not a valuation.')} Checked ${fmtDate(d.date_checked)}.</p>
         <div class="deal-card__actions">
           <a class="btn-ink" href="deal.html?id=${encodeURIComponent(d.id)}">View deal</a>
           <button class="btn-outline-dark" data-calc="${esc(d.id)}">Run the numbers</button>
@@ -192,12 +193,12 @@
     let tSort = { key: 'uplift_pct', dir: -1 };
     const cols = [
       ['id', 'Deal', d => d.id], ['headline', 'Opportunity', d => `${esc(d.headline)}<br><small>${esc(d.area)}</small>`],
-      ['guide', 'Guide', d => esc(d.guide_label || range(d.guide[0], d.guide[1])), d => d.guide[0]],
-      ['value', 'Indicative end value', d => `${range(d.value[0], d.value[2])}<br><small>base ${gbpK(d.value[1])}</small>`, d => d.value[1]],
-      ['uplift', 'Base uplift', d => gbpK(base(d).gross_uplift), d => base(d).gross_uplift],
-      ['uplift_pct', 'Uplift %', d => pct(base(d).gross_uplift_pct), d => base(d).gross_uplift_pct],
+      ['guide', 'Guide', d => d.guide[1] ? esc(d.guide_label || range(d.guide[0], d.guide[1])) : `<span class="na">${esc(d.guide_label || 'Not published')}</span>`, d => d.guide[0]],
+      ['value', 'Indicative end value', d => d.value[1] ? `${range(d.value[0], d.value[2])}<br><small>base ${gbpK(d.value[1])}</small>` : '<span class="na">Not assessed</span>', d => d.value[1]],
+      ['uplift', 'Base uplift', d => d.value[1] ? gbpK(base(d).gross_uplift) : '—', d => d.value[1] ? base(d).gross_uplift : -1e12],
+      ['uplift_pct', 'Uplift %', d => d.value[1] ? pct(base(d).gross_uplift_pct) : '—', d => d.value[1] ? base(d).gross_uplift_pct : -1e12],
       ['tax', 'Tax (base)', d => gbpK(base(d).tax), d => base(d).tax],
-      ['net', 'Net after known costs', d => `<span class="${base(d).net_profit < 0 ? 'neg' : ''}">${gbpK(base(d).net_profit)}</span><br><small>${base(d).tbd.length} TBD</small>`, d => base(d).net_profit],
+      ['net', 'Net after known costs', d => d.value[1] ? `<span class="${base(d).net_profit < 0 ? 'neg' : ''}">${gbpK(base(d).net_profit)}</span><br><small>${base(d).tbd.length} TBD</small>` : '<span class="na">Not assessed</span>', d => d.value[1] ? base(d).net_profit : -1e12],
       ['confidence', 'Confidence', d => `<span class="conf ${confClass(d.confidence)}">${esc(d.confidence)}</span>`, d => d.confidence],
       ['stage', 'Stage', d => `<span class="deal-badge ${stageClass(d.stage)}">${esc(d.stage)}</span>`, d => d.stage],
       ['auction', 'Auction', d => d.auction_date ? fmtDate(d.auction_date) : '—', d => d.auction_date || 'z'],
@@ -218,14 +219,14 @@
   /* ─── Services page: live strip under Property Sourcing ───────────────── */
   const strip = document.getElementById('sourcing-pipeline');
   if (strip) {
-    const top = [...D.deals].sort((a, b) => base(b).gross_uplift_pct - base(a).gross_uplift_pct).slice(0, 3);
+    const top = [...D.deals].filter(d => d.value[1]).sort((a, b) => base(b).gross_uplift_pct - base(a).gross_uplift_pct).slice(0, 3);
     strip.innerHTML = top.map((d, i) => {
       const b = base(d);
       return `<a class="mini-deal reveal" href="deal.html?id=${encodeURIComponent(d.id)}" style="transition-delay:${i * 0.08}s">
         <span class="mini-deal__id">${esc(d.id)} · ${esc(d.nation)}</span>
         <b class="font-serif">${esc(d.headline)}</b>
         <span class="mini-deal__meta">${esc(d.type)}${d.config ? ' · ' + esc(d.config) : ''}</span>
-        <dl><div><dt>Guide</dt><dd>${esc(d.guide_label || range(d.guide[0], d.guide[1]))}</dd></div>
+        <dl><div><dt>Guide</dt><dd>${d.guide[1] ? esc(d.guide_label || range(d.guide[0], d.guide[1])) : '<span class="na">' + esc(d.guide_label || 'Not published') + '</span>'}</dd></div>
             <div><dt>Indicative value</dt><dd>${range(d.value[0], d.value[2])}</dd></div>
             <div><dt>Base uplift</dt><dd class="${b.gross_uplift < 0 ? 'neg' : ''}">${gbpK(b.gross_uplift)} <small>(${pct(b.gross_uplift_pct)})</small></dd></div></dl>
         <span class="mini-deal__foot"><span class="conf ${confClass(d.confidence)}">${esc(d.confidence)}</span> <small>not a valuation · checked ${fmtDate(d.date_checked)}</small></span>
@@ -257,8 +258,8 @@
     detail.innerHTML = `
       <div class="deal-stats">
         <div><span>Guide</span><b>${esc(d.guide_label || range(d.guide[0], d.guide[1]))}</b></div>
-        <div><span>${commercial ? 'Income value (rent ÷ yield)' : 'Indicative end value'}</span><b>${range(d.value[0], d.value[2])}</b><small>base ${gbpK(d.value[1])} · not a valuation</small></div>
-        <div><span>Base gross uplift</span><b class="${b.gross_uplift < 0 ? 'neg' : ''}">${gbpK(b.gross_uplift)}</b><small>${pct(b.gross_uplift_pct)} of purchase price</small></div>
+        <div><span>${commercial ? 'Income value (rent ÷ yield)' : 'Indicative end value'}</span><b>${d.value[1] ? range(d.value[0], d.value[2]) : '<span class="na">Not assessed</span>'}</b><small>${d.value[1] ? `base ${gbpK(d.value[1])} · not a valuation` : 'no end value evidence yet'}</small></div>
+        <div><span>Base gross uplift</span><b class="${d.value[1] && b.gross_uplift < 0 ? 'neg' : ''}">${d.value[1] ? gbpK(b.gross_uplift) : '—'}</b><small>${d.value[1] ? pct(b.gross_uplift_pct) + ' of purchase price' : 'pending an end-value assessment'}</small></div>
         <div><span>Confidence</span><b><span class="conf ${confClass(d.confidence)}">${esc(d.confidence)}</span></b><small>checked ${fmtDate(d.date_checked)}${d.auction_date ? ' · auction ' + fmtDate(d.auction_date) : ''}</small></div>
       </div>
       <p class="deal-basis"><b>Value basis:</b> ${esc(d.value_kind)}. ${commercial ? 'This is a commercial investment — its value is modelled from current rent, ERV, yield and occupancy, and is never described as GDV.' : 'The range is an analytical estimate built from local evidence; it is not a formal valuation.'} ${/development upside separate/i.test(d.value_kind) ? 'Any planning or development upside is kept separate and is not included in any case.' : ''}</p>
