@@ -954,3 +954,5 @@ footer a:hover { color: var(--gold); }
 .mini-deal dd { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.1rem; font-weight: 600; color: var(--ink); line-height: 1.1; margin-top: 0.1rem; }
 .mini-deal dd small { font-family: 'Jost', sans-serif; font-size: 0.66rem; font-weight: 400; color: var(--muted); }
 .mini-deal__foot { display: flex; align-items: center; gap: 0.6rem; margin-top: 0.8rem; font-size: 0.68rem; color: var(--muted); flex-wrap: wrap; }
+.na { color: #8E2E22; font-family: 'Jost', sans-serif; font-size: 0.78rem; font-style: italic; font-weight: 400; }
+.deal-kv dd .na { font-size: 0.85rem; }
