@@ -1446,10 +1446,10 @@ window.KEMEK_PIPELINE = {
    "category": "Residential",
    "config": "3 bed",
    "guide": [
-    370000,
-    370000
+    210000,
+    210000
    ],
-   "guide_label": "£370k+ guide (plus fees)",
+   "guide_label": "£210k guide (plus fees)",
    "value": [
     345000,
     380000,
