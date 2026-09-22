@@ -1434,6 +1434,56 @@ window.KEMEK_PIPELINE = {
     "auction_date"
    ],
    "research_date": "2026-09-19"
+  },
+  {
+   "id": "KEM-025",
+   "headline": "3-bed terrace, New Addington",
+   "area": "New Addington, Croydon, London",
+   "outcode": "CR0",
+   "region": "London",
+   "nation": "England",
+   "type": "Terraced house",
+   "category": "Residential",
+   "config": "3 bed",
+   "guide": [
+    370000,
+    370000
+   ],
+   "guide_label": "£370k+ guide (plus fees)",
+   "value": [
+    345000,
+    380000,
+    400000
+   ],
+   "value_label": "£345k-£400k",
+   "value_kind": "GDV",
+   "tax": "SDLT_RES_HIGHER",
+   "confidence": "Medium",
+   "auction_date": "2026-10-07",
+   "date_checked": "2026-09-22",
+   "stage": "Screening",
+   "published": true,
+   "public_fields": [
+    "headline",
+    "area",
+    "outcode",
+    "region",
+    "nation",
+    "type",
+    "category",
+    "config",
+    "guide",
+    "guide_label",
+    "value",
+    "value_label",
+    "value_kind",
+    "confidence",
+    "date_checked",
+    "stage",
+    "tax",
+    "auction_date"
+   ],
+   "research_date": "2026-09-19"
   }
  ]
 };
