@@ -1,11 +1,12 @@
 {
   "name": "kemek-enterprise",
   "version": "1.0.0",
-  "description": "Kemek Enterprise — premium website for a UK family property business.",
+  "description": "Kemek Enterprise \u2014 premium website for a UK family property business.",
   "private": true,
   "scripts": {
     "build:css": "tailwindcss -c tailwind.config.js -i src/tailwind.input.css -o css/tailwind.css --minify",
-    "watch:css": "tailwindcss -c tailwind.config.js -i src/tailwind.input.css -o css/tailwind.css --watch"
+    "watch:css": "tailwindcss -c tailwind.config.js -i src/tailwind.input.css -o css/tailwind.css --watch",
+    "test": "node --test tests/pipeline.test.cjs"
   },
   "repository": {
     "type": "git",

@@ -4,6 +4,7 @@ window.KEMEK_PIPELINE = {
  "generated": "2026-09-19",
  "stages": [
   "Screening",
+  "Validating",
   "Shortlist",
   "GO — Deal Room",
   "Bid / Offer",
@@ -123,6 +124,22 @@ window.KEMEK_PIPELINE = {
    "unit": "£",
    "status": "TBD",
    "note": "Only for KEM-002 and KEM-013. Kept separate from residential value; not counted in any case until planning is evidenced."
+  },
+  {
+   "key": "lender_costs",
+   "label": "Lender costs (valuation, lender legal, admin)",
+   "value": 0.0,
+   "unit": "£",
+   "status": "ASSUMED",
+   "note": "0 unless quoted — set per deal from the DIP. Added to finance total."
+  },
+  {
+   "key": "holding_month",
+   "label": "Holding costs per month (council tax, utilities, insurance)",
+   "value": 0.0,
+   "unit": "£/month",
+   "status": "ASSUMED",
+   "note": "0 unless estimated — set per deal. Multiplied by the bridging term."
   }
  ],
  "tax_tables": {
@@ -244,7 +261,29 @@ window.KEMEK_PIPELINE = {
   "scenarios",
   "size_sqft",
   "income_pcm",
-  "commercial"
+  "commercial",
+  "lot",
+  "listing",
+  "stage_note",
+  "sources",
+  "bid_analysis"
+ ],
+ "changelog": [
+  {
+   "date": "2026-09-25",
+   "deal": "KEM-025",
+   "pr": "#12"
+  },
+  {
+   "date": "2026-09-22",
+   "deal": "KEM-025",
+   "pr": "#11"
+  },
+  {
+   "date": "2026-09-22",
+   "deal": "KEM-025",
+   "pr": "#10"
+  }
  ],
  "disclaimer": "Indicative end values are analytical ranges, not formal valuations. Every figure carries its source, date checked and confidence. Legal packs, title, planning and surveys must be checked before bidding.",
  "deals": [
@@ -1437,31 +1476,31 @@ window.KEMEK_PIPELINE = {
   },
   {
    "id": "KEM-025",
-   "headline": "3-bed terrace, New Addington",
+   "headline": "3-bed semi, New Addington",
    "area": "New Addington, Croydon, London",
    "outcode": "CR0",
    "region": "London",
    "nation": "England",
-   "type": "Terraced house",
+   "type": "Semi-detached house",
    "category": "Residential",
    "config": "3 bed",
    "guide": [
     210000,
     210000
    ],
-   "guide_label": "£210k guide (plus fees)",
+   "guide_label": "£210k+ guide (plus fees)",
    "value": [
-    345000,
+    340000,
     380000,
-    400000
+    420000
    ],
-   "value_label": "£345k-£400k",
+   "value_label": "£340k-£420k",
    "value_kind": "GDV",
    "tax": "SDLT_RES_HIGHER",
    "confidence": "Medium",
    "auction_date": "2026-10-07",
-   "date_checked": "2026-09-22",
-   "stage": "Screening",
+   "stage": "Validating",
+   "date_checked": "2026-09-25",
    "published": true,
    "public_fields": [
     "headline",
