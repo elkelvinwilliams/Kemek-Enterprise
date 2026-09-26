@@ -46,10 +46,10 @@ test('KEM-025 ships the corrected public facts', () => {
   assert.ok(d, 'KEM-025 missing');
   assert.equal(d.type, 'Semi-detached house');
   assert.deepEqual(d.guide, [210000, 210000]);
-  assert.deepEqual(d.value, [340000, 380000, 420000]);
+  assert.deepEqual(d.value, [365000, 400000, 430000]);
   assert.equal(d.stage, 'Validating');
   assert.equal(d.auction_date, '2026-10-07');
-  assert.equal(d.date_checked, '2026-09-25');
+  assert.equal(d.date_checked, '2026-09-26');
 });
 
 test('engine: cost model includes lender costs and holding when set', () => {

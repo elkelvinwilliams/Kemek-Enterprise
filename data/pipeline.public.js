@@ -260,15 +260,29 @@ window.KEMEK_PIPELINE = {
   "costs",
   "scenarios",
   "size_sqft",
+  "size_sqm",
   "income_pcm",
   "commercial",
   "lot",
   "listing",
   "stage_note",
   "sources",
-  "bid_analysis"
+  "bid_analysis",
+  "bid_limits",
+  "value_basis",
+  "funding_target"
  ],
  "changelog": [
+  {
+   "date": "2026-09-26",
+   "deal": "KEM-025",
+   "pr": "#12"
+  },
+  {
+   "date": "2026-09-26",
+   "deal": "KEM-025",
+   "pr": "#12"
+  },
   {
    "date": "2026-09-25",
    "deal": "KEM-025",
@@ -1490,17 +1504,17 @@ window.KEMEK_PIPELINE = {
    ],
    "guide_label": "£210k+ guide (plus fees)",
    "value": [
-    340000,
-    380000,
-    420000
+    365000,
+    400000,
+    430000
    ],
-   "value_label": "£340k-£420k",
+   "value_label": "£365k-£430k",
    "value_kind": "GDV",
    "tax": "SDLT_RES_HIGHER",
    "confidence": "Medium",
    "auction_date": "2026-10-07",
    "stage": "Validating",
-   "date_checked": "2026-09-25",
+   "date_checked": "2026-09-26",
    "published": true,
    "public_fields": [
     "headline",
