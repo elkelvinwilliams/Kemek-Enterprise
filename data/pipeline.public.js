@@ -276,6 +276,11 @@ window.KEMEK_PIPELINE = {
  "changelog": [
   {
    "date": "2026-09-28",
+   "deal": "KEM-026",
+   "pr": "#12"
+  },
+  {
+   "date": "2026-09-28",
    "deal": "KEM-025",
    "pr": "#12"
   },
@@ -1521,6 +1526,56 @@ window.KEMEK_PIPELINE = {
    "auction_date": "2026-10-07",
    "stage": "Validating",
    "date_checked": "2026-09-26",
+   "published": true,
+   "public_fields": [
+    "headline",
+    "area",
+    "outcode",
+    "region",
+    "nation",
+    "type",
+    "category",
+    "config",
+    "guide",
+    "guide_label",
+    "value",
+    "value_label",
+    "value_kind",
+    "confidence",
+    "date_checked",
+    "stage",
+    "tax",
+    "auction_date"
+   ],
+   "research_date": "2026-09-19"
+  },
+  {
+   "id": "KEM-026",
+   "headline": "4-bed semi, Little Houghton (unsold lot)",
+   "area": "Little Houghton, Northampton",
+   "outcode": "NN7",
+   "region": "England",
+   "nation": "England",
+   "type": "Semi-detached house",
+   "category": "Residential",
+   "config": "4 bed",
+   "guide": [
+    250000,
+    275000
+   ],
+   "guide_label": "£250k–£275k guide (plus fees)",
+   "value": [
+    270000,
+    285000,
+    300000
+   ],
+   "value_label": "£270k-£300k",
+   "value_kind": "GDV",
+   "tax": "SDLT_RES_HIGHER",
+   "confidence": "Low",
+   "auction_date": "2026-09-23",
+   "stage": "Screening",
+   "date_checked": "2026-09-28",
    "published": true,
    "public_fields": [
     "headline",
