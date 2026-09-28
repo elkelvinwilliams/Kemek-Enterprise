@@ -4,6 +4,7 @@ One line per correction or stage decision. The full entry (with private evidence
 
 | Date | Deal | PR | Entry |
 |---|---|---|---|
+| 2026-09-28 | KEM-027 | #12 | Added and pinned first: 1 Little Horwood Manor, won at auction 23 Sep 2026 at £450,000 (guide £425,000+); stage Exchanged; value is the director's assessment £950k–£1.2m pending RICS, evidence-led range £650k–£750k recorded beside it. |
 | 2026-09-28 | KEM-026 | #12 | Added at Screening: 17 Lodge Close, Little Houghton — Lot 13, unsold at the 23 Sep auction; guide £250k–£275k sits at or above street evidence; analytical range £270k / £285k / £300k, LOW confidence; engine net −£18k at mid-guide; screen out unless well under guide. |
 | 2026-09-28 | KEM-025 | #12 | Structure set by the director: no refurbishment; 100% bridge plus £15,000 for 12 months; deposit partner 5% or 10% on the day, returned at completion; stamp duty and 12 months' interest deducted, then a 50/50 split. Engine re-run with refurb £0, LTV 100%, 12-month term; tests re-pinned. |
 | 2026-09-26 | KEM-025 | #12 | Funding target set: aim 100% bridging with additional security over the director's two properties; 90% minimum; 70% fallback modelled. |

@@ -276,6 +276,11 @@ window.KEMEK_PIPELINE = {
  "changelog": [
   {
    "date": "2026-09-28",
+   "deal": "KEM-027",
+   "pr": "#12"
+  },
+  {
+   "date": "2026-09-28",
    "deal": "KEM-026",
    "pr": "#12"
   },
@@ -340,6 +345,7 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
     "headline",
     "area",
     "outcode",
@@ -389,6 +395,7 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
     "headline",
     "area",
     "outcode",
@@ -438,6 +445,7 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
     "headline",
     "area",
     "outcode",
@@ -487,6 +495,7 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
     "headline",
     "area",
     "outcode",
@@ -536,6 +545,7 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
     "headline",
     "area",
     "outcode",
@@ -585,6 +595,7 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
     "headline",
     "area",
     "outcode",
@@ -634,6 +645,7 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
     "headline",
     "area",
     "outcode",
@@ -683,6 +695,7 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
     "headline",
     "area",
     "outcode",
@@ -732,6 +745,7 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
     "headline",
     "area",
     "outcode",
@@ -781,6 +795,7 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
     "headline",
     "area",
     "outcode",
@@ -830,6 +845,7 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
     "headline",
     "area",
     "outcode",
@@ -879,6 +895,7 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
     "headline",
     "area",
     "outcode",
@@ -928,6 +945,7 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
     "headline",
     "area",
     "outcode",
@@ -978,6 +996,7 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
     "headline",
     "area",
     "outcode",
@@ -1028,6 +1047,7 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
     "headline",
     "area",
     "outcode",
@@ -1078,6 +1098,7 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
     "headline",
     "area",
     "outcode",
@@ -1128,6 +1149,7 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
     "headline",
     "area",
     "outcode",
@@ -1178,6 +1200,7 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
     "headline",
     "area",
     "outcode",
@@ -1228,6 +1251,7 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
     "headline",
     "area",
     "outcode",
@@ -1278,6 +1302,7 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
     "headline",
     "area",
     "outcode",
@@ -1328,6 +1353,7 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
     "headline",
     "area",
     "outcode",
@@ -1378,6 +1404,7 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
     "headline",
     "area",
     "outcode",
@@ -1428,6 +1455,7 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
     "headline",
     "area",
     "outcode",
@@ -1478,6 +1506,7 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
     "headline",
     "area",
     "outcode",
@@ -1528,6 +1557,7 @@ window.KEMEK_PIPELINE = {
    "date_checked": "2026-09-26",
    "published": true,
    "public_fields": [
+    "pinned",
     "headline",
     "area",
     "outcode",
@@ -1578,6 +1608,59 @@ window.KEMEK_PIPELINE = {
    "date_checked": "2026-09-28",
    "published": true,
    "public_fields": [
+    "pinned",
+    "headline",
+    "area",
+    "outcode",
+    "region",
+    "nation",
+    "type",
+    "category",
+    "config",
+    "guide",
+    "guide_label",
+    "value",
+    "value_label",
+    "value_kind",
+    "confidence",
+    "date_checked",
+    "stage",
+    "tax",
+    "auction_date"
+   ],
+   "research_date": "2026-09-19"
+  },
+  {
+   "id": "KEM-027",
+   "pinned": true,
+   "headline": "Grade II listed house in a former manor estate — WON at auction",
+   "area": "Little Horwood, Milton Keynes",
+   "outcode": "MK17",
+   "region": "England",
+   "nation": "England",
+   "type": "End-of-terrace house (Grade II listed)",
+   "category": "Residential",
+   "config": "4/5 bed",
+   "guide": [
+    450000,
+    450000
+   ],
+   "guide_label": "Bought £450,000 · guide was £425,000+",
+   "value": [
+    950000,
+    1200000,
+    1200000
+   ],
+   "value_label": "£950k–£1.2m",
+   "value_kind": "GDV",
+   "tax": "SDLT_RES_HIGHER",
+   "confidence": "Low",
+   "auction_date": "2026-09-23",
+   "stage": "Exchanged",
+   "date_checked": "2026-09-28",
+   "published": true,
+   "public_fields": [
+    "pinned",
     "headline",
     "area",
     "outcode",

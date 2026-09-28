@@ -64,3 +64,10 @@ test('engine: cost model includes lender costs and holding when set', () => {
 test('engine: SDLT higher-rate bands at £220,000 = £12,900', () => {
   assert.equal(E.taxFor(data.tax_tables.SDLT_RES_HIGHER, 220000), 12900);
 });
+
+test('exactly one deal is pinned and it leads the pipeline', () => {
+  const pinned = data.deals.filter(d => d.pinned);
+  assert.equal(pinned.length, 1, 'one pinned deal');
+  assert.equal(pinned[0].id, 'KEM-027');
+  assert.equal(pinned[0].stage, 'Exchanged');
+});

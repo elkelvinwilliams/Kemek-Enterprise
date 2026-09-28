@@ -26,7 +26,7 @@
     <article class="deal-card reveal" data-id="${esc(d.id)}" style="transition-delay:${(i % 3) * 0.08}s">
       <div class="deal-card__media ph-prop-${(i % 6) + 1} ph-sheen">
         <span class="deal-card__id">${esc(d.id)}</span>
-        <span class="deal-badge ${stageClass(d.stage)}">${esc(d.stage)}</span>
+        <span class="deal-badge ${stageClass(d.stage)}">${esc(d.stage)}</span>${d.pinned ? ' <span class="deal-badge" style="background:var(--gold);color:#0A1A30">No. 1 · live deal</span>' : ''}
       </div>
       <div class="deal-card__body">
         <span class="section-label" style="margin-bottom:.35rem">${esc(d.category)} · ${esc(d.nation)}</span>
@@ -170,7 +170,7 @@
       (state.confidence === 'all' || d.confidence === state.confidence) &&
       (state.band === 'all' || bandOf(d) === state.band) &&
       (!state.q || `${d.id} ${d.headline} ${d.area} ${d.type} ${d.outcode}`.toLowerCase().includes(state.q))
-    ).sort(sorters[state.sort]);
+    ).sort((a, b) => ((b.pinned ? 1 : 0) - (a.pinned ? 1 : 0)) || sorters[state.sort](a, b));   // pinned deal always first
 
     const render = () => {
       const list = visible();
@@ -219,7 +219,7 @@
   /* ─── Services page: live strip under Property Sourcing ───────────────── */
   const strip = document.getElementById('sourcing-pipeline');
   if (strip) {
-    const top = [...D.deals].filter(d => d.value[1]).sort((a, b) => base(b).gross_uplift_pct - base(a).gross_uplift_pct).slice(0, 3);
+    const top = [...D.deals].filter(d => d.value[1]).sort((a, b) => ((b.pinned ? 1 : 0) - (a.pinned ? 1 : 0)) || base(b).gross_uplift_pct - base(a).gross_uplift_pct).slice(0, 3);
     strip.innerHTML = top.map((d, i) => {
       const b = base(d);
       return `<a class="mini-deal reveal" href="deal.html?id=${encodeURIComponent(d.id)}" style="transition-delay:${i * 0.08}s">
