@@ -270,9 +270,15 @@ window.KEMEK_PIPELINE = {
   "bid_analysis",
   "bid_limits",
   "value_basis",
-  "funding_target"
+  "funding_target",
+  "jv"
  ],
  "changelog": [
+  {
+   "date": "2026-09-28",
+   "deal": "KEM-025",
+   "pr": "#12"
+  },
   {
    "date": "2026-09-26",
    "deal": "KEM-025",
