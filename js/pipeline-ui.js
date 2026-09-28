@@ -26,7 +26,7 @@
     <article class="deal-card reveal" data-id="${esc(d.id)}" style="transition-delay:${(i % 3) * 0.08}s">
       <div class="deal-card__media ph-prop-${(i % 6) + 1} ph-sheen">
         <span class="deal-card__id">${esc(d.id)}</span>
-        <span class="deal-badge ${stageClass(d.stage)}">${esc(d.stage)}</span>${d.pinned ? ' <span class="deal-badge" style="background:var(--gold);color:#0A1A30">No. 1 · live deal</span>' : ''}
+        <span class="deal-badge ${stageClass(d.stage)}">${esc(d.stage)}</span>${d.pinned ? '<span class="deal-badge" style="background:var(--gold);color:#0A1A30;top:40px">No. 1 · live deal</span>' : ''}
       </div>
       <div class="deal-card__body">
         <span class="section-label" style="margin-bottom:.35rem">${esc(d.category)} · ${esc(d.nation)}</span>
