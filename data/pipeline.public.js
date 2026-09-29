@@ -351,6 +351,7 @@ window.KEMEK_PIPELINE = {
    "published": true,
    "public_fields": [
     "pinned",
+    "value_source",
     "headline",
     "area",
     "outcode",
@@ -401,6 +402,7 @@ window.KEMEK_PIPELINE = {
    "published": true,
    "public_fields": [
     "pinned",
+    "value_source",
     "headline",
     "area",
     "outcode",
@@ -451,6 +453,7 @@ window.KEMEK_PIPELINE = {
    "published": true,
    "public_fields": [
     "pinned",
+    "value_source",
     "headline",
     "area",
     "outcode",
@@ -501,6 +504,7 @@ window.KEMEK_PIPELINE = {
    "published": true,
    "public_fields": [
     "pinned",
+    "value_source",
     "headline",
     "area",
     "outcode",
@@ -551,6 +555,7 @@ window.KEMEK_PIPELINE = {
    "published": true,
    "public_fields": [
     "pinned",
+    "value_source",
     "headline",
     "area",
     "outcode",
@@ -601,6 +606,7 @@ window.KEMEK_PIPELINE = {
    "published": true,
    "public_fields": [
     "pinned",
+    "value_source",
     "headline",
     "area",
     "outcode",
@@ -651,6 +657,7 @@ window.KEMEK_PIPELINE = {
    "published": true,
    "public_fields": [
     "pinned",
+    "value_source",
     "headline",
     "area",
     "outcode",
@@ -701,6 +708,7 @@ window.KEMEK_PIPELINE = {
    "published": true,
    "public_fields": [
     "pinned",
+    "value_source",
     "headline",
     "area",
     "outcode",
@@ -751,6 +759,7 @@ window.KEMEK_PIPELINE = {
    "published": true,
    "public_fields": [
     "pinned",
+    "value_source",
     "headline",
     "area",
     "outcode",
@@ -801,6 +810,7 @@ window.KEMEK_PIPELINE = {
    "published": true,
    "public_fields": [
     "pinned",
+    "value_source",
     "headline",
     "area",
     "outcode",
@@ -851,6 +861,7 @@ window.KEMEK_PIPELINE = {
    "published": true,
    "public_fields": [
     "pinned",
+    "value_source",
     "headline",
     "area",
     "outcode",
@@ -901,6 +912,7 @@ window.KEMEK_PIPELINE = {
    "published": true,
    "public_fields": [
     "pinned",
+    "value_source",
     "headline",
     "area",
     "outcode",
@@ -951,6 +963,7 @@ window.KEMEK_PIPELINE = {
    "published": true,
    "public_fields": [
     "pinned",
+    "value_source",
     "headline",
     "area",
     "outcode",
@@ -1002,6 +1015,7 @@ window.KEMEK_PIPELINE = {
    "published": true,
    "public_fields": [
     "pinned",
+    "value_source",
     "headline",
     "area",
     "outcode",
@@ -1053,6 +1067,7 @@ window.KEMEK_PIPELINE = {
    "published": true,
    "public_fields": [
     "pinned",
+    "value_source",
     "headline",
     "area",
     "outcode",
@@ -1104,6 +1119,7 @@ window.KEMEK_PIPELINE = {
    "published": true,
    "public_fields": [
     "pinned",
+    "value_source",
     "headline",
     "area",
     "outcode",
@@ -1155,6 +1171,7 @@ window.KEMEK_PIPELINE = {
    "published": true,
    "public_fields": [
     "pinned",
+    "value_source",
     "headline",
     "area",
     "outcode",
@@ -1206,6 +1223,7 @@ window.KEMEK_PIPELINE = {
    "published": true,
    "public_fields": [
     "pinned",
+    "value_source",
     "headline",
     "area",
     "outcode",
@@ -1257,6 +1275,7 @@ window.KEMEK_PIPELINE = {
    "published": true,
    "public_fields": [
     "pinned",
+    "value_source",
     "headline",
     "area",
     "outcode",
@@ -1308,6 +1327,7 @@ window.KEMEK_PIPELINE = {
    "published": true,
    "public_fields": [
     "pinned",
+    "value_source",
     "headline",
     "area",
     "outcode",
@@ -1359,6 +1379,7 @@ window.KEMEK_PIPELINE = {
    "published": true,
    "public_fields": [
     "pinned",
+    "value_source",
     "headline",
     "area",
     "outcode",
@@ -1410,6 +1431,7 @@ window.KEMEK_PIPELINE = {
    "published": true,
    "public_fields": [
     "pinned",
+    "value_source",
     "headline",
     "area",
     "outcode",
@@ -1461,6 +1483,7 @@ window.KEMEK_PIPELINE = {
    "published": true,
    "public_fields": [
     "pinned",
+    "value_source",
     "headline",
     "area",
     "outcode",
@@ -1512,6 +1535,7 @@ window.KEMEK_PIPELINE = {
    "published": true,
    "public_fields": [
     "pinned",
+    "value_source",
     "headline",
     "area",
     "outcode",
@@ -1563,6 +1587,7 @@ window.KEMEK_PIPELINE = {
    "published": true,
    "public_fields": [
     "pinned",
+    "value_source",
     "headline",
     "area",
     "outcode",
@@ -1614,6 +1639,7 @@ window.KEMEK_PIPELINE = {
    "published": true,
    "public_fields": [
     "pinned",
+    "value_source",
     "headline",
     "area",
     "outcode",
@@ -1638,6 +1664,7 @@ window.KEMEK_PIPELINE = {
   {
    "id": "KEM-027",
    "pinned": true,
+   "value_source": "Valuation by Cockrams Survey Ltd for the bridging lender · reported 28 Sep 2026",
    "headline": "Grade II listed house in a former manor estate — WON at auction",
    "area": "Little Horwood, Milton Keynes",
    "outcode": "MK17",
@@ -1666,6 +1693,7 @@ window.KEMEK_PIPELINE = {
    "published": true,
    "public_fields": [
     "pinned",
+    "value_source",
     "headline",
     "area",
     "outcode",
