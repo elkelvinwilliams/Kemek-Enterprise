@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /admin/
+Disallow: /property-prize-draw.html
 
 Sitemap: https://elkelvinwilliams.github.io/Kemek-Enterprise/sitemap.xml

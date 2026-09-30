@@ -6,7 +6,7 @@
   "scripts": {
     "build:css": "tailwindcss -c tailwind.config.js -i src/tailwind.input.css -o css/tailwind.css --minify",
     "watch:css": "tailwindcss -c tailwind.config.js -i src/tailwind.input.css -o css/tailwind.css --watch",
-    "test": "node --test tests/pipeline.test.cjs"
+    "test": "node --test tests/pipeline.test.cjs tests/prize-draw.test.cjs"
   },
   "repository": {
     "type": "git",
