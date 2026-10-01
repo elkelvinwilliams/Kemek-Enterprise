@@ -278,6 +278,11 @@ window.KEMEK_PIPELINE = {
   {
    "date": "2026-10-01",
    "deal": "KEM-028",
+   "pr": "#25"
+  },
+  {
+   "date": "2026-10-01",
+   "deal": "KEM-028",
    "pr": "#24"
   },
   {
@@ -1812,7 +1817,7 @@ window.KEMEK_PIPELINE = {
    "value_label": "£400k–£440k",
    "value_kind": "GDV",
    "tax": "SDLT_RES_HIGHER",
-   "confidence": "Low–Medium",
+   "confidence": "High",
    "auction_date": "2026-10-13",
    "deal_room": "deal-room/brookmans.json",
    "stage": "Validating",
