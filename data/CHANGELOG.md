@@ -5,6 +5,7 @@ One line per correction or stage decision. The full entry (with private evidence
 | Date | Deal | PR | Entry |
 |---|---|---|---|
 | 2026-10-01 | KEM-014 | #12 | Range set to the Zoopla estimate £595k / £662k / £728k on the director's instruction (estimate, not a sale; structural note not reflected). Investor access now unlocks inside the deal page with a per-deal password. |
+| 2026-10-01 | KEM-014 | #16 | Confidence set to High on the director's instruction. |
 | 2026-10-01 | KEM-014 | #15 | Works set to £8,000–£10,000 on the director's instruction (modelled £10,000); deal-room works line updated; condition wording removed from the private record and the generic cost note. Fragment re-locked, same password. |
 | 2026-10-01 | KEM-014 | #14 | Deal room: 360° virtual tour link (auctioneer's Made Snappy tour) added above the photographs; only the nine photographs supplied by the director remain; condition commentary removed from the room and the public headline on the director's instruction — he briefs investors on the works directly. Fragment re-locked, same password. |
 | 2026-10-01 | KEM-014 | #12 | Deal room: five low-resolution condition previews added behind the password (loft room, bare bedroom, hallway and staircase with the auctioneer's red crack markers, entrance-hall crack), captioned as previews; fragment re-locked, same password. |
