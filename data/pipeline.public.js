@@ -1799,6 +1799,7 @@ window.KEMEK_PIPELINE = {
    "tax": "SDLT_RES_HIGHER",
    "confidence": "Low–Medium",
    "auction_date": "2026-10-13",
+   "deal_room": "deal-room/brookmans.json",
    "stage": "Screening",
    "date_checked": "2026-10-01",
    "published": true,
