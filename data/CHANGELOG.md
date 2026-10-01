@@ -5,6 +5,7 @@ One line per correction or stage decision. The full entry (with private evidence
 | Date | Deal | PR | Entry |
 |---|---|---|---|
 | 2026-10-01 | KEM-014 | #12 | Range set to the Zoopla estimate £595k / £662k / £728k on the director's instruction (estimate, not a sale; structural note not reflected). Investor access now unlocks inside the deal page with a per-deal password. |
+| 2026-10-01 | KEM-014 | #12 | Deal room: five low-resolution condition previews added behind the password (loft room, bare bedroom, hallway and staircase with the auctioneer's red crack markers, entrance-hall crack), captioned as previews; fragment re-locked, same password. |
 | 2026-10-01 | KEM-014 | #12 | Floor plan read (114 sqm / 1,228 sq ft). Director set bid £200,000 open/offer, £210,000 ceiling; works £5,000 clean and repaint on instruction (structural note stands); deposit partner £10,000 at 35%; password-locked investor deal room added. |
 | 2026-10-01 | KEM-014 | #12 | 62 Crowther Road corrected from the lot page: Lot 89, guide £160,000+ (not £300k+); significant structural movement per the auctioneer; structural repair TBD, counted £0 and flagged; stage Validating. |
 | 2026-09-29 | KEM-027 | #12 | Confidence raised Medium → High on the director's instruction; Cockrams Survey Ltd report copy not yet on file. |
