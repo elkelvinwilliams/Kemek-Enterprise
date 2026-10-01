@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /admin/
+Disallow: /deal-room/
+Disallow: /property-prize-draw.html
 
 Sitemap: https://elkelvinwilliams.github.io/Kemek-Enterprise/sitemap.xml

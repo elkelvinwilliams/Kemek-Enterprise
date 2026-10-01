@@ -4,6 +4,7 @@ window.KEMEK_PIPELINE = {
  "generated": "2026-09-19",
  "stages": [
   "Screening",
+  "Validating",
   "Shortlist",
   "GO — Deal Room",
   "Bid / Offer",
@@ -123,6 +124,22 @@ window.KEMEK_PIPELINE = {
    "unit": "£",
    "status": "TBD",
    "note": "Only for KEM-002 and KEM-013. Kept separate from residential value; not counted in any case until planning is evidenced."
+  },
+  {
+   "key": "lender_costs",
+   "label": "Lender costs (valuation, lender legal, admin)",
+   "value": 0.0,
+   "unit": "£",
+   "status": "ASSUMED",
+   "note": "0 unless quoted — set per deal from the DIP. Added to finance total."
+  },
+  {
+   "key": "holding_month",
+   "label": "Holding costs per month (council tax, utilities, insurance)",
+   "value": 0.0,
+   "unit": "£/month",
+   "status": "ASSUMED",
+   "note": "0 unless estimated — set per deal. Multiplied by the bridging term."
   }
  ],
  "tax_tables": {
@@ -243,8 +260,86 @@ window.KEMEK_PIPELINE = {
   "costs",
   "scenarios",
   "size_sqft",
+  "size_sqm",
   "income_pcm",
-  "commercial"
+  "commercial",
+  "lot",
+  "listing",
+  "stage_note",
+  "sources",
+  "bid_analysis",
+  "bid_limits",
+  "value_basis",
+  "funding_target",
+  "jv",
+  "works_basis"
+ ],
+ "changelog": [
+  {
+   "date": "2026-10-01",
+   "deal": "KEM-014",
+   "pr": "#12"
+  },
+  {
+   "date": "2026-10-01",
+   "deal": "KEM-014",
+   "pr": "#12"
+  },
+  {
+   "date": "2026-10-01",
+   "deal": "KEM-014",
+   "pr": "#12"
+  },
+  {
+   "date": "2026-09-29",
+   "deal": "KEM-027",
+   "pr": "#12"
+  },
+  {
+   "date": "2026-09-28",
+   "deal": "KEM-027",
+   "pr": "#12"
+  },
+  {
+   "date": "2026-09-28",
+   "deal": "KEM-027",
+   "pr": "#12"
+  },
+  {
+   "date": "2026-09-28",
+   "deal": "KEM-026",
+   "pr": "#12"
+  },
+  {
+   "date": "2026-09-28",
+   "deal": "KEM-025",
+   "pr": "#12"
+  },
+  {
+   "date": "2026-09-26",
+   "deal": "KEM-025",
+   "pr": "#12"
+  },
+  {
+   "date": "2026-09-26",
+   "deal": "KEM-025",
+   "pr": "#12"
+  },
+  {
+   "date": "2026-09-25",
+   "deal": "KEM-025",
+   "pr": "#12"
+  },
+  {
+   "date": "2026-09-22",
+   "deal": "KEM-025",
+   "pr": "#11"
+  },
+  {
+   "date": "2026-09-22",
+   "deal": "KEM-025",
+   "pr": "#10"
+  }
  ],
  "disclaimer": "Indicative end values are analytical ranges, not formal valuations. Every figure carries its source, date checked and confidence. Legal packs, title, planning and surveys must be checked before bidding.",
  "deals": [
@@ -276,6 +371,9 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -325,6 +423,9 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -374,6 +475,9 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -423,6 +527,9 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -472,6 +579,9 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -521,6 +631,9 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -570,6 +683,9 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -619,6 +735,9 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -668,6 +787,9 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -717,6 +839,9 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -766,6 +891,9 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -815,6 +943,9 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -864,6 +995,9 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -887,33 +1021,37 @@ window.KEMEK_PIPELINE = {
   },
   {
    "id": "KEM-014",
-   "headline": "Victorian semi, South Norwood",
+   "headline": "Victorian semi, South Norwood — structural movement",
    "area": "South Norwood, Croydon, London",
    "outcode": "SE25",
    "region": "London",
    "nation": "England",
    "type": "Semi-detached house",
    "category": "Residential",
-   "config": "3 bed",
+   "config": "3 bed + loft room",
    "guide": [
-    300000,
-    300000
+    160000,
+    160000
    ],
-   "guide_label": "£300k+ current guide",
+   "guide_label": "£160k+ guide (plus fees)",
    "value": [
-    425000,
-    475000,
-    525000
+    595000,
+    662000,
+    728000
    ],
-   "value_label": "£425k–£525k",
+   "value_label": "£595k–£728k",
    "value_kind": "GDV",
    "tax": "SDLT_RES_HIGHER",
-   "confidence": "Medium",
+   "confidence": "Low–Medium",
+   "stage": "Validating",
+   "deal_room": "deal-room/crowther.json",
    "auction_date": "2026-10-07",
-   "date_checked": "2026-09-19",
-   "stage": "Screening",
+   "date_checked": "2026-10-01",
    "published": true,
    "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -964,6 +1102,9 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -1014,6 +1155,9 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -1064,6 +1208,9 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -1114,6 +1261,9 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -1164,6 +1314,9 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -1214,6 +1367,9 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -1264,6 +1420,9 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -1314,6 +1473,9 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -1364,6 +1526,9 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -1414,6 +1579,9 @@ window.KEMEK_PIPELINE = {
    "stage": "Screening",
    "published": true,
    "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -1437,33 +1605,144 @@ window.KEMEK_PIPELINE = {
   },
   {
    "id": "KEM-025",
-   "headline": "3-bed terrace, New Addington",
+   "headline": "3-bed semi, New Addington",
    "area": "New Addington, Croydon, London",
    "outcode": "CR0",
    "region": "London",
    "nation": "England",
-   "type": "Terraced house",
+   "type": "Semi-detached house",
    "category": "Residential",
    "config": "3 bed",
    "guide": [
     210000,
     210000
    ],
-   "guide_label": "£210k guide (plus fees)",
+   "guide_label": "£210k+ guide (plus fees)",
    "value": [
-    345000,
-    380000,
-    400000
+    365000,
+    400000,
+    430000
    ],
-   "value_label": "£345k-£400k",
+   "value_label": "£365k-£430k",
    "value_kind": "GDV",
    "tax": "SDLT_RES_HIGHER",
    "confidence": "Medium",
    "auction_date": "2026-10-07",
-   "date_checked": "2026-09-22",
-   "stage": "Screening",
+   "stage": "Validating",
+   "date_checked": "2026-09-26",
    "published": true,
    "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
+    "headline",
+    "area",
+    "outcode",
+    "region",
+    "nation",
+    "type",
+    "category",
+    "config",
+    "guide",
+    "guide_label",
+    "value",
+    "value_label",
+    "value_kind",
+    "confidence",
+    "date_checked",
+    "stage",
+    "tax",
+    "auction_date"
+   ],
+   "research_date": "2026-09-19"
+  },
+  {
+   "id": "KEM-026",
+   "headline": "4-bed semi, Little Houghton (unsold lot)",
+   "area": "Little Houghton, Northampton",
+   "outcode": "NN7",
+   "region": "England",
+   "nation": "England",
+   "type": "Semi-detached house",
+   "category": "Residential",
+   "config": "4 bed",
+   "guide": [
+    250000,
+    275000
+   ],
+   "guide_label": "£250k–£275k guide (plus fees)",
+   "value": [
+    270000,
+    285000,
+    300000
+   ],
+   "value_label": "£270k-£300k",
+   "value_kind": "GDV",
+   "tax": "SDLT_RES_HIGHER",
+   "confidence": "Low",
+   "auction_date": "2026-09-23",
+   "stage": "Screening",
+   "date_checked": "2026-09-28",
+   "published": true,
+   "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
+    "headline",
+    "area",
+    "outcode",
+    "region",
+    "nation",
+    "type",
+    "category",
+    "config",
+    "guide",
+    "guide_label",
+    "value",
+    "value_label",
+    "value_kind",
+    "confidence",
+    "date_checked",
+    "stage",
+    "tax",
+    "auction_date"
+   ],
+   "research_date": "2026-09-19"
+  },
+  {
+   "id": "KEM-027",
+   "pinned": true,
+   "value_source": "Valuation by Cockrams Survey Ltd for the bridging lender · reported 28 Sep 2026",
+   "headline": "Grade II listed house in a former manor estate — WON at auction",
+   "area": "Little Horwood, Milton Keynes",
+   "outcode": "MK17",
+   "region": "England",
+   "nation": "England",
+   "type": "End-of-terrace house (Grade II listed)",
+   "category": "Residential",
+   "config": "4/5 bed",
+   "guide": [
+    450000,
+    450000
+   ],
+   "guide_label": "Bought £450,000 · guide was £425,000+",
+   "value": [
+    950000,
+    1200000,
+    1200000
+   ],
+   "value_label": "£950k–£1.2m",
+   "value_kind": "GDV",
+   "tax": "SDLT_RES_HIGHER",
+   "confidence": "High",
+   "auction_date": "2026-09-23",
+   "stage": "Exchanged",
+   "date_checked": "2026-09-28",
+   "published": true,
+   "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",

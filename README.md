@@ -27,7 +27,16 @@ investing · contractor accommodation · social housing (coming soon).
 - `data/pipeline.private.js` / `.json` — the full master (addresses, sources, evidence, corrections, costs). **Git-ignored — never commit.** Load it into the admin screen (drag-and-drop) to edit.
 - Admin workflow: edit → *Save to this browser* → *Export PUBLIC* → replace `data/pipeline.public.js` → commit. The export refuses to run if any private field is present without its "publish" box ticked.
 - **GO** in the admin promotes a record to the deal room; that is the explicit instruction to build the full deal pack from the Kemek templates.
-- `js/pipeline-engine.js` is the calculation engine (mirrors the master spreadsheet exactly). Indicative end values are analytical ranges — never valuations; TBD costs count as £0 and are flagged.
+- `js/pipeline-engine.js` is the calculation engine (mirrors the master spreadsheet exactly). Indicative end values are analytical ranges — never valuations; TBD costs count as £0 and are flagged. The cost model is acquisition + auction fee + transaction tax + legal + survey + refurb + professional + contingency + finance (interest + arrangement + lender costs) + holding (£/month × term).
+- Stages: Screening → **Validating** (viewing booked, inputs being verified) → Shortlist → GO — Deal Room → Bid / Offer → Exchanged → Completed → Passed.
+- Every record whose source is an auction lot carries a private `listing` block (lot, guide, address as the listing states them). A test fails if the deal's lot / guide / address drift from it — the check that would have caught the KEM-025 mix-up.
+- `data/CHANGELOG.md` is the decision log — one line per correction or stage decision.
+
+## Tests
+```bash
+npm test   # node --test tests/ — public export leak check, stage/guide validity, KEM-025 facts, engine cost terms, SDLT bands
+```
+The lot / guide / address consistency test and the appraisal reconciliation run beside the private dataset (`python3 -m unittest test_dataset -v` in the pipeline folder), because the source dataset carries addresses and is never committed.
 
 ## Develop
 ```bash

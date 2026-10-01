@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Prize Draw Admin | Kemek Enterprise</title>
+  <link rel="stylesheet" href="../css/tailwind.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <style>
+    .pd-banner { border-left: 4px solid #8E2E22; background: #FBE9E6; color: #5A1D15; padding: 0.8rem 1rem; font-size: 0.82rem; margin-bottom: 1.2rem; }
+    .pd-banner.ok { border-color: #1F6A3F; background: #E6F2EA; color: #14432A; }
+    .pd-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 0.7rem; margin-bottom: 1rem; }
+    .pd-kpi { border: 1px solid var(--border); background: #FCFBF8; padding: 0.7rem 0.9rem; }
+    .pd-kpi span { display: block; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+    .pd-kpi b { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.5rem; color: var(--ink); }
+    .pd-kpi small { display: block; font-size: 0.68rem; color: var(--muted); }
+    .pd-grid { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+    .pd-grid th, .pd-grid td { padding: 0.45rem 0.55rem; border-bottom: 1px solid var(--border); text-align: right; white-space: nowrap; }
+    .pd-grid th:first-child, .pd-grid td:first-child { text-align: left; }
+    .pd-grid td.neg { color: #8E2E22; } .pd-grid td.pos { color: #1F6A3F; }
+    .pd-grid thead th { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    .tag { display: inline-block; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 2px 7px; font-weight: 600; }
+    .tag.ill { background: #FBF1D6; color: #7A5C15; } .tag.req { background: #FADBD8; color: #8E2E22; } .tag.ok { background: #DDF0E3; color: #1F6A3F; } .tag.nv { background: #EEE; color: #555; }
+    .toggle { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.55rem 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
+    .toggle input[type=checkbox] { width: 20px; height: 20px; accent-color: #1F6A3F; }
+    .board { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.5rem; }
+    .board .col { background: #FCFBF8; border: 1px solid var(--border); padding: 0.5rem; min-height: 90px; }
+    .board .col h4 { font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
+    .board .chip { display: block; background: #fff; border: 1px solid var(--border); padding: 0.3rem 0.45rem; margin-bottom: 0.3rem; font-size: 0.72rem; cursor: pointer; }
+    .ops { width: 100%; font-size: 0.76rem; border-collapse: collapse; } .ops td, .ops th { padding: 0.4rem 0.45rem; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+    .ops tr:hover { background: #FCFBF8; cursor: pointer; }
+    textarea.out { width: 100%; min-height: 300px; font-family: 'Jost', sans-serif; font-size: 0.82rem; padding: 0.7rem; border: 1.5px solid var(--border); }
+    .steps { display: flex; flex-wrap: wrap; gap: 0.4rem; } .steps span { background: #fff; border: 1px solid var(--border); padding: 0.3rem 0.6rem; font-size: 0.72rem; }
+    .muted { color: var(--muted); font-size: 0.78rem; }
+    .adm-list a { display: block; color: rgba(255,255,255,0.75); padding: 0.45rem 0.6rem; font-size: 0.8rem; text-decoration: none; border-left: 2px solid transparent; }
+    .adm-list a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+  </style>
+</head>
+<body class="font-sans text-ink">
+<div class="adm">
+  <aside class="adm-side">
+    <a href="../index.html" class="nav-mark mb-4" aria-label="Kemek Enterprise home"><span class="monogram" aria-hidden="true">K</span><span class="wordmark">KEMEK<span class="wordmark-sub">Enterprise</span></span></a>
+    <p class="text-xs" style="color:rgba(255,255,255,0.5);margin:0.6rem 0 1rem">Prize-draw module · private · nothing here is on the server</p>
+    <div class="adm-list">
+      <a href="#s-property">Property &amp; status</a><a href="#s-controls">Admin controls</a><a href="#s-legal">Legal &amp; compliance</a><a href="#s-model">Financial modeller</a><a href="#s-scenarios">Scenario table</a>
+      <a href="#s-targets">Negotiation targets</a><a href="#s-operators">Operator CRM</a><a href="#s-pipeline">Operator pipeline</a><a href="#s-proposals">Proposal comparison</a><a href="#s-dd">Due-diligence room</a>
+      <a href="#s-outreach">Outreach generator</a><a href="#s-consumer">Consumer page &amp; journey</a><a href="#s-analytics">Analytics</a>
+    </div>
+    <button class="adm-tool" id="btn-save">Save to this browser</button>
+    <button class="adm-tool gold" id="btn-export">Export module state (.json)</button>
+    <label class="adm-tool" style="cursor:pointer">Import state<input type="file" id="file-import" accept=".json" hidden></label>
+    <button class="adm-tool" id="btn-reset" style="border-color:rgba(255,255,255,0.12);color:rgba(255,255,255,0.5)">Forget local copy</button>
+    <a href="pipeline-admin.html" class="adm-tool" style="text-decoration:none;margin-top:1rem">← Pipeline admin</a>
+  </aside>
+  <main class="adm-main" id="main"></main>
+</div>
+<div class="adm-status" id="adm-status"></div>
+<script src="../data/prize-draw.js"></script>
+<script src="../js/prize-draw-engine.js"></script>
+<script>
+(() => {
+  'use strict';
+  const D = window.KEMEK_PRIZE_DRAW, E = window.KemekPrizeDraw, LS = 'kemek_prize_draw_v1';
+  const $ = s => document.querySelector(s);
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const toast = m => { const el = $('#adm-status'); el.textContent = m; el.classList.add('show'); clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove('show'), 2600); };
+  const gbp = E.gbp;
+  const defaults = () => ({
+    property_status: D.property.status, controls: { ...D.controls }, assumptions: Object.fromEntries(D.assumptions.map(a => [a.key, a.value])),
+    basis: Object.fromEntries(D.assumptions.map(a => [a.key, a.basis])), targets: Object.fromEntries(D.targets.map(t => [t.key, t.value])),
+    operators: JSON.parse(JSON.stringify(D.operators)), proposals: {}, dd: Object.fromEntries(D.dd_documents.map(d => [d, { status: 'Not started', location: '', note: '' }])),
+    outreach: { operator: '', structure: '', sender_name: 'El Kelvin Williams', sender_role: 'Director, Kemek Enterprise Ltd', sender_contact: 'elkelvinwilliams@gmail.com · 07476 656712' },
+    model: { entries: 1000000, price: 10 }, compare: [], selected: null, notes: {}
+  });
+  let S = defaults();
+  try { const saved = localStorage.getItem(LS); if (saved) { S = { ...S, ...JSON.parse(saved) }; } } catch (e) {}
+  const save = () => { localStorage.setItem(LS, JSON.stringify(S)); };
+  const A = () => S.assumptions;
+  const tag = (t, cls) => `<span class="tag ${cls}">${esc(t)}</span>`;
+  const approved = () => S.controls.legal_approval === 'APPROVED';
+
+  /* ── Sections ─────────────────────────────────────────────────────────── */
+  const secProperty = () => `<section class="adm-card" id="s-property"><h2>Property &amp; status</h2>
+    <div class="pd-kpis">
+      <div class="pd-kpi"><span>Property value</span><b>${gbp(D.property.value)}</b><small>${esc(D.property.value_basis)}</small></div>
+      <div class="pd-kpi"><span>Property status</span><b style="font-size:1.1rem">${esc(S.property_status)}</b><small><select id="f-pstatus" class="mt-1">${D.property.statuses.map(s => `<option ${s === S.property_status ? 'selected' : ''}>${esc(s)}</option>`).join('')}</select></small></div>
+      <div class="pd-kpi"><span>Verification</span><b style="font-size:1.1rem">${esc(S.controls.property_verification)}</b><small>set under Admin controls</small></div>
+      <div class="pd-kpi"><span>Planning capacity</span><b>${D.planning.max_entries_assumption.toLocaleString('en-GB')}</b><small>${esc(D.planning.note)}</small></div>
+    </div>
+    <p class="muted">Reference ${esc(D.property.ref)} · ${esc(D.property.headline)}. The property's identity and papers stay in the private deal file and the due-diligence room; nothing here names it publicly.</p></section>`;
+
+  const secControls = () => { const c = S.controls; const live = E.consumerLive(c);
+    const tog = (k, l, note) => `<label class="toggle"><span>${esc(l)}<br><small class="muted">${esc(note)}</small></span><input type="checkbox" data-ctl="${k}" ${c[k] ? 'checked' : ''} ${approved() ? '' : 'disabled title="Legal approval required"'}></label>`;
+    return `<section class="adm-card" id="s-controls"><h2>Admin controls</h2>
+    <div class="pd-banner ${live ? 'ok' : ''}">${live ? 'Consumer page is LIVE-CAPABLE: legal approval recorded, property verified, campaign and page switched on.' : 'Every consumer switch is OFF. Switches stay locked until legal approval is recorded below. Default state: LEGAL APPROVAL REQUIRED.'}</div>
+    <div class="adm-grid">
+      <div class="adm-field"><label>Legal approval status</label><select data-ctl-sel="legal_approval"><option ${c.legal_approval === 'LEGAL APPROVAL REQUIRED' ? 'selected' : ''}>LEGAL APPROVAL REQUIRED</option><option ${c.legal_approval === 'UNDER REVIEW' ? 'selected' : ''}>UNDER REVIEW</option><option ${c.legal_approval === 'APPROVED' ? 'selected' : ''}>APPROVED</option></select><small class="muted">Set APPROVED only when the solicitor's written sign-off of the structure, T&amp;Cs and marketing is in the due-diligence room.</small></div>
+      <div class="adm-field"><label>Property verification status</label><select data-ctl-sel="property_verification"><option ${c.property_verification === 'NOT VERIFIED' ? 'selected' : ''}>NOT VERIFIED</option><option ${c.property_verification === 'IN PROGRESS' ? 'selected' : ''}>IN PROGRESS</option><option ${c.property_verification === 'VERIFIED' ? 'selected' : ''}>VERIFIED</option></select></div>
+      <div class="adm-field"><label>Operator status</label><input data-ctl-txt="operator_status" value="${esc(c.operator_status)}"></div>
+      <div class="adm-field"><label>Draw status</label><select data-ctl-sel="draw_status">${['Not scheduled', 'Scheduled', 'Independent supervisor appointed', 'Drawn', 'Winner verified', 'Prize transferred'].map(s => `<option ${c.draw_status === s ? 'selected' : ''}>${s}</option>`).join('')}</select></div>
+    </div>
+    <div class="mt-3">${tog('campaign_on', 'Campaign ON', 'Master switch — nothing consumer-facing works without it')}${tog('consumer_page_on', 'Consumer page ON', 'property-prize-draw.html renders its sections instead of the holding notice')}${tog('free_entry_route_on', 'Free-entry route ON', 'Must be on before entries or payments — a paid route without a free route is not permitted')}${tog('entries_on', 'Entries ON', 'Requires the operator platform; this site records no entries')}${tog('payments_on', 'Payments ON', 'No payment code exists in this repository; the switch records the decision only')}${tog('analytics_on', 'Consumer analytics ON', 'Only after the privacy/compliance review')}</div>
+    <p class="muted mt-3">Gate check: consumer page ${live ? tag('LIVE-CAPABLE', 'ok') : tag('DARK', 'req')} · entries ${E.entriesLive(c) ? tag('ON', 'ok') : tag('OFF', 'req')} · payments ${E.paymentsLive(c) ? tag('ON', 'ok') : tag('OFF', 'req')}. The public export of these controls is the data file; this page changes your browser copy only.</p></section>`; };
+
+  const secLegal = () => `<section class="adm-card" id="s-legal"><h2>Legal &amp; compliance register ${tag(S.controls.legal_approval, approved() ? 'ok' : 'req')}</h2>
+    <p class="muted mb-3">Two lawful routes and one unlawful one. Summaries checked 30 Sep 2026 — they are not legal conclusions; counsel decides the structure.</p>
+    <table class="ops"><thead><tr><th style="width:22%">Route</th><th>What it requires</th></tr></thead>${D.legal.routes.map(r => `<tr><td><b>${esc(r.name)}</b></td><td>${esc(r.summary)}</td></tr>`).join('')}</table>
+    <h3 class="mt-4 mb-2" style="font-family:'Cormorant Garamond',serif;font-size:1.2rem">References</h3>
+    <table class="ops"><thead><tr><th style="width:34%">Source</th><th>What it requires of this promotion</th></tr></thead>${D.legal.references.map(r => `<tr><td><a class="deal-link" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a></td><td>${esc(r.requires)}</td></tr>`).join('')}</table>
+    <h3 class="mt-4 mb-2" style="font-family:'Cormorant Garamond',serif;font-size:1.2rem">Safeguards built into this module</h3>
+    <ul class="muted" style="list-style:disc;padding-left:1.2rem">${D.legal.safeguards.map(s => `<li>${esc(s)}</li>`).join('')}</ul></section>`;
+
+  const secModel = () => { const m = S.model; const r = E.campaign(m.entries, m.price, A());
+    const row = (l, v, cls) => `<tr><td>${l}</td><td class="${cls || ''}">${gbp(v)}</td></tr>`;
+    return `<section class="adm-card" id="s-model"><h2>Financial modeller ${tag('ILLUSTRATIVE', 'ill')}</h2>
+    <div class="adm-grid">
+      <div class="adm-field"><label>Property value £</label><input type="number" data-a="consideration" value="${A().consideration}"><small class="muted">Consideration paid to the owner under a fixed-acquisition model</small></div>
+      <div class="adm-field"><label>Entry price</label><select data-m="price">${D.entry_prices.map(p => `<option value="${p}" ${+m.price === p ? 'selected' : ''}>£${p}</option>`).join('')}</select></div>
+      <div class="adm-field"><label>Maximum entries</label><select data-m="entries">${D.entry_caps.map(c => `<option value="${c}" ${+m.entries === c ? 'selected' : ''}>${c.toLocaleString('en-GB')}</option>`).join('')}</select></div>
+    </div>
+    <h3 class="mt-3 mb-1" style="font-family:'Cormorant Garamond',serif;font-size:1.2rem">Cost assumptions — every one editable</h3>
+    <table class="assump-table"><thead><tr><th>Assumption</th><th>Value</th><th>Unit</th><th>Basis</th><th>Note</th></tr></thead>
+    ${D.assumptions.map(a => `<tr><td>${esc(a.label)}</td><td><input type="number" step="any" data-a="${a.key}" value="${A()[a.key]}"></td><td>${esc(a.unit)}</td><td><select data-b="${a.key}"><option ${S.basis[a.key] === 'ILLUSTRATIVE' ? 'selected' : ''}>ILLUSTRATIVE</option><option ${S.basis[a.key] === 'quotation' ? 'selected' : ''}>quotation</option></select></td><td class="muted">${esc(a.note)}</td></tr>`).join('')}</table>
+    <div class="adm-grid mt-4"><div><table class="pd-grid"><thead><tr><th>At ${m.entries.toLocaleString('en-GB')} entries × £${m.price}</th><th>£</th></tr></thead>
+      ${row('Gross entry revenue', r.gross)}${row('less VAT on entries', -r.vat)}${row('Revenue net of VAT', r.net_of_vat)}${row('Marketing', -r.marketing)}${row('Platform', -r.platform)}${row('Payment processing', -r.payment)}${row('Legal / compliance', -r.legal)}${row('Operator fee', -r.operator)}${row('Other costs', -r.other)}${row('Property consideration to owner', -r.consideration)}
+      <tr><td><b>Net campaign proceeds</b></td><td class="${r.net < 0 ? 'neg' : 'pos'}"><b>${gbp(r.net)}</b></td></tr></table></div>
+      <div><div class="pd-kpis"><div class="pd-kpi"><span>Property-owner proceeds</span><b>${gbp(r.owner_proceeds)}</b><small>consideration + ${A().owner_share_pct}% of net</small></div><div class="pd-kpi"><span>Operator proceeds</span><b>${gbp(r.operator_proceeds)}</b><small>net after owner share</small></div><div class="pd-kpi"><span>Break-even entries</span><b>${r.breakeven_entries ? r.breakeven_entries.toLocaleString('en-GB') : '—'}</b><small>to cover fixed costs and consideration at £${m.price}</small></div></div>
+      <p class="muted">Every line is ILLUSTRATIVE until the basis column reads "quotation" against an operator's written proposal. Entry volumes are planning assumptions — not forecasts, not guarantees.</p></div></div></section>`; };
+
+  const secScenarios = () => { const t = E.scenarioTable(D.entry_caps, D.entry_prices, A());
+    return `<section class="adm-card" id="s-scenarios"><h2>Scenario table — net campaign proceeds ${tag('ILLUSTRATIVE', 'ill')}</h2>
+    <table class="pd-grid"><thead><tr><th>Entries</th>${D.entry_prices.map(p => `<th>£${p}</th>`).join('')}</tr></thead>
+    ${t.map(r => `<tr><td>${r.entries.toLocaleString('en-GB')}</td>${r.cells.map(c => `<td class="${c.value < 0 ? 'neg' : 'pos'}">${gbp(c.value)}</td>`).join('')}</tr>`).join('')}</table>
+    <div class="adm-bar mt-3"><button class="btn-outline-dark" id="btn-csv">Export CSV</button><button class="btn-outline-dark" id="btn-print">Print / save as PDF</button><span class="muted">Net = revenue net of VAT − costs − property consideration, on the assumptions above.</span></div></section>`; };
+
+  const secTargets = () => `<section class="adm-card" id="s-targets"><h2>Internal negotiation targets ${tag('USER INPUT', 'nv')}</h2>
+    <p class="muted mb-2">Blank by design. Nothing here is a recommendation; fill in your own numbers before the first operator call.</p>
+    <div class="adm-grid">${D.targets.map(t => `<div class="adm-field"><label>${esc(t.label)}${t.fixed ? ' · fixed' : ''}</label>${t.unit === 'text' ? `<select data-t="${t.key}"><option value="">—</option>${D.structures.map(s => `<option ${S.targets[t.key] === s ? 'selected' : ''}>${s}</option>`).join('')}</select>` : `<input type="number" data-t="${t.key}" value="${S.targets[t.key] ?? ''}" ${t.fixed ? 'readonly' : ''} placeholder="USER INPUT">`}</div>`).join('')}</div></section>`;
+
+  const opRow = o => `<tr data-op="${esc(o.id)}"><td><b>${esc(o.company)}</b><br><small class="muted">${esc(o.operator_type)}</small></td><td>${esc(o.property_specialist)}</td><td>${esc(o.status)}</td><td>${/NOT PUBLICLY/.test(o.email) ? tag('not verified', 'nv') : esc(o.email)}</td><td>${esc(o.follow_up || '—')}</td><td>${esc(o.proposal_received)}</td></tr>`;
+  const secOperators = () => { const o = S.operators.find(x => x.id === S.selected);
+    const F = [['company', 'Company'], ['website', 'Website'], ['contact_name', 'Contact name'], ['contact_role', 'Contact role'], ['email', 'Email'], ['phone', 'Phone'], ['linkedin', 'LinkedIn'], ['operator_type', 'Operator type'], ['property_specialist', 'Property specialist'], ['current_campaigns', 'Current campaigns'], ['highest_value_known', 'Highest-value known property'], ['max_entries', 'Maximum entries'], ['free_entry_mechanism', 'Free-entry mechanism'], ['code_status', 'Government voluntary-code status'], ['legal_info', 'Legal / compliance information'], ['commercial_model', 'Commercial model'], ['fixed_acquisition', 'Fixed acquisition'], ['revenue_share', 'Revenue share'], ['jv', 'JV'], ['hybrid', 'Hybrid'], ['status', 'Status', 'stage'], ['last_contacted', 'Last contacted', 'date'], ['follow_up', 'Follow-up date', 'date'], ['response', 'Response'], ['proposal_received', 'Proposal received', 'yn'], ['proposed_valuation', 'Proposed valuation'], ['proposed_terms', 'Proposed commercial terms'], ['notes', 'Notes', 'textarea']];
+    const field = ([k, l, t]) => `<div class="adm-field ${t === 'textarea' ? 'full' : ''}"><label>${esc(l)}</label>${t === 'stage' ? `<select data-of="${k}">${D.stages.map(s => `<option ${o[k] === s ? 'selected' : ''}>${s}</option>`).join('')}</select>` : t === 'yn' ? `<select data-of="${k}"><option ${o[k] === 'No' ? 'selected' : ''}>No</option><option ${o[k] === 'Yes' ? 'selected' : ''}>Yes</option></select>` : t === 'textarea' ? `<textarea data-of="${k}">${esc(o[k])}</textarea>` : `<input type="${t === 'date' ? 'date' : 'text'}" data-of="${k}" value="${esc(o[k])}">`}</div>`;
+    return `<section class="adm-card" id="s-operators"><h2>Prize Draw Operators — CRM <small class="muted">${S.operators.length} records · contacts from official sources only; otherwise NOT PUBLICLY VERIFIED</small></h2>
+    <div class="adm-bar"><button class="btn-outline-dark" id="btn-newop">+ Add operator</button><input id="op-q" placeholder="Search operators" style="padding:.5rem .7rem;border:1.5px solid var(--border);font-family:Jost"></div>
+    <table class="ops"><thead><tr><th>Company</th><th>Property specialist</th><th>Stage</th><th>Email</th><th>Follow-up</th><th>Proposal</th></tr></thead><tbody id="op-rows">${S.operators.map(opRow).join('')}</tbody></table>
+    ${o ? `<div class="adm-card mt-4" style="border-left:4px solid var(--gold)"><h2>${esc(o.company)} <small class="muted">${esc(o.id)} · source: ${esc(o.source || '')}</small></h2><div class="adm-grid">${F.map(field).join('')}</div>
+      <div class="adm-bar mt-3"><button class="btn-outline-dark" id="btn-op-outreach">Draft outreach to this operator</button><button class="btn-outline-dark" id="btn-op-compare">${S.compare.includes(o.id) ? 'Remove from comparison' : 'Add to comparison'}</button><button class="btn-outline-dark" id="btn-op-delete" style="border-color:#B4541F;color:#B4541F;margin-left:auto">Remove record</button></div></div>` : '<p class="muted mt-2">Click a row to edit.</p>'}</section>`; };
+
+  const secPipeline = () => `<section class="adm-card" id="s-pipeline"><h2>Operator pipeline</h2><div class="board">${D.stages.map(s => `<div class="col"><h4>${esc(s)} · ${S.operators.filter(o => o.status === s).length}</h4>${S.operators.filter(o => o.status === s).map(o => `<span class="chip" data-op="${esc(o.id)}">${esc(o.company)}</span>`).join('')}</div>`).join('')}</div></section>`;
+
+  const secProposals = () => { const ops = S.compare.map(id => S.operators.find(o => o.id === id)).filter(Boolean);
+    return `<section class="adm-card" id="s-proposals"><h2>Operator proposal comparison</h2>
+    ${ops.length ? `<table class="ops"><thead><tr><th>Term</th>${ops.map(o => `<th>${esc(o.company)}</th>`).join('')}</tr></thead>${D.proposal_fields.map(f => `<tr><td><b>${esc(D.proposal_labels[f])}</b></td>${ops.map(o => `<td><input data-pf="${f}" data-pop="${esc(o.id)}" value="${esc((S.proposals[o.id] || {})[f] || '')}" style="width:100%;padding:.3rem .4rem;border:1px solid var(--border);font-family:Jost;font-size:.76rem"></td>`).join('')}</tr>`).join('')}</table><p class="muted mt-2">Record each operator's written proposal verbatim. Blank cells mean "not yet proposed", never "nil".</p>` : '<p class="muted">Add operators to the comparison from their CRM record. Two or more proposals show side by side here.</p>'}</section>`; };
+
+  const secDD = () => `<section class="adm-card" id="s-dd"><h2>Property due-diligence room</h2>
+    <p class="muted mb-2">A register, not a vault: this site is static and public. Documents stay in the private deal file and the solicitor's system; record here what exists, its status and where it is held. Nothing uploads to the repository.</p>
+    <table class="ops"><thead><tr><th>Document</th><th>Status</th><th>Held at / reference</th><th>Note</th></tr></thead>${D.dd_documents.map(d => { const x = S.dd[d] || { status: 'Not started', location: '', note: '' }; return `<tr><td><b>${esc(d)}</b></td><td><select data-dd="${esc(d)}" data-k="status">${D.dd_statuses.map(s => `<option ${x.status === s ? 'selected' : ''}>${s}</option>`).join('')}</select></td><td><input data-dd="${esc(d)}" data-k="location" value="${esc(x.location)}" style="width:100%;padding:.3rem .4rem;border:1px solid var(--border);font-family:Jost;font-size:.76rem"></td><td><input data-dd="${esc(d)}" data-k="note" value="${esc(x.note)}" style="width:100%;padding:.3rem .4rem;border:1px solid var(--border);font-family:Jost;font-size:.76rem"></td></tr>`; }).join('')}</table></section>`;
+
+  const secOutreach = () => { const o = S.operators.find(x => x.id === S.outreach.operator) || {}; const g = E.outreach({ ...o, structure: S.outreach.structure, sender_name: S.outreach.sender_name, sender_role: S.outreach.sender_role, sender_contact: S.outreach.sender_contact });
+    return `<section class="adm-card" id="s-outreach"><h2>Operator outreach generator</h2>
+    <div class="adm-grid"><div class="adm-field"><label>Operator</label><select data-out="operator"><option value="">— generic —</option>${S.operators.map(x => `<option value="${esc(x.id)}" ${S.outreach.operator === x.id ? 'selected' : ''}>${esc(x.company)}</option>`).join('')}</select></div>
+      <div class="adm-field"><label>Structure to lead with</label><select data-out="structure"><option value="">All four</option>${D.structures.map(s => `<option ${S.outreach.structure === s ? 'selected' : ''}>${s}</option>`).join('')}</select></div>
+      <div class="adm-field"><label>Sender</label><input data-out="sender_name" value="${esc(S.outreach.sender_name)}"></div><div class="adm-field"><label>Role</label><input data-out="sender_role" value="${esc(S.outreach.sender_role)}"></div><div class="adm-field"><label>Contact line</label><input data-out="sender_contact" value="${esc(S.outreach.sender_contact)}"></div></div>
+    <p class="muted mt-2"><b>Subject:</b> ${esc(g.subject)}</p><textarea class="out" id="out-body" readonly>${esc(g.body)}</textarea>
+    <div class="adm-bar mt-2"><button class="btn-outline-dark" id="btn-copy">Copy email</button>${g.mailto ? `<a class="btn-outline-dark" href="${g.mailto}">Open in mail app</a>` : '<span class="muted">No verified email on record — find it on the operator\'s official site first.</span>'}</div></section>`; };
+
+  const secConsumer = () => `<section class="adm-card" id="s-consumer"><h2>Consumer page &amp; journey ${tag(E.consumerLive(S.controls) ? 'LIVE-CAPABLE' : 'DISABLED', E.consumerLive(S.controls) ? 'ok' : 'req')}</h2>
+    <p class="muted mb-2"><a class="deal-link" href="../property-prize-draw.html?preview=1" target="_blank" rel="noopener">Open the consumer page in preview</a> — it shows the section architecture with a PREVIEW banner. Without preview it renders a holding notice until the gate opens. It is <code>noindex</code> and blocked in robots.txt.</p>
+    <h3 class="mb-1" style="font-family:'Cormorant Garamond',serif;font-size:1.2rem">Sections</h3><div class="steps">${D.consumer_sections.map(s => `<span>${esc(s)}</span>`).join('')}</div>
+    <h3 class="mt-3 mb-1" style="font-family:'Cormorant Garamond',serif;font-size:1.2rem">Consumer journey</h3><div class="steps">${D.journey.map((s, i) => `<span>${i + 1}. ${esc(s)}</span>`).join('')}</div>
+    <p class="muted mt-2">Steps 5–13 run on the operator's platform or a separate service; this repository has no entry, age-verification, payment or draw code and must not acquire any before legal approval.</p></section>`;
+
+  const secAnalytics = () => `<section class="adm-card" id="s-analytics"><h2>Analytics ${tag(S.controls.analytics_on ? 'ON' : 'OFF — privacy review first', S.controls.analytics_on ? 'ok' : 'req')}</h2>
+    <p class="muted mb-2">${esc(D.analytics.note)} Definitions are fixed now so the operator's reporting can be mapped one-to-one.</p>
+    <table class="ops"><thead><tr><th>Metric</th><th>Definition</th><th>Current</th></tr></thead>${D.analytics.metrics.map(([k, l, d]) => `<tr><td><b>${esc(l)}</b></td><td class="muted">${esc(d)}</td><td>—</td></tr>`).join('')}</table></section>`;
+
+  const render = () => { $('#main').innerHTML = `<div class="pd-banner ${approved() ? 'ok' : ''}"><b>${esc(S.controls.legal_approval)}</b> — internal planning module. No consumer launch, entries or payments until the legal and commercial structure is approved and switched on.</div>` + [secProperty, secControls, secLegal, secModel, secScenarios, secTargets, secOperators, secPipeline, secProposals, secDD, secOutreach, secConsumer, secAnalytics].map(f => f()).join(''); bind(); };
+
+  /* ── Events ─────────────────────────────────────────────────────────── */
+  const bind = () => {
+    const m = $('#main');
+    m.querySelector('#f-pstatus').addEventListener('change', e => { S.property_status = e.target.value; save(); render(); });
+    m.querySelectorAll('[data-ctl]').forEach(el => el.addEventListener('change', e => { S.controls[el.dataset.ctl] = e.target.checked; save(); render(); }));
+    m.querySelectorAll('[data-ctl-sel]').forEach(el => el.addEventListener('change', e => { S.controls[el.dataset.ctlSel] = e.target.value; if (S.controls.legal_approval !== 'APPROVED') { for (const k of ['campaign_on', 'consumer_page_on', 'payments_on', 'entries_on', 'free_entry_route_on', 'analytics_on']) S.controls[k] = false; } save(); render(); }));
+    m.querySelectorAll('[data-ctl-txt]').forEach(el => el.addEventListener('change', e => { S.controls[el.dataset.ctlTxt] = e.target.value; save(); }));
+    m.querySelectorAll('[data-a]').forEach(el => el.addEventListener('change', e => { S.assumptions[el.dataset.a] = +e.target.value; save(); render(); }));
+    m.querySelectorAll('[data-b]').forEach(el => el.addEventListener('change', e => { S.basis[el.dataset.b] = e.target.value; save(); }));
+    m.querySelectorAll('[data-m]').forEach(el => el.addEventListener('change', e => { S.model[el.dataset.m] = +e.target.value; save(); render(); }));
+    m.querySelectorAll('[data-t]').forEach(el => el.addEventListener('change', e => { S.targets[el.dataset.t] = el.type === 'number' ? (e.target.value === '' ? null : +e.target.value) : e.target.value; save(); }));
+    m.querySelectorAll('[data-op]').forEach(el => el.addEventListener('click', () => { S.selected = el.dataset.op; save(); render(); document.getElementById('s-operators').scrollIntoView(); }));
+    m.querySelectorAll('[data-of]').forEach(el => el.addEventListener('change', e => { const o = S.operators.find(x => x.id === S.selected); if (o) { o[el.dataset.of] = e.target.value; save(); if (['status', 'company', 'email', 'follow_up', 'proposal_received'].includes(el.dataset.of)) render(); } }));
+    m.querySelectorAll('[data-pf]').forEach(el => el.addEventListener('change', e => { S.proposals[el.dataset.pop] = S.proposals[el.dataset.pop] || {}; S.proposals[el.dataset.pop][el.dataset.pf] = e.target.value; save(); }));
+    m.querySelectorAll('[data-dd]').forEach(el => el.addEventListener('change', e => { S.dd[el.dataset.dd] = S.dd[el.dataset.dd] || {}; S.dd[el.dataset.dd][el.dataset.k] = e.target.value; save(); }));
+    m.querySelectorAll('[data-out]').forEach(el => el.addEventListener('change', e => { S.outreach[el.dataset.out] = e.target.value; save(); render(); }));
+    m.querySelector('#op-q').addEventListener('input', e => { const q = e.target.value.toLowerCase(); m.querySelectorAll('#op-rows tr').forEach(tr => { tr.style.display = tr.textContent.toLowerCase().includes(q) ? '' : 'none'; }); });
+    m.querySelector('#btn-newop').addEventListener('click', () => { const id = 'OP-' + String(S.operators.length + 1).padStart(2, '0'); S.operators.push(Object.fromEntries(D.operator_fields.map(f => [f, f === 'status' ? 'Researched' : f === 'proposal_received' ? 'No' : '']).concat([['id', id], ['company', 'New operator'], ['source', 'entered by hand']]))); S.selected = id; save(); render(); });
+    const del = m.querySelector('#btn-op-delete'); if (del) del.addEventListener('click', () => { if (!confirm('Remove this operator record?')) return; S.operators = S.operators.filter(o => o.id !== S.selected); S.compare = S.compare.filter(i => i !== S.selected); S.selected = null; save(); render(); });
+    const cmp = m.querySelector('#btn-op-compare'); if (cmp) cmp.addEventListener('click', () => { S.compare = S.compare.includes(S.selected) ? S.compare.filter(i => i !== S.selected) : [...S.compare, S.selected]; save(); render(); });
+    const out = m.querySelector('#btn-op-outreach'); if (out) out.addEventListener('click', () => { S.outreach.operator = S.selected; save(); render(); document.getElementById('s-outreach').scrollIntoView(); });
+    m.querySelector('#btn-copy').addEventListener('click', () => { navigator.clipboard.writeText($('#out-body').value).then(() => toast('Email copied')); });
+    m.querySelector('#btn-csv').addEventListener('click', () => { const csv = E.scenarioCSV(D.entry_caps, D.entry_prices, A()); const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' })); a.download = 'kemek-prize-draw-scenarios.csv'; a.click(); });
+    m.querySelector('#btn-print').addEventListener('click', () => window.print());
+  };
+  $('#btn-save').addEventListener('click', () => { save(); toast('Saved in this browser (not on the server)'); });
+  $('#btn-reset').addEventListener('click', () => { localStorage.removeItem(LS); S = defaults(); render(); toast('Local copy forgotten — defaults restored (everything OFF)'); });
+  $('#btn-export').addEventListener('click', () => { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(S, null, 1)], { type: 'application/json' })); a.download = 'kemek-prize-draw-state.json'; a.click(); });
+  $('#file-import').addEventListener('change', e => { const f = e.target.files[0]; if (!f) return; f.text().then(t => { try { S = { ...defaults(), ...JSON.parse(t) }; save(); render(); toast('State imported'); } catch (err) { toast('Not a valid state file'); } }); });
+  render();
+})();
+</script>
+</body>
+</html>

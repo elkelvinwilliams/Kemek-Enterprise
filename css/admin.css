@@ -1,0 +1,40 @@
+/* Kemek admin screens — shared styles (pipeline admin, prize-draw admin). */
+    body { background: var(--cream); }
+    .adm { display: grid; grid-template-columns: 300px 1fr; min-height: 100vh; }
+    @media (max-width: 900px) { .adm { grid-template-columns: 1fr; } .adm-side { position: static !important; max-height: none !important; } }
+    .adm-side { background: var(--ink); color: rgba(255,255,255,0.8); padding: 1.4rem 1.2rem; position: sticky; top: 0; max-height: 100vh; overflow-y: auto; }
+    .adm-main { padding: 1.6rem 2rem 4rem; }
+    .adm-list button { display: block; width: 100%; text-align: left; background: none; border: none; color: rgba(255,255,255,0.75); padding: 0.55rem 0.6rem; cursor: pointer; font-family: 'Jost', sans-serif; font-size: 0.8rem; border-left: 2px solid transparent; }
+    .adm-list button:hover { color: #fff; background: rgba(255,255,255,0.05); }
+    .adm-list button.active { color: #fff; border-left-color: var(--gold); background: rgba(200,162,75,0.12); }
+    .adm-list small { display: block; color: rgba(255,255,255,0.45); font-size: 0.68rem; }
+    .adm-tool { display: block; width: 100%; text-align: left; margin-top: 0.5rem; padding: 0.6rem 0.8rem; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; border: 1.5px solid rgba(255,255,255,0.25); background: transparent; color: #fff; cursor: pointer; font-family: 'Jost', sans-serif; }
+    .adm-tool:hover { border-color: var(--gold); }
+    .adm-tool.gold { background: var(--gold); color: var(--deep); border-color: var(--gold); font-weight: 600; }
+    .adm-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem 1.2rem; }
+    @media (min-width: 1100px) { .adm-grid { grid-template-columns: repeat(3, 1fr); } }
+    .adm-grid .full { grid-column: 1 / -1; }
+    .adm-field label { display: block; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.25rem; }
+    .adm-field input, .adm-field select, .adm-field textarea { width: 100%; padding: 0.55rem 0.7rem; border: 1.5px solid var(--border); background: #fff; font-family: 'Jost', sans-serif; font-size: 0.84rem; }
+    .adm-field textarea { min-height: 72px; }
+    .adm-field input:focus, .adm-field textarea:focus, .adm-field select:focus { outline: none; border-color: var(--gold); }
+    .adm-field.private label::after { content: ' · PRIVATE'; color: #8E2E22; }
+    .adm-pub { display: flex; align-items: center; gap: 0.5rem; font-size: 0.72rem; color: var(--muted); margin-top: 0.3rem; }
+    .adm-card { background: #fff; border: 1px solid var(--border); padding: 1.4rem 1.6rem; margin-bottom: 1.4rem; }
+    .adm-card h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.5rem; color: var(--ink); margin-bottom: 0.9rem; }
+    .adm-status { position: fixed; bottom: 18px; right: 18px; background: var(--ink); color: #fff; padding: 0.7rem 1.1rem; font-size: 0.78rem; opacity: 0; transition: opacity 0.3s ease; z-index: 100; }
+    .adm-status.show { opacity: 1; }
+    .adm-bar { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; margin-bottom: 1.2rem; }
+    .adm-bar .btn-ink, .adm-bar .btn-primary, .adm-bar .btn-outline-dark { padding: 0.6rem 1.1rem; font-size: 0.68rem; cursor: pointer; }
+    .go-check { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.4rem 1.2rem; font-size: 0.82rem; }
+    .go-check label { display: flex; gap: 0.5rem; align-items: center; }
+    .adm-empty { max-width: 760px; margin: 4rem auto; text-align: center; }
+    .drop { border: 2px dashed var(--border); padding: 2.5rem; margin-top: 1.5rem; background: #fff; }
+    .drop.over { border-color: var(--gold); background: #FFFBEA; }
+    .assump-table { width: 100%; font-size: 0.8rem; border-collapse: collapse; }
+    .assump-table td, .assump-table th { padding: 0.45rem 0.5rem; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+    .assump-table input { width: 110px; padding: 0.35rem 0.5rem; border: 1.5px solid var(--border); font-family: 'Jost', sans-serif; font-size: 0.8rem; text-align: right; background: #FFFBEA; }
+    .assump-table input.tbd { background: #FFF1F0; border-color: #F0B9B3; }
+    .assump-table .st { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; padding: 2px 7px; }
+    .st-ASSUMED { background: #FBF1D6; color: #7A5C15; } .st-TBD { background: #FADBD8; color: #8E2E22; } .st-KNOWN { background: #DDF0E3; color: #1F6A3F; }
+    @media print { .adm-side, .adm-bar, .adm-status, .no-print { display: none !important; } .adm { display: block; } .adm-main { padding: 0; } }

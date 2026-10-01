@@ -60,8 +60,10 @@
     const loan = acq * num(a.ltv_pct) / 100;
     const interest = loan * num(a.rate_month_pct) / 100 * num(a.term_months);
     const arrangement = loan * num(a.arrangement_pct) / 100;
-    const finance = interest + arrangement;
-    const totalCost = acq + num(a.auction_fee) + tax + num(a.legal) + num(a.survey) + refurb + prof + contingency + finance;
+    const lenderCosts = num(a.lender_costs);
+    const finance = interest + arrangement + lenderCosts;
+    const holding = num(a.holding_month) * num(a.term_months);
+    const totalCost = acq + num(a.auction_fee) + tax + num(a.legal) + num(a.survey) + refurb + prof + contingency + finance + holding;
     const equity = totalCost - loan;
     const exitCosts = value * num(a.exit_agent_pct) / 100 + num(a.exit_legal);
     const grossUplift = value - acq;
@@ -71,7 +73,7 @@
     const r = {
       case: caseName, acquisition: acq, end_value: value, rent_used: rentUsed,
       auction_fee: num(a.auction_fee), tax, legal: num(a.legal), survey: num(a.survey),
-      refurb, professional: prof, contingency, loan, interest, arrangement, finance,
+      refurb, professional: prof, contingency, loan, interest, arrangement, lender_costs: lenderCosts, finance, holding,
       total_cost: totalCost, equity, exit_costs: exitCosts,
       gross_uplift: grossUplift, gross_uplift_pct: acq ? grossUplift / acq : 0,
       gross_profit: grossProfit, net_profit: netProfit,
