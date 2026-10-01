@@ -277,6 +277,11 @@ window.KEMEK_PIPELINE = {
  "changelog": [
   {
    "date": "2026-10-01",
+   "deal": "KEM-028",
+   "pr": "#17"
+  },
+  {
+   "date": "2026-10-01",
    "deal": "KEM-014",
    "pr": "#16"
   },
@@ -1743,6 +1748,59 @@ window.KEMEK_PIPELINE = {
    "auction_date": "2026-09-23",
    "stage": "Exchanged",
    "date_checked": "2026-09-28",
+   "published": true,
+   "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
+    "headline",
+    "area",
+    "outcode",
+    "region",
+    "nation",
+    "type",
+    "category",
+    "config",
+    "guide",
+    "guide_label",
+    "value",
+    "value_label",
+    "value_kind",
+    "confidence",
+    "date_checked",
+    "stage",
+    "tax",
+    "auction_date"
+   ],
+   "research_date": "2026-09-19"
+  },
+  {
+   "id": "KEM-028",
+   "headline": "4-bed semi, Harwich — online auction, guide £190k",
+   "area": "Harwich, Essex",
+   "outcode": "CO12",
+   "region": "England",
+   "nation": "England",
+   "type": "Semi-detached house",
+   "category": "Residential",
+   "config": "4 bed",
+   "guide": [
+    190000,
+    190000
+   ],
+   "guide_label": "£190k guide (plus fees) · minimum opening bid",
+   "value": [
+    285000,
+    302000,
+    325000
+   ],
+   "value_label": "£285k–£325k",
+   "value_kind": "GDV",
+   "tax": "SDLT_RES_HIGHER",
+   "confidence": "Low–Medium",
+   "auction_date": "2026-10-13",
+   "stage": "Screening",
+   "date_checked": "2026-10-01",
    "published": true,
    "public_fields": [
     "pinned",
