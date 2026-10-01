@@ -5,6 +5,7 @@ One line per correction or stage decision. The full entry (with private evidence
 | Date | Deal | PR | Entry |
 |---|---|---|---|
 | 2026-10-01 | KEM-014 | #12 | Range set to the Zoopla estimate £595k / £662k / £728k on the director's instruction (estimate, not a sale; structural note not reflected). Investor access now unlocks inside the deal page with a per-deal password. |
+| 2026-10-01 | KEM-028 | #18 | Lot page and floor plan read: 3-bed house plus 1-bed annexe and garden office; re-offered lot (guided £220,000 for the 22 Sep online auction, unsold); Low Road semi sales £208,000 (Oct 2023) and £257,000 (Feb 2021) added; conservative lowered to £260k; works £10,000 ASSUMED. |
 | 2026-10-01 | KEM-028 | #17 | KEM-028 added at Screening: 2 Brookmans Farm Cottages, Harwich CO12 3TT — Auction House East Anglia online auction closing 13 Oct 2026 11:00, guide £190,000; range £285k / £302k / £325k from the Zoopla estimate and local asking prices; the Zoopla drop from £397k to £302k is flagged. |
 | 2026-10-01 | KEM-014 | #16 | Confidence set to High on the director's instruction. |
 | 2026-10-01 | KEM-014 | #15 | Works set to £8,000–£10,000 on the director's instruction (modelled £10,000); deal-room works line updated; condition wording removed from the private record and the generic cost note. Fragment re-locked, same password. |
