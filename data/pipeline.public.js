@@ -59,7 +59,7 @@ window.KEMEK_PIPELINE = {
    "value": null,
    "unit": "£",
    "status": "TBD",
-   "note": "Architect, planning, listed-building consent, structural engineer where relevant."
+   "note": "Architect, planning, listed-building consent, specialist consultants where relevant."
   },
   {
    "key": "contingency_pct",
