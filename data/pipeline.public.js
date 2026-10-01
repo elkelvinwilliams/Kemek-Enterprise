@@ -1021,7 +1021,7 @@ window.KEMEK_PIPELINE = {
   },
   {
    "id": "KEM-014",
-   "headline": "Victorian semi, South Norwood — structural movement",
+   "headline": "Victorian semi, South Norwood — three floors with loft room",
    "area": "South Norwood, Croydon, London",
    "outcode": "SE25",
    "region": "London",
