@@ -278,6 +278,11 @@ window.KEMEK_PIPELINE = {
   {
    "date": "2026-10-01",
    "deal": "KEM-028",
+   "pr": "#21"
+  },
+  {
+   "date": "2026-10-01",
+   "deal": "KEM-028",
    "pr": "#20"
   },
   {
@@ -1795,11 +1800,11 @@ window.KEMEK_PIPELINE = {
    ],
    "guide_label": "£190k guide (plus fees) · minimum opening bid",
    "value": [
-    302000,
+    397000,
     465000,
     465000
    ],
-   "value_label": "£302k–£465k",
+   "value_label": "£397k–£465k",
    "value_kind": "GDV",
    "tax": "SDLT_RES_HIGHER",
    "confidence": "Low–Medium",
