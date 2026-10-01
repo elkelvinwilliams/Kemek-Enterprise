@@ -278,6 +278,11 @@ window.KEMEK_PIPELINE = {
   {
    "date": "2026-10-01",
    "deal": "KEM-028",
+   "pr": "#20"
+  },
+  {
+   "date": "2026-10-01",
+   "deal": "KEM-028",
    "pr": "#17"
   },
   {
@@ -1776,7 +1781,7 @@ window.KEMEK_PIPELINE = {
   },
   {
    "id": "KEM-028",
-   "headline": "4-bed semi, Harwich — online auction, guide £190k",
+   "headline": "4-bed semi with annexe, Harwich — online auction, offer £215k",
    "area": "Harwich, Essex",
    "outcode": "CO12",
    "region": "England",
@@ -1790,17 +1795,17 @@ window.KEMEK_PIPELINE = {
    ],
    "guide_label": "£190k guide (plus fees) · minimum opening bid",
    "value": [
-    260000,
     302000,
-    325000
+    465000,
+    465000
    ],
-   "value_label": "£260k–£325k",
+   "value_label": "£302k–£465k",
    "value_kind": "GDV",
    "tax": "SDLT_RES_HIGHER",
    "confidence": "Low–Medium",
    "auction_date": "2026-10-13",
    "deal_room": "deal-room/brookmans.json",
-   "stage": "Screening",
+   "stage": "Validating",
    "date_checked": "2026-10-01",
    "published": true,
    "public_fields": [
