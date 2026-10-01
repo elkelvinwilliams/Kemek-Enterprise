@@ -1783,18 +1783,18 @@ window.KEMEK_PIPELINE = {
    "nation": "England",
    "type": "Semi-detached house",
    "category": "Residential",
-   "config": "4 bed",
+   "config": "3 bed + 1-bed annexe + garden office",
    "guide": [
     190000,
     190000
    ],
    "guide_label": "£190k guide (plus fees) · minimum opening bid",
    "value": [
-    285000,
+    260000,
     302000,
     325000
    ],
-   "value_label": "£285k–£325k",
+   "value_label": "£260k–£325k",
    "value_kind": "GDV",
    "tax": "SDLT_RES_HIGHER",
    "confidence": "Low–Medium",
