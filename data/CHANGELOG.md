@@ -5,6 +5,7 @@ One line per correction or stage decision. The full entry (with private evidence
 | Date | Deal | PR | Entry |
 |---|---|---|---|
 | 2026-10-01 | KEM-014 | #12 | Range set to the Zoopla estimate £595k / £662k / £728k on the director's instruction (estimate, not a sale; structural note not reflected). Investor access now unlocks inside the deal page with a per-deal password. |
+| 2026-10-01 | KEM-028 | #24 | Director: resale or remortgage at £400,000–£425,000 is very possible. Range set to £400k / £425k / £465k (the earlier similar-house figure kept as upside). Room re-locked. |
 | 2026-10-01 | KEM-028 | #23 | Three more comparables from the Zoopla CO12 3TT search (Jubilee Close bungalow £375k, Highfield Avenue detached £575k, Barratt Radleigh £440k) added to the record, the pack and the room. |
 | 2026-10-01 | KEM-028 | #22 | Comparable-evidence screenshots (Zoopla estimate history, new-build and nearby listings) added to the investor room. |
 | 2026-10-01 | KEM-028 | #21 | Conservative case set to the April 2026 Zoopla estimate £397,000 on the director's instruction; base/upside £465,000 from similar houses. Current estimate £302,000 noted. Room re-locked. |
