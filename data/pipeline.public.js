@@ -275,6 +275,11 @@ window.KEMEK_PIPELINE = {
  ],
  "changelog": [
   {
+   "date": "2026-10-01",
+   "deal": "KEM-014",
+   "pr": "#12"
+  },
+  {
    "date": "2026-09-29",
    "deal": "KEM-027",
    "pr": "#12"
@@ -992,7 +997,7 @@ window.KEMEK_PIPELINE = {
   },
   {
    "id": "KEM-014",
-   "headline": "Victorian semi, South Norwood",
+   "headline": "Victorian semi, South Norwood — structural movement",
    "area": "South Norwood, Croydon, London",
    "outcode": "SE25",
    "region": "London",
@@ -1001,10 +1006,10 @@ window.KEMEK_PIPELINE = {
    "category": "Residential",
    "config": "3 bed",
    "guide": [
-    300000,
-    300000
+    160000,
+    160000
    ],
-   "guide_label": "£300k+ current guide",
+   "guide_label": "£160k+ guide (plus fees)",
    "value": [
     425000,
     475000,
@@ -1013,10 +1018,10 @@ window.KEMEK_PIPELINE = {
    "value_label": "£425k–£525k",
    "value_kind": "GDV",
    "tax": "SDLT_RES_HIGHER",
-   "confidence": "Medium",
+   "confidence": "Low–Medium",
+   "stage": "Validating",
    "auction_date": "2026-10-07",
-   "date_checked": "2026-09-19",
-   "stage": "Screening",
+   "date_checked": "2026-10-01",
    "published": true,
    "public_fields": [
     "pinned",

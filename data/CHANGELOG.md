@@ -4,6 +4,7 @@ One line per correction or stage decision. The full entry (with private evidence
 
 | Date | Deal | PR | Entry |
 |---|---|---|---|
+| 2026-10-01 | KEM-014 | #12 | 62 Crowther Road corrected from the lot page: Lot 89, guide £160,000+ (not £300k+); significant structural movement per the auctioneer; structural repair TBD, counted £0 and flagged; stage Validating. |
 | 2026-09-29 | KEM-027 | #12 | Confidence raised Medium → High on the director's instruction; Cockrams Survey Ltd report copy not yet on file. |
 | 2026-09-28 | KEM-027 | #12 | Lender's valuation reported: Cockrams Survey Ltd, £950,000–£1,200,000. Value basis changed from director's assessment to the valuer's figure; confidence Low → Medium pending the report copy. |
 | 2026-09-28 | KEM-027 | #12 | Added and pinned first: 1 Little Horwood Manor, won at auction 23 Sep 2026 at £450,000 (guide £425,000+); stage Exchanged; value is the director's assessment £950k–£1.2m pending RICS, evidence-led range £650k–£750k recorded beside it. |
