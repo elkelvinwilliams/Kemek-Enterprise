@@ -4,6 +4,7 @@ One line per correction or stage decision. The full entry (with private evidence
 
 | Date | Deal | PR | Entry |
 |---|---|---|---|
+| 2026-10-01 | KEM-014 | #12 | Floor plan read (114 sqm / 1,228 sq ft). Director set bid £200,000 open/offer, £210,000 ceiling; works £5,000 clean and repaint on instruction (structural note stands); deposit partner £10,000 at 35%; password-locked investor deal room added. |
 | 2026-10-01 | KEM-014 | #12 | 62 Crowther Road corrected from the lot page: Lot 89, guide £160,000+ (not £300k+); significant structural movement per the auctioneer; structural repair TBD, counted £0 and flagged; stage Validating. |
 | 2026-09-29 | KEM-027 | #12 | Confidence raised Medium → High on the director's instruction; Cockrams Survey Ltd report copy not yet on file. |
 | 2026-09-28 | KEM-027 | #12 | Lender's valuation reported: Cockrams Survey Ltd, £950,000–£1,200,000. Value basis changed from director's assessment to the valuer's figure; confidence Low → Medium pending the report copy. |

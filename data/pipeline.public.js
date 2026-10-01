@@ -271,9 +271,15 @@ window.KEMEK_PIPELINE = {
   "bid_limits",
   "value_basis",
   "funding_target",
-  "jv"
+  "jv",
+  "works_basis"
  ],
  "changelog": [
+  {
+   "date": "2026-10-01",
+   "deal": "KEM-014",
+   "pr": "#12"
+  },
   {
    "date": "2026-10-01",
    "deal": "KEM-014",
@@ -362,6 +368,7 @@ window.KEMEK_PIPELINE = {
    "public_fields": [
     "pinned",
     "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -413,6 +420,7 @@ window.KEMEK_PIPELINE = {
    "public_fields": [
     "pinned",
     "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -464,6 +472,7 @@ window.KEMEK_PIPELINE = {
    "public_fields": [
     "pinned",
     "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -515,6 +524,7 @@ window.KEMEK_PIPELINE = {
    "public_fields": [
     "pinned",
     "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -566,6 +576,7 @@ window.KEMEK_PIPELINE = {
    "public_fields": [
     "pinned",
     "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -617,6 +628,7 @@ window.KEMEK_PIPELINE = {
    "public_fields": [
     "pinned",
     "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -668,6 +680,7 @@ window.KEMEK_PIPELINE = {
    "public_fields": [
     "pinned",
     "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -719,6 +732,7 @@ window.KEMEK_PIPELINE = {
    "public_fields": [
     "pinned",
     "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -770,6 +784,7 @@ window.KEMEK_PIPELINE = {
    "public_fields": [
     "pinned",
     "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -821,6 +836,7 @@ window.KEMEK_PIPELINE = {
    "public_fields": [
     "pinned",
     "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -872,6 +888,7 @@ window.KEMEK_PIPELINE = {
    "public_fields": [
     "pinned",
     "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -923,6 +940,7 @@ window.KEMEK_PIPELINE = {
    "public_fields": [
     "pinned",
     "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -974,6 +992,7 @@ window.KEMEK_PIPELINE = {
    "public_fields": [
     "pinned",
     "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -1004,7 +1023,7 @@ window.KEMEK_PIPELINE = {
    "nation": "England",
    "type": "Semi-detached house",
    "category": "Residential",
-   "config": "3 bed",
+   "config": "3 bed + loft room",
    "guide": [
     160000,
     160000
@@ -1020,12 +1039,14 @@ window.KEMEK_PIPELINE = {
    "tax": "SDLT_RES_HIGHER",
    "confidence": "Low–Medium",
    "stage": "Validating",
+   "deal_room": "deal-room/crowther.html",
    "auction_date": "2026-10-07",
    "date_checked": "2026-10-01",
    "published": true,
    "public_fields": [
     "pinned",
     "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -1078,6 +1099,7 @@ window.KEMEK_PIPELINE = {
    "public_fields": [
     "pinned",
     "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -1130,6 +1152,7 @@ window.KEMEK_PIPELINE = {
    "public_fields": [
     "pinned",
     "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -1182,6 +1205,7 @@ window.KEMEK_PIPELINE = {
    "public_fields": [
     "pinned",
     "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -1234,6 +1258,7 @@ window.KEMEK_PIPELINE = {
    "public_fields": [
     "pinned",
     "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -1286,6 +1311,7 @@ window.KEMEK_PIPELINE = {
    "public_fields": [
     "pinned",
     "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -1338,6 +1364,7 @@ window.KEMEK_PIPELINE = {
    "public_fields": [
     "pinned",
     "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -1390,6 +1417,7 @@ window.KEMEK_PIPELINE = {
    "public_fields": [
     "pinned",
     "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -1442,6 +1470,7 @@ window.KEMEK_PIPELINE = {
    "public_fields": [
     "pinned",
     "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -1494,6 +1523,7 @@ window.KEMEK_PIPELINE = {
    "public_fields": [
     "pinned",
     "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -1546,6 +1576,7 @@ window.KEMEK_PIPELINE = {
    "public_fields": [
     "pinned",
     "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -1598,6 +1629,7 @@ window.KEMEK_PIPELINE = {
    "public_fields": [
     "pinned",
     "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -1650,6 +1682,7 @@ window.KEMEK_PIPELINE = {
    "public_fields": [
     "pinned",
     "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
@@ -1704,6 +1737,7 @@ window.KEMEK_PIPELINE = {
    "public_fields": [
     "pinned",
     "value_source",
+    "deal_room",
     "headline",
     "area",
     "outcode",
