@@ -1,14 +1,16 @@
 // Lock a private HTML page with a password (AES-256-GCM, PBKDF2-SHA256 310k iterations) so it can live on GitHub Pages.
 // Usage: node tools/lock-page.cjs <plain.html> <out.html> <password> ["Title"]
+//        node tools/lock-page.cjs --fragment <fragment.html> <out.json> <password>   → JSON payload the deal page unlocks in place
 // The output page holds only ciphertext; the browser derives the key from the password and decrypts locally.
 const crypto = require('crypto'), fs = require('fs');
-const [,, src, out, password, title = 'Kemek deal room'] = process.argv;
+const args = process.argv.slice(2); const frag = args.includes('--fragment'); const [src, out, password, title = 'Kemek deal room'] = args.filter(a => a !== '--fragment');
 if (!src || !out || !password) { console.error('usage: node tools/lock-page.cjs <plain.html> <out.html> <password> [title]'); process.exit(1); }
 const salt = crypto.randomBytes(16), iv = crypto.randomBytes(12);
 const key = crypto.pbkdf2Sync(password, salt, 310000, 32, 'sha256');
 const c = crypto.createCipheriv('aes-256-gcm', key, iv);
 const ct = Buffer.concat([c.update(fs.readFileSync(src)), c.final(), c.getAuthTag()]);
 const b64 = b => b.toString('base64');
+if (frag) { fs.writeFileSync(out, JSON.stringify({ v: 1, kdf: 'PBKDF2-SHA256-310000', salt: b64(salt), iv: b64(iv), ct: b64(ct) })); console.log('locked fragment', out, Math.round(ct.length / 1024) + ' KB'); process.exit(0); }
 fs.writeFileSync(out, `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>${title}</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#0E2542,#0A1A30 58%,#050D1A);font-family:Jost,sans-serif;color:#F8F6F1}

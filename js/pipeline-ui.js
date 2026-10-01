@@ -252,6 +252,24 @@
     document.title = `${d.headline} | Deal Pipeline | Kemek Enterprise`;
     const b = base(d);
     const commercial = d.value_kind && /income/i.test(d.value_kind);
+    const roomBtn = () => document.getElementById('btn-investor');
+    const b64u = x => Uint8Array.from(atob(x), c => c.charCodeAt(0));
+    const openRoom = async (pass) => {
+      const err = document.getElementById('investor-err'); err.textContent = 'Checking…';
+      try {
+        const payload = await (await fetch(d.deal_room, { cache: 'no-store' })).json();
+        const km = await crypto.subtle.importKey('raw', new TextEncoder().encode(pass), 'PBKDF2', false, ['deriveKey']);
+        const key = await crypto.subtle.deriveKey({ name: 'PBKDF2', salt: b64u(payload.salt), iterations: 310000, hash: 'SHA-256' }, km, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
+        const pt = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: b64u(payload.iv) }, key, b64u(payload.ct));
+        document.getElementById('investor-content').innerHTML = new TextDecoder().decode(pt);
+        document.getElementById('investor-gate').hidden = true; err.textContent = '';
+      } catch (e) { err.textContent = 'That password did not open the room.'; }
+    };
+    setTimeout(() => {
+      const b = roomBtn(); if (!b) return;
+      b.addEventListener('click', () => { const r = document.getElementById('investor-room'); r.hidden = false; r.scrollIntoView({ behavior: 'smooth' }); document.getElementById('investor-pass').focus(); });
+      document.getElementById('investor-form').addEventListener('submit', e => { e.preventDefault(); openRoom(document.getElementById('investor-pass').value); });
+    }, 0);
     document.getElementById('deal-hero').innerHTML = `
       <span class="section-label fade-up fade-up-1" style="color:var(--gold)">${esc(d.id)} · ${esc(d.category)} · ${esc(d.nation)} · <span class="deal-badge ${stageClass(d.stage)}">${esc(d.stage)}</span></span>
       <h1 class="font-serif text-white text-4xl sm:text-5xl lg:text-6xl font-semibold fade-up fade-up-2">${esc(d.headline)}</h1>
@@ -264,7 +282,13 @@
         <div><span>Confidence</span><b><span class="conf ${confClass(d.confidence)}">${esc(d.confidence)}</span></b><small>checked ${fmtDate(d.date_checked)}${d.auction_date ? ' · auction ' + fmtDate(d.auction_date) : ''}</small></div>
       </div>
       <p class="deal-basis"><b>Value basis:</b> ${esc(d.value_kind)}. ${commercial ? 'This is a commercial investment — its value is modelled from current rent, ERV, yield and occupancy, and is never described as GDV.' : 'The range is an analytical estimate built from local evidence; it is not a formal valuation.'} ${/development upside separate/i.test(d.value_kind) ? 'Any planning or development upside is kept separate and is not included in any case.' : ''}</p>
-      <div class="deal-actions"><button class="btn-outline-dark" data-evidence="${esc(d.id)}">Evidence &amp; sources</button><a class="btn-primary" href="contact.html#book">Register interest</a>${d.deal_room ? `<a class="btn-outline-dark" href="${esc(d.deal_room)}">Investor deal room · password</a>` : ''}<a class="deal-link" href="pipeline.html">← All opportunities</a></div>
+      <div class="deal-actions"><button class="btn-outline-dark" data-evidence="${esc(d.id)}">Evidence &amp; sources</button><a class="btn-primary" href="contact.html#book">Register interest</a>${d.deal_room ? `<button class="btn-outline-dark" id="btn-investor">Investor access · password</button>` : ''}<a class="deal-link" href="pipeline.html">← All opportunities</a></div>
+      <section class="mt-10" id="investor-room" hidden><span class="section-label" style="color:var(--gold)">Investor access · private</span><span class="accent-line"></span>
+        <div id="investor-gate" style="max-width:520px;border:1px solid var(--border);padding:1.4rem 1.6rem;background:#fff">
+          <p class="text-sm" style="color:var(--muted)">This deal's investor room holds the photographs, Kemek's bid figures and the full numbers. Enter the password Kemek gave you; nothing is stored and nothing leaves your browser.</p>
+          <form id="investor-form" class="mt-3" style="display:flex;gap:.6rem;flex-wrap:wrap"><input id="investor-pass" type="password" placeholder="Password" autocomplete="off" style="flex:1;min-width:200px;padding:.7rem .9rem;border:1.5px solid var(--border);font-family:Jost"><button class="btn-primary" type="submit">Open</button></form>
+          <p id="investor-err" class="text-sm mt-2" style="color:#8E2E22;min-height:1.2em"></p></div>
+        <div id="investor-content"></div></section>
       <section class="mt-14"><span class="section-label">Conservative · Base · Upside</span><span class="accent-line"></span><h2 class="font-serif text-3xl text-ink">Run the numbers</h2>
       <p class="mt-3 mb-6" style="color:var(--muted)">Every required calculation, live. Change any assumption and all three cases recalculate. Red fields are TBD — nothing is invented.</p>
       <div id="deal-calc">${calcMarkup(d)}</div></section>`;
