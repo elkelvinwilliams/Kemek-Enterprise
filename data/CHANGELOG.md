@@ -5,6 +5,7 @@ One line per correction or stage decision. The full entry (with private evidence
 | Date | Deal | PR | Entry |
 |---|---|---|---|
 | 2026-10-01 | KEM-014 | #12 | Range set to the Zoopla estimate £595k / £662k / £728k on the director's instruction (estimate, not a sale; structural note not reflected). Investor access now unlocks inside the deal page with a per-deal password. |
+| 2026-10-01 | KEM-028 | #26 | Director: no profit share on this deal — Kemek 100%. Room reworded: investor option is £10,000 towards the deposit, £20,000 back on drawdown of the bridge. Fragment re-locked. |
 | 2026-10-01 | KEM-028 | #25 | Confidence set to High on the director's instruction. |
 | 2026-10-01 | KEM-028 | #24 | Director: resale or remortgage at £400,000–£425,000 is very possible, £440,000 upside. Range set to £400k / £425k / £440k. Room re-locked. |
 | 2026-10-01 | KEM-028 | #23 | Three more comparables from the Zoopla CO12 3TT search (Jubilee Close bungalow £375k, Highfield Avenue detached £575k, Barratt Radleigh £440k) added to the record, the pack and the room. |
