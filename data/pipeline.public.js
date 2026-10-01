@@ -277,6 +277,11 @@ window.KEMEK_PIPELINE = {
  "changelog": [
   {
    "date": "2026-10-01",
+   "deal": "KEM-027",
+   "pr": "#27"
+  },
+  {
+   "date": "2026-10-01",
    "deal": "KEM-028",
    "pr": "#25"
   },
@@ -1742,6 +1747,7 @@ window.KEMEK_PIPELINE = {
   {
    "id": "KEM-027",
    "pinned": true,
+   "deal_room": "deal-room/horwood.json",
    "value_source": "Valuation by Cockrams Survey Ltd for the bridging lender · reported 28 Sep 2026",
    "headline": "Grade II listed house in a former manor estate — WON at auction",
    "area": "Little Horwood, Milton Keynes",
