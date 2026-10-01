@@ -5,6 +5,7 @@ One line per correction or stage decision. The full entry (with private evidence
 | Date | Deal | PR | Entry |
 |---|---|---|---|
 | 2026-10-01 | KEM-014 | #12 | Range set to the Zoopla estimate £595k / £662k / £728k on the director's instruction (estimate, not a sale; structural note not reflected). Investor access now unlocks inside the deal page with a per-deal password. |
+| 2026-10-01 | KEM-028 | #22 | Comparable-evidence screenshots (Zoopla estimate history, new-build and nearby listings) added to the investor room. |
 | 2026-10-01 | KEM-028 | #21 | Conservative case set to the April 2026 Zoopla estimate £397,000 on the director's instruction; base/upside £465,000 from similar houses. Current estimate £302,000 noted. Room re-locked. |
 | 2026-10-01 | KEM-028 | #20 | Director set the offer at £215,000 (open at the £190,000 guide) and the resale at £465,000 from Zoopla listings of similar houses; adopted as base/upside with the house's own £302,000 estimate as the conservative case. Stage Validating. Deal room re-locked. |
 | 2026-10-01 | KEM-028 | #19 | Password-locked investor room added to the deal page (encrypted fragment deal-room/brookmans.json): photographs, accommodation, value evidence, plan, illustrative arithmetic at the guide, next steps. |
