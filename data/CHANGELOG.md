@@ -5,6 +5,7 @@ One line per correction or stage decision. The full entry (with private evidence
 | Date | Deal | PR | Entry |
 |---|---|---|---|
 | 2026-10-01 | KEM-014 | #12 | Range set to the Zoopla estimate £595k / £662k / £728k on the director's instruction (estimate, not a sale; structural note not reflected). Investor access now unlocks inside the deal page with a per-deal password. |
+| 2026-10-02 | KEM-028 | #29 | Investor option (£10,000 in / £20,000 back) withdrawn on the director's instruction: Kemek is the only party and funds the whole deposit (5–10%) and all costs itself. Room re-locked without the option; pack 04 is now the funding and deposit plan. |
 | 2026-10-01 | KEM-027 | #28 | Investor room unlinked from the deal page on the director's instruction: the password link was for Brookmans (KEM-028), not Horwood. The Horwood investor receives the agreement and security pack directly by email. |
 | 2026-10-01 | KEM-027 | #27 | Password-locked investor room added to the deal page (encrypted fragment deal-room/horwood.json): the £10,000 in / £20,000 back fixed-return option, purchase facts, photographs and value evidence. |
 | 2026-10-01 | KEM-028 | #26 | Director: no profit share on this deal — Kemek 100%. Room reworded: investor option is £10,000 towards the deposit, £20,000 back on drawdown of the bridge. Fragment re-locked. |
