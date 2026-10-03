@@ -5,6 +5,7 @@ One line per correction or stage decision. The full entry (with private evidence
 | Date | Deal | PR | Entry |
 |---|---|---|---|
 | 2026-10-01 | KEM-014 | #12 | Range set to the Zoopla estimate £595k / £662k / £728k on the director's instruction (estimate, not a sale; structural note not reflected). Investor access now unlocks inside the deal page with a per-deal password. |
+| 2026-10-03 | KEM-029 | #31 | New record: Land Adjacent to 14 Littledale, Green Street Green Road, Dartford DA2 7HU — Auction House London Lot 245, 7 Oct 09:30, guide £30,000+ plus fees, 0.55 acres freehold, no planning consent. Value NOT ASSESSED, confidence Low, stage Screening; modelled as a cash purchase with fees TBD. |
 | 2026-10-03 | KEM-027 | #30 | Investor room rebuilt for a named deposit contributor: £40,000 in, £60,000 back within five business days of the bridge paying out, long-stop three months, no security. Codename room — no address, lot, auctioneer or valuer named; public card area changed to Buckinghamshire to match. |
 | 2026-10-02 | KEM-028 | #29 | Investor option (£10,000 in / £20,000 back) withdrawn on the director's instruction: Kemek is the only party and funds the whole deposit (5–10%) and all costs itself. Room re-locked without the option; pack 04 is now the funding and deposit plan. |
 | 2026-10-01 | KEM-027 | #28 | Investor room unlinked from the deal page on the director's instruction: the password link was for Brookmans (KEM-028), not Horwood. The Horwood investor receives the agreement and security pack directly by email. |
