@@ -1869,11 +1869,11 @@ window.KEMEK_PIPELINE = {
    ],
    "guide_label": "£445k+ guide (plus fees)",
    "value": [
-    600000,
-    638000,
-    688000
+    690000,
+    760000,
+    860000
    ],
-   "value_label": "£600k–£688k",
+   "value_label": "£690k–£860k",
    "value_kind": "GDV",
    "tax": "SDLT_RES_HIGHER",
    "confidence": "Low",
