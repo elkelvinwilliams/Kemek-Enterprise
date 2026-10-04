@@ -1878,7 +1878,7 @@ window.KEMEK_PIPELINE = {
    "tax": "SDLT_RES_HIGHER",
    "confidence": "Low",
    "auction_date": "2026-10-21",
-   "stage": "Screening",
+   "stage": "Validating",
    "date_checked": "2026-10-04",
    "published": true,
    "public_fields": [
