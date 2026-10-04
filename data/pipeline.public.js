@@ -1855,25 +1855,25 @@ window.KEMEK_PIPELINE = {
   },
   {
    "id": "KEM-031",
-   "headline": "4-bed detached cottage with garage and gym, Crays Hill — £445k+ guide, livestream auction 21 Oct",
+   "headline": "Detached 1850s cottage, 119 sq m, with office/gym and garden room, Crays Hill — £445k+ guide, 21 Oct",
    "area": "Crays Hill, Billericay, Essex",
    "outcode": "CM11",
    "region": "East of England",
    "nation": "England",
-   "type": "Detached house",
+   "type": "Detached house (c.1850)",
    "category": "Residential",
-   "config": "4 bed · 1 bath · 1 reception · garage · gym (search summary)",
+   "config": "4 bed (two box rooms) · bathroom + en-suite WC · 2 receptions · kitchen/diner · garage · office/gym with WC · garden room with mezzanine",
    "guide": [
     445000,
     445000
    ],
    "guide_label": "£445k+ guide (plus fees)",
    "value": [
-    525000,
-    575000,
-    625000
+    500000,
+    550000,
+    600000
    ],
-   "value_label": "£525k–£625k",
+   "value_label": "£500k–£600k",
    "value_kind": "GDV",
    "tax": "SDLT_RES_HIGHER",
    "confidence": "Low",
