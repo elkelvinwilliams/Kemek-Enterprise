@@ -65,6 +65,10 @@ test('engine: SDLT higher-rate bands at £220,000 = £12,900', () => {
   assert.equal(E.taxFor(data.tax_tables.SDLT_RES_HIGHER, 220000), 12900);
 });
 
+test('engine: SDLT standard bands (individual, only dwelling) at £480,000 = £14,000', () => {
+  assert.equal(E.taxFor(data.tax_tables.SDLT_RES_STD, 480000), 14000);
+});
+
 test('exactly one deal is pinned and it leads the pipeline', () => {
   const pinned = data.deals.filter(d => d.pinned);
   assert.equal(pinned.length, 1, 'one pinned deal');
