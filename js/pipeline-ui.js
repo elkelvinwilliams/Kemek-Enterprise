@@ -243,8 +243,8 @@
   /* ─── Detail page ─────────────────────────────────────────────────────── */
   const detail = document.getElementById('deal-detail');
   if (detail) {
-    const id = new URLSearchParams(location.search).get('id');
-    const d = D.deals.find(x => x.id === id);
+    const id = (new URLSearchParams(location.search).get('id') || '').trim().toUpperCase();
+    const d = D.deals.find(x => x.id.toUpperCase() === id);
     if (!d) {
       detail.innerHTML = `<div class="max-w-3xl mx-auto text-center py-24"><span class="section-label">Deal Pipeline</span><h1 class="font-serif text-4xl text-ink">That opportunity isn't published</h1><p class="mt-4" style="color:var(--muted)">It may have moved into a private deal room or been withdrawn. <a class="deal-link" href="pipeline.html">Back to the pipeline →</a></p></div>`;
       return;
