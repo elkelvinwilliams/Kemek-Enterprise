@@ -278,6 +278,11 @@ window.KEMEK_PIPELINE = {
   {
    "date": "2026-10-16",
    "deal": "KEM-031",
+   "pr": "#51"
+  },
+  {
+   "date": "2026-10-16",
+   "deal": "KEM-031",
    "pr": "#50"
   },
   {
@@ -1940,7 +1945,8 @@ window.KEMEK_PIPELINE = {
     "auction_date"
    ],
    "research_date": "2026-09-19",
-   "value_source": "Director's view after light works, 16 Oct 2026: £650k / £700k / £770k · evidence beside it: Rightmove estimate £638,000 (3 Oct 2026, range £600k–£675k); sold £/sq m £432k–£518k for the house alone"
+   "value_source": "Director's view after light works, 16 Oct 2026: £650k / £700k / £770k · evidence beside it: Rightmove estimate £638,000 (3 Oct 2026, range £600k–£675k); sold £/sq m £432k–£518k for the house alone",
+   "deal_room": "deal-room/gardiners.json"
   },
   {
    "id": "KEM-030",
