@@ -198,7 +198,7 @@
     </div>
   </footer>
 
-  <script src="data/pipeline.public.js"></script>
+  <script>document.write('<script src="data/pipeline.public.js?v=' + Math.floor(Date.now() / 60000) + '"><\/script>');</script> <!-- minute-stamped so a cached copy never hides a new deal -->
   <script src="js/pipeline-engine.js"></script>
   <script src="js/main.js" defer></script>
   <script src="js/pipeline-ui.js" defer></script>
