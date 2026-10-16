@@ -305,6 +305,11 @@ window.KEMEK_PIPELINE = {
   {
    "date": "2026-10-16",
    "deal": "KEM-031",
+   "pr": "#55"
+  },
+  {
+   "date": "2026-10-16",
+   "deal": "KEM-031",
    "pr": "#54"
   },
   {
@@ -1958,7 +1963,7 @@ window.KEMEK_PIPELINE = {
    "value_label": "£650k–£770k",
    "value_kind": "GDV",
    "tax": "SDLT_RES_STD",
-   "confidence": "Low",
+   "confidence": "High",
    "auction_date": "2026-10-21",
    "stage": "Bid / Offer",
    "date_checked": "2026-10-16",
