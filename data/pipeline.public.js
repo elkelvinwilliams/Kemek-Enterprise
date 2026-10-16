@@ -278,6 +278,11 @@ window.KEMEK_PIPELINE = {
   {
    "date": "2026-10-16",
    "deal": "KEM-032",
+   "pr": "#45"
+  },
+  {
+   "date": "2026-10-16",
+   "deal": "KEM-032",
    "pr": "#44"
   },
   {
@@ -2026,7 +2031,7 @@ window.KEMEK_PIPELINE = {
   {
    "id": "KEM-032",
    "deal_room": "deal-room/hillway.json",
-   "value_source": "Rightmove estimate £600,000, range £525k–£675k (30 Sep 2026) from the director's screenshot · an estimate, not a sale; subsidence not reflected · cross-check 132 sq m × Woburn Sands £/sq m = £495k–£649k",
+   "value_source": "Director's view of the house after turnaround, 16 Oct 2026: £600k / £660k / £750k · evidence beside it: Rightmove estimate £600,000 (range £525k–£675k, subsidence not reflected); 132 sq m × Woburn Sands £/sq m = £495k–£649k",
    "headline": "Detached 4-bed bungalow, 132 sq m, on a 0.13-acre plot, Woburn Sands — subsidence stabilised, structural repair needed; £375k–£400k guide, 12 Nov",
    "area": "Woburn Sands, Milton Keynes, Buckinghamshire",
    "outcode": "MK17",
@@ -2041,12 +2046,12 @@ window.KEMEK_PIPELINE = {
    ],
    "guide_label": "£375k–£400k guide (plus fees)",
    "value": [
-    525000,
     600000,
-    675000
+    660000,
+    750000
    ],
-   "value_label": "£525k–£675k",
-   "value_kind": "GDV · as a repaired bungalow · development upside separate",
+   "value_label": "£600k–£750k",
+   "value_kind": "GDV · after turnaround · development upside separate",
    "tax": "SDLT_RES_HIGHER",
    "confidence": "Low",
    "auction_date": "2026-11-12",
