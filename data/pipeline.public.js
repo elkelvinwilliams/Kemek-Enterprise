@@ -246,6 +246,33 @@ window.KEMEK_PIPELINE = {
    ],
    "flat_pct": 0.08,
    "note": "ADS 8% on the full price for a company / additional dwelling."
+  },
+  "SDLT_RES_STD": {
+   "label": "SDLT — residential, standard rates (individual buying their only dwelling)",
+   "bands": [
+    [
+     0,
+     0.0
+    ],
+    [
+     125000,
+     0.02
+    ],
+    [
+     250000,
+     0.05
+    ],
+    [
+     925000,
+     0.1
+    ],
+    [
+     1500000,
+     0.12
+    ]
+   ],
+   "flat_pct": 0.0,
+   "note": "Applies to an individual who owns no other dwelling at completion. First-time buyer relief (0% to £300,000, 5% to £500,000, none above £500,000) is not modelled: it also requires the buyer to occupy the dwelling as their only or main residence."
   }
  },
  "private_fields": [
@@ -275,6 +302,11 @@ window.KEMEK_PIPELINE = {
   "works_basis"
  ],
  "changelog": [
+  {
+   "date": "2026-10-16",
+   "deal": "KEM-031",
+   "pr": "#54"
+  },
   {
    "date": "2026-10-16",
    "deal": "KEM-031",
@@ -1925,7 +1957,7 @@ window.KEMEK_PIPELINE = {
    ],
    "value_label": "£650k–£770k",
    "value_kind": "GDV",
-   "tax": "SDLT_RES_HIGHER",
+   "tax": "SDLT_RES_STD",
    "confidence": "Low",
    "auction_date": "2026-10-21",
    "stage": "Bid / Offer",
