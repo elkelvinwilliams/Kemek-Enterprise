@@ -277,6 +277,11 @@ window.KEMEK_PIPELINE = {
  "changelog": [
   {
    "date": "2026-10-16",
+   "deal": "KEM-031",
+   "pr": "#50"
+  },
+  {
+   "date": "2026-10-16",
    "deal": "KEM-032",
    "pr": "#49"
   },
@@ -1899,17 +1904,17 @@ window.KEMEK_PIPELINE = {
    ],
    "guide_label": "£445k+ guide (plus fees)",
    "value": [
-    690000,
-    760000,
-    860000
+    650000,
+    700000,
+    770000
    ],
-   "value_label": "£690k–£860k",
+   "value_label": "£650k–£770k",
    "value_kind": "GDV",
    "tax": "SDLT_RES_HIGHER",
    "confidence": "Low",
    "auction_date": "2026-10-21",
    "stage": "Validating",
-   "date_checked": "2026-10-04",
+   "date_checked": "2026-10-16",
    "published": true,
    "public_fields": [
     "pinned",
@@ -1934,7 +1939,8 @@ window.KEMEK_PIPELINE = {
     "tax",
     "auction_date"
    ],
-   "research_date": "2026-09-19"
+   "research_date": "2026-09-19",
+   "value_source": "Director's view after light works, 16 Oct 2026: £650k / £700k / £770k · evidence beside it: Rightmove estimate £638,000 (3 Oct 2026, range £600k–£675k); sold £/sq m £432k–£518k for the house alone"
   },
   {
    "id": "KEM-030",
