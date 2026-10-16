@@ -278,6 +278,11 @@ window.KEMEK_PIPELINE = {
   {
    "date": "2026-10-16",
    "deal": "KEM-031",
+   "pr": "#53"
+  },
+  {
+   "date": "2026-10-16",
+   "deal": "KEM-031",
    "pr": "#52"
   },
   {
@@ -1900,7 +1905,7 @@ window.KEMEK_PIPELINE = {
   },
   {
    "id": "KEM-031",
-   "headline": "Detached 1850s cottage, 119 sq m, with office/gym and garden room, Crays Hill — pre-auction offer of £490k awaiting acceptance",
+   "headline": "Detached 1850s cottage, 119 sq m, with office/gym and garden room, Crays Hill — pre-auction offer of £480k awaiting acceptance",
    "area": "Crays Hill, Billericay, Essex",
    "outcode": "CM11",
    "region": "East of England",
@@ -1909,10 +1914,10 @@ window.KEMEK_PIPELINE = {
    "category": "Residential",
    "config": "4 bed (two box rooms) · bathroom + en-suite WC · 2 receptions · kitchen/diner · garage · office/gym with WC · garden room with mezzanine",
    "guide": [
-    490000,
-    490000
+    480000,
+    480000
    ],
-   "guide_label": "Pre-auction offer £490,000 · awaiting acceptance · guide was £445k+ (plus fees)",
+   "guide_label": "Pre-auction offer £480,000 · awaiting acceptance · guide was £445k+ (plus fees)",
    "value": [
     650000,
     700000,
