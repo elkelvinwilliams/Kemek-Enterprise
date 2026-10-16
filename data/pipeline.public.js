@@ -276,6 +276,11 @@ window.KEMEK_PIPELINE = {
  ],
  "changelog": [
   {
+   "date": "2026-10-16",
+   "deal": "KEM-032",
+   "pr": "#43"
+  },
+  {
    "date": "2026-10-01",
    "deal": "KEM-027",
    "pr": "#27"
@@ -1987,6 +1992,61 @@ window.KEMEK_PIPELINE = {
    "deal_room": "deal-room/brookmans.json",
    "stage": "Validating",
    "date_checked": "2026-10-01",
+   "published": true,
+   "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
+    "headline",
+    "area",
+    "outcode",
+    "region",
+    "nation",
+    "type",
+    "category",
+    "config",
+    "guide",
+    "guide_label",
+    "value",
+    "value_label",
+    "value_kind",
+    "confidence",
+    "date_checked",
+    "stage",
+    "tax",
+    "auction_date"
+   ],
+   "research_date": "2026-09-19"
+  },
+  {
+   "id": "KEM-032",
+   "deal_room": "deal-room/hillway.json",
+   "value_source": "Analytical range as a repaired bungalow — Woburn Sands £/sq m and a local bungalow asking price · search summary 16 Oct 2026",
+   "headline": "Detached 4-bed bungalow on a 0.13-acre plot, Woburn Sands — subsidence stabilised, structural repair needed; £375k–£400k guide, 12 Nov",
+   "area": "Woburn Sands, Milton Keynes, Buckinghamshire",
+   "outcode": "MK17",
+   "region": "South East",
+   "nation": "England",
+   "type": "Detached bungalow",
+   "category": "Residential",
+   "config": "4 bed · lounge · dining room · kitchen · utility · cloakroom · bathroom · garage 20'0 × 10'10 · gated driveway · c.0.13-acre plot",
+   "guide": [
+    375000,
+    400000
+   ],
+   "guide_label": "£375k–£400k guide (plus fees)",
+   "value": [
+    450000,
+    525000,
+    575000
+   ],
+   "value_label": "£450k–£575k",
+   "value_kind": "GDV · as a repaired bungalow · development upside separate",
+   "tax": "SDLT_RES_HIGHER",
+   "confidence": "Low",
+   "auction_date": "2026-11-12",
+   "stage": "Screening",
+   "date_checked": "2026-10-16",
    "published": true,
    "public_fields": [
     "pinned",
