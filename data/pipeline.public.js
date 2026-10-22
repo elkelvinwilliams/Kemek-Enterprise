@@ -303,6 +303,11 @@ window.KEMEK_PIPELINE = {
  ],
  "changelog": [
   {
+   "date": "2026-10-22",
+   "deal": "KEM-033",
+   "pr": "#56"
+  },
+  {
    "date": "2026-10-16",
    "deal": "KEM-031",
    "pr": "#55"
@@ -2155,6 +2160,60 @@ window.KEMEK_PIPELINE = {
     "auction_date"
    ],
    "research_date": "2026-09-19"
+  },
+  {
+   "id": "KEM-033",
+   "deal_room": "deal-room/longitude.json",
+   "value_source": "Analytical range £200k / £230k / £260k after a lease extension, from: Flat 53 sold £298,000 (Sep 2020); Rightmove estimate £260,000 (range £210k–£310k, 5 Oct 2026); similar flats nearby £295,000 (range £240k–£350k); shared-ownership full values in the block £280,000–£350,000 (2026); Flat 58 in the block sold £182,650 (Apr 2024)",
+   "headline": "Two-bed first-floor flat, 71 sq m, a hundred yards from East Croydon station — purchase agreed at £165,000 through the auctioneer; completion 1 December",
+   "area": "Addiscombe Grove, East Croydon",
+   "outcode": "CR0",
+   "region": "London",
+   "nation": "England",
+   "type": "Flat",
+   "category": "Residential",
+   "config": "2 bed · 1 bath · open-plan kitchen/living · balcony · 71 sq m · first floor · built 2010 · leasehold, c.82 years unexpired · East Croydon station 0.1 miles",
+   "guide": [
+    165000,
+    165000
+   ],
+   "guide_label": "Purchase price £165,000 · auction sales memorandum · completion 1 December 2026 (subject to exchange)",
+   "value": [
+    200000,
+    230000,
+    260000
+   ],
+   "value_label": "£200k–£260k",
+   "value_kind": "Resale value · analytical · after lease extension",
+   "tax": "SDLT_RES_HIGHER",
+   "confidence": "Medium",
+   "stage": "Bid / Offer",
+   "date_checked": "2026-10-22",
+   "published": true,
+   "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
+    "headline",
+    "area",
+    "outcode",
+    "region",
+    "nation",
+    "type",
+    "category",
+    "config",
+    "guide",
+    "guide_label",
+    "value",
+    "value_label",
+    "value_kind",
+    "confidence",
+    "date_checked",
+    "stage",
+    "tax",
+    "auction_date"
+   ],
+   "research_date": "2026-10-22"
   }
  ]
 };
