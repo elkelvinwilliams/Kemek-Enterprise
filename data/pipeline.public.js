@@ -305,6 +305,11 @@ window.KEMEK_PIPELINE = {
   {
    "date": "2026-10-23",
    "deal": "KEM-033",
+   "pr": "#59"
+  },
+  {
+   "date": "2026-10-23",
+   "deal": "KEM-033",
    "pr": "#58"
   },
   {
@@ -2169,7 +2174,7 @@ window.KEMEK_PIPELINE = {
   {
    "id": "KEM-033",
    "deal_room": "deal-room/longitude.json",
-   "value_source": "Director's view, 23 Oct 2026: £260k / £295k / £340k after a lease extension · evidence beside it: Flat 53 sold £298,000 (Sep 2020); Rightmove estimate £260,000 (range £210k–£310k, 5 Oct 2026); similar flats nearby £295,000 (range £240k–£350k); shared-ownership full values in the block £280,000–£350,000 (2026); Flat 58 in the block sold £182,650 (Apr 2024); no bids at the £110k–£160k auction guide (Oct 2026)",
+   "value_source": "Director's view, 23 Oct 2026: £260k / £295k / £340k · evidence beside it: Flat 53 sold £298,000 (Sep 2020); Rightmove estimate £260,000 (range £210k–£310k, 5 Oct 2026); similar flats nearby £295,000 (range £240k–£350k); shared-ownership full values in the block £280,000–£350,000 (2026); Flat 58 in the block sold £182,650 (Apr 2024); no bids at the £110k–£160k auction guide (Oct 2026); legal pack read 23 Oct: lease to 2198 at a peppercorn, £10,490 of the seller's costs under the special conditions, Southern Housing's clause 3(19) certificate needed on every sale",
    "headline": "Two-bed first-floor flat, 71 sq m, a hundred yards from East Croydon station — purchase agreed at £165,000 through the auctioneer; completion 1 December",
    "area": "Addiscombe Grove, East Croydon",
    "outcode": "CR0",
@@ -2177,7 +2182,7 @@ window.KEMEK_PIPELINE = {
    "nation": "England",
    "type": "Flat",
    "category": "Residential",
-   "config": "2 bed · 1 bath · open-plan kitchen/living · balcony · 71 sq m · first floor · built 2010 · leasehold, c.82 years unexpired · East Croydon station 0.1 miles",
+   "config": "2 bed · 1 bath · open-plan kitchen/living · balcony · 71 sq m · first floor · built 2010 · leasehold to 2198 (extended 2023), peppercorn rent · East Croydon station 0.1 miles",
    "guide": [
     165000,
     165000
@@ -2189,7 +2194,7 @@ window.KEMEK_PIPELINE = {
     340000
    ],
    "value_label": "£260k–£340k",
-   "value_kind": "Resale value · director's view · after lease extension",
+   "value_kind": "Resale value · director's view",
    "tax": "SDLT_RES_STD",
    "confidence": "Medium",
    "stage": "Bid / Offer",
