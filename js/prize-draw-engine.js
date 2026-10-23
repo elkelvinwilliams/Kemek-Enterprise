@@ -64,7 +64,7 @@ Kind regards,
 
 ${s.sender_name || 'El Kelvin Williams'}
 ${s.sender_role || 'Director, Kemek Enterprise Ltd'}
-${s.sender_contact || 'elkelvinwilliams@gmail.com · 07476 656712'}`;
+${s.sender_contact || 'contact@kemekenterprise.com · 07476 656712'}`;
     return { subject, body, mailto: (s.email && /@/.test(s.email) && !/NOT PUBLICLY/i.test(s.email)) ? `mailto:${s.email.split(' ')[0]}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}` : null };
   }
   root.KemekPrizeDraw = { gbp, num, assumptionsMap, campaign, scenarioTable, scenarioCSV, consumerLive, entriesLive, paymentsLive, outreach };
