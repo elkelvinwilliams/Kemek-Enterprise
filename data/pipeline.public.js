@@ -303,6 +303,11 @@ window.KEMEK_PIPELINE = {
  ],
  "changelog": [
   {
+   "date": "2026-10-23",
+   "deal": "KEM-033",
+   "pr": "#58"
+  },
+  {
    "date": "2026-10-22",
    "deal": "KEM-033",
    "pr": "#56"
@@ -2164,7 +2169,7 @@ window.KEMEK_PIPELINE = {
   {
    "id": "KEM-033",
    "deal_room": "deal-room/longitude.json",
-   "value_source": "Analytical range £200k / £230k / £260k after a lease extension, from: Flat 53 sold £298,000 (Sep 2020); Rightmove estimate £260,000 (range £210k–£310k, 5 Oct 2026); similar flats nearby £295,000 (range £240k–£350k); shared-ownership full values in the block £280,000–£350,000 (2026); Flat 58 in the block sold £182,650 (Apr 2024)",
+   "value_source": "Director's view, 23 Oct 2026: £260k / £295k / £340k after a lease extension · evidence beside it: Flat 53 sold £298,000 (Sep 2020); Rightmove estimate £260,000 (range £210k–£310k, 5 Oct 2026); similar flats nearby £295,000 (range £240k–£350k); shared-ownership full values in the block £280,000–£350,000 (2026); Flat 58 in the block sold £182,650 (Apr 2024); no bids at the £110k–£160k auction guide (Oct 2026)",
    "headline": "Two-bed first-floor flat, 71 sq m, a hundred yards from East Croydon station — purchase agreed at £165,000 through the auctioneer; completion 1 December",
    "area": "Addiscombe Grove, East Croydon",
    "outcode": "CR0",
@@ -2179,16 +2184,16 @@ window.KEMEK_PIPELINE = {
    ],
    "guide_label": "Purchase price £165,000 · auction sales memorandum · completion 1 December 2026 (subject to exchange)",
    "value": [
-    200000,
-    230000,
-    260000
+    260000,
+    295000,
+    340000
    ],
-   "value_label": "£200k–£260k",
-   "value_kind": "Resale value · analytical · after lease extension",
-   "tax": "SDLT_RES_HIGHER",
+   "value_label": "£260k–£340k",
+   "value_kind": "Resale value · director's view · after lease extension",
+   "tax": "SDLT_RES_STD",
    "confidence": "Medium",
    "stage": "Bid / Offer",
-   "date_checked": "2026-10-22",
+   "date_checked": "2026-10-23",
    "published": true,
    "public_fields": [
     "pinned",
