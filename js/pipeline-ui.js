@@ -253,15 +253,11 @@
     const b = base(d);
     const commercial = d.value_kind && /income/i.test(d.value_kind);
     const roomBtn = () => document.getElementById('btn-investor');
-    const b64u = x => Uint8Array.from(atob(x), c => c.charCodeAt(0));
     const openRoom = async (pass) => {
       const err = document.getElementById('investor-err'); err.textContent = 'Checking…';
       try {
         const payload = await (await fetch(d.deal_room, { cache: 'no-store' })).json();
-        const km = await crypto.subtle.importKey('raw', new TextEncoder().encode(pass), 'PBKDF2', false, ['deriveKey']);
-        const key = await crypto.subtle.deriveKey({ name: 'PBKDF2', salt: b64u(payload.salt), iterations: 310000, hash: 'SHA-256' }, km, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
-        const pt = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: b64u(payload.iv) }, key, b64u(payload.ct));
-        document.getElementById('investor-content').innerHTML = new TextDecoder().decode(pt);
+        document.getElementById('investor-content').innerHTML = await window.KemekRoom.open(payload, pass);   // js/deal-room.js · one or more passwords per room
         document.getElementById('investor-gate').hidden = true; err.textContent = '';
       } catch (e) { err.textContent = 'That password did not open the room.'; }
     };
