@@ -303,6 +303,11 @@ window.KEMEK_PIPELINE = {
  ],
  "changelog": [
   {
+   "date": "2026-10-26",
+   "deal": "KEM-033",
+   "pr": "#62"
+  },
+  {
    "date": "2026-10-25",
    "deal": "KEM-033",
    "pr": "#61"
