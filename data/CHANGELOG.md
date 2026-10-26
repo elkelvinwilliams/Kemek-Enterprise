@@ -4,6 +4,7 @@ One line per correction or stage decision. The full entry (with private evidence
 
 | Date | Deal | PR | Entry |
 |---|---|---|---|
+| 2026-10-26 | KEM-033 | #63 | Room re-locked with a fifth password for a fifth named holder; content unchanged; the first four holders' passwords unchanged. |
 | 2026-10-26 | KEM-033 | #62 | Room re-locked with a fourth password for a fourth named holder; content unchanged; the first three holders' passwords unchanged. |
 | 2026-10-25 | KEM-033 | #61 | Room re-locked with a third password for a third named holder; content unchanged; the first two holders' passwords unchanged. |
 | 2026-10-24 | KEM-033 | #60 | Room re-locked with a second password for a second named holder; the room's content is unchanged and the first holder's password still opens it exactly as before. Rooms can now carry one password per holder: each further password wraps the same room key (tools/lock-page.cjs takes several passwords; js/deal-room.js opens both formats; tests in tests/deal-room.test.cjs). |
