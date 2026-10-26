@@ -305,6 +305,11 @@ window.KEMEK_PIPELINE = {
   {
    "date": "2026-10-26",
    "deal": "KEM-033",
+   "pr": "#63"
+  },
+  {
+   "date": "2026-10-26",
+   "deal": "KEM-033",
    "pr": "#62"
   },
   {
