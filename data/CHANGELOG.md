@@ -4,6 +4,7 @@ One line per correction or stage decision. The full entry (with private evidence
 
 | Date | Deal | PR | Entry |
 |---|---|---|---|
+| 2026-10-27 | KEM-033 | #64 | Room re-locked with a sixth password for a sixth named holder; content unchanged; the first five holders' passwords unchanged. |
 | 2026-10-26 | KEM-033 | #63 | Room re-locked with a fifth password for a fifth named holder; content unchanged; the first four holders' passwords unchanged. |
 | 2026-10-26 | KEM-033 | #62 | Room re-locked with a fourth password for a fourth named holder; content unchanged; the first three holders' passwords unchanged. |
 | 2026-10-25 | KEM-033 | #61 | Room re-locked with a third password for a third named holder; content unchanged; the first two holders' passwords unchanged. |
