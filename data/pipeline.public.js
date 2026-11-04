@@ -304,6 +304,11 @@ window.KEMEK_PIPELINE = {
  "changelog": [
   {
    "date": "2026-11-04",
+   "deal": "KEM-035",
+   "pr": "#67"
+  },
+  {
+   "date": "2026-11-04",
    "deal": "ALL",
    "pr": "#66"
   },
@@ -2288,6 +2293,61 @@ window.KEMEK_PIPELINE = {
    "confidence": "Low",
    "stage": "GO — Deal Room",
    "date_checked": "2026-11-04",
+   "published": true,
+   "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
+    "headline",
+    "area",
+    "outcode",
+    "region",
+    "nation",
+    "type",
+    "category",
+    "config",
+    "guide",
+    "guide_label",
+    "value",
+    "value_label",
+    "value_kind",
+    "confidence",
+    "date_checked",
+    "stage",
+    "tax",
+    "auction_date"
+   ],
+   "research_date": "2026-11-04"
+  },
+  {
+   "id": "KEM-035",
+   "deal_room": "deal-room/mersea.json",
+   "value_source": "Kemek's analytical range, 4 Nov 2026: £255k / £275k / £300k after a light refresh · evidence beside it: the house sold for £315,000 in February 2022; a three-bed period terrace on the same road is guided at £270,000–£280,000; terraced houses nearby (CO2) sold for £207,500–£290,000 in 2026, sizes unknown; the low case allows for a loft room without building regulations sign-off",
+   "headline": "Victorian bay-fronted terrace on three floors, a short walk from Colchester city centre, sold empty by a lender — online auction, guide £180,000",
+   "area": "Colchester, Essex",
+   "outcode": "CO2",
+   "region": "East of England",
+   "nation": "England",
+   "type": "Terraced house",
+   "category": "Residential",
+   "config": "2 bedrooms + loft room · 2 reception rooms (opened into one) · kitchen · bathroom with separate shower · about 92 sq m (Kemek estimate from the floor plan) · freehold · EPC C · no tenancies",
+   "guide": [
+    180000,
+    180000
+   ],
+   "guide_label": "Online auction guide £180,000 plus fees · Auction House East Anglia · bidding 23–24 Nov 2026",
+   "value": [
+    255000,
+    275000,
+    300000
+   ],
+   "value_label": "£255k–£300k",
+   "value_kind": "Resale value · analytical",
+   "tax": "SDLT_RES_HIGHER",
+   "confidence": "Low–Medium",
+   "stage": "Bid / Offer",
+   "date_checked": "2026-11-04",
+   "auction_date": "2026-11-24",
    "published": true,
    "public_fields": [
     "pinned",

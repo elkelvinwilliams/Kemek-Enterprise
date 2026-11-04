@@ -257,7 +257,15 @@
       const err = document.getElementById('investor-err'); err.textContent = 'Checking…';
       try {
         const payload = await (await fetch(d.deal_room, { cache: 'no-store' })).json();
-        document.getElementById('investor-content').innerHTML = await window.KemekRoom.open(payload, pass);   // js/deal-room.js · one or more passwords per room
+        const box = document.getElementById('investor-content');
+        box.innerHTML = await window.KemekRoom.open(payload, pass);   // js/deal-room.js · one or more passwords per room
+        box.querySelectorAll('a[download][href^="data:"]').forEach(a => {   // a file inside the room (e.g. the deal-pack ZIP): a blob link downloads reliably on phones
+          try {
+            const [meta, b64] = a.getAttribute('href').split(',', 2), bin = atob(b64), bytes = new Uint8Array(bin.length);
+            for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+            a.href = URL.createObjectURL(new Blob([bytes], { type: meta.slice(5).split(';')[0] || 'application/octet-stream' }));
+          } catch (x) { /* keep the data: link */ }
+        });
         document.getElementById('investor-gate').hidden = true; err.textContent = '';
       } catch (e) { err.textContent = 'That password did not open the room.'; }
     };
