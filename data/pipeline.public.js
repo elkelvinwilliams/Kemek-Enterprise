@@ -72,10 +72,10 @@ window.KEMEK_PIPELINE = {
   {
    "key": "ltv_pct",
    "label": "Bridging loan-to-value on purchase",
-   "value": 70.0,
+   "value": 100.0,
    "unit": "%",
    "status": "ASSUMED",
-   "note": "In line with Kemek's DIPs on Project Harwood Manor (c.70% of purchase). Editable."
+   "note": "Kemek standard from 4 Nov 2026: a bridge for 100% of the purchase price (was 70%, in line with the Harwood Manor DIPs). A loan of this size usually depends on the lender's valuation or extra security. Editable."
   },
   {
    "key": "rate_month_pct",
@@ -302,6 +302,11 @@ window.KEMEK_PIPELINE = {
   "works_basis"
  ],
  "changelog": [
+  {
+   "date": "2026-11-04",
+   "deal": "ALL",
+   "pr": "#66"
+  },
   {
    "date": "2026-11-04",
    "deal": "KEM-034",
