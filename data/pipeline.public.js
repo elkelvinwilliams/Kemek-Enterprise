@@ -303,6 +303,11 @@ window.KEMEK_PIPELINE = {
  ],
  "changelog": [
   {
+   "date": "2026-11-04",
+   "deal": "KEM-034",
+   "pr": "#65"
+  },
+  {
    "date": "2026-10-27",
    "deal": "KEM-033",
    "pr": "#64"
@@ -2249,6 +2254,60 @@ window.KEMEK_PIPELINE = {
     "auction_date"
    ],
    "research_date": "2026-10-22"
+  },
+  {
+   "id": "KEM-034",
+   "deal_room": "deal-room/tharp.json",
+   "value_source": "Director's view, 4 Nov 2026: £370k / £535k / £700k from Rightmove's estimate (£535,000) and range (£370k–£700k) for similar houses in CB7 · evidence beside it: marketed at a £410,000 guide and then offers over £375,000 without selling; the building's last three-bed sale £380,000 (Jul 2015) and last recorded sale in the postcode £650,000 (Feb 2017); three-bed houses nearby asking £221–£246 a sq ft; Kemek's reading of the local evidence £375k–£445k",
+   "headline": "Three-bed house, 1,801 sq ft, in a Grade II* listed former stable block on a parkland estate near Newmarket — at auction, guide £250,000",
+   "area": "Chippenham, near Newmarket, Cambridgeshire",
+   "outcode": "CB7",
+   "region": "East of England",
+   "nation": "England",
+   "type": "House (Grade II* listed)",
+   "category": "Residential",
+   "config": "3 bed · 2 bath + WC · living room · dining room · study · kitchen/breakfast room · 1,801 sq ft (167 sq m) · single garage · communal gardens · freehold · one of eight homes in the building",
+   "guide": [
+    250000,
+    250000
+   ],
+   "guide_label": "Auction guide £250,000 plus fees · Auction House East Anglia · auction date to be confirmed",
+   "value": [
+    370000,
+    535000,
+    700000
+   ],
+   "value_label": "£370k–£700k",
+   "value_kind": "Resale value · director's view",
+   "tax": "SDLT_RES_HIGHER",
+   "confidence": "Low",
+   "stage": "GO — Deal Room",
+   "date_checked": "2026-11-04",
+   "published": true,
+   "public_fields": [
+    "pinned",
+    "value_source",
+    "deal_room",
+    "headline",
+    "area",
+    "outcode",
+    "region",
+    "nation",
+    "type",
+    "category",
+    "config",
+    "guide",
+    "guide_label",
+    "value",
+    "value_label",
+    "value_kind",
+    "confidence",
+    "date_checked",
+    "stage",
+    "tax",
+    "auction_date"
+   ],
+   "research_date": "2026-11-04"
   }
  ]
 };
